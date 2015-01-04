@@ -1,0 +1,2242 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALIN_ADDR	.\phclient.c	14;"	d	file:
+ALIN_PORT	.\phclient.c	15;"	d	file:
+AUXMARK	.\gw_src\lua_src\loadlib.c	590;"	d	file:
+Arith	.\gw_src\lua_src\lvm.c	/^static void Arith (lua_State *L, StkId ra, const TValue *rb,$/;"	f	file:
+BASIC_CI_SIZE	.\gw_src\inc\lstate.h	32;"	d
+BASIC_STACK_SIZE	.\gw_src\inc\lstate.h	34;"	d
+BITRK	.\gw_src\inc\lopcodes.h	119;"	d
+BLACKBIT	.\gw_src\inc\lgc.h	56;"	d
+BUFFER_FD_t	.\gw_src\inc\global_var.h	/^}BUFFER_FD_t;$/;"	t	typeref:struct:__anon8
+BUFFER_IPPORT_t	.\gw_src\inc\global_var.h	/^}BUFFER_IPPORT_t;$/;"	t	typeref:struct:__anon7
+BUFFER_t	.\gw_src\inc\global_var.h	/^}BUFFER_t;$/;"	t	typeref:struct:__anon6
+BU_CAryToDFNum	.\gw_src\preprocess.c	/^float BU_CAryToDFNum(const uint8_t *code)$/;"	f
+BU_CAryToDFNum1	.\gw_src\preprocess.c	/^float BU_CAryToDFNum1(const uint8_t *hex, int i)$/;"	f
+BU_CAryToDINum	.\gw_src\preprocess.c	/^int BU_CAryToDINum(const uint8_t *code, int num)$/;"	f
+BU_CAryToDU_INum	.\gw_src\preprocess.c	/^int BU_CAryToDU_INum(const uint8_t *code, int num)$/;"	f
+BU_CAryToHCStr	.\gw_src\preprocess.c	/^void BU_CAryToHCStr(const uint8_t *code, uint8_t *str, int num)$/;"	f
+BinOpr	.\gw_src\inc\lcode.h	/^typedef enum BinOpr {$/;"	g
+BinOpr	.\gw_src\inc\lcode.h	/^} BinOpr;$/;"	t	typeref:enum:BinOpr
+BlockCnt	.\gw_src\lua_src\lparser.c	/^typedef struct BlockCnt {$/;"	s	file:
+BlockCnt	.\gw_src\lua_src\lparser.c	/^} BlockCnt;$/;"	t	typeref:struct:BlockCnt	file:
+CAP_POSITION	.\gw_src\lua_src\lstrlib.c	168;"	d	file:
+CAP_UNFINISHED	.\gw_src\lua_src\lstrlib.c	167;"	d	file:
+CCallS	.\gw_src\lua_src\lapi.c	/^struct CCallS {  \/* data to `f_Ccall' *\/$/;"	s	file:
+CClosure	.\gw_src\inc\lobject.h	/^typedef struct CClosure {$/;"	s
+CClosure	.\gw_src\inc\lobject.h	/^} CClosure;$/;"	t	typeref:struct:CClosure
+CO_DEAD	.\gw_src\lua_src\lbaselib.c	485;"	d	file:
+CO_NOR	.\gw_src\lua_src\lbaselib.c	484;"	d	file:
+CO_RUN	.\gw_src\lua_src\lbaselib.c	482;"	d	file:
+CO_SUS	.\gw_src\lua_src\lbaselib.c	483;"	d	file:
+CRC16	.\gw_src\preprocess.c	/^uint16_t CRC16(const uint8_t  *p_uiData, int uiCrcDataLen)$/;"	f
+CREATE_ABC	.\gw_src\inc\lopcodes.h	104;"	d
+CREATE_ABx	.\gw_src\inc\lopcodes.h	109;"	d
+CallInfo	.\gw_src\inc\lstate.h	/^typedef struct CallInfo {$/;"	s
+CallInfo	.\gw_src\inc\lstate.h	/^} CallInfo;$/;"	t	typeref:struct:CallInfo
+CallS	.\gw_src\lua_src\lapi.c	/^struct CallS {  \/* data to `f_call' *\/$/;"	s	file:
+Closure	.\gw_src\inc\lobject.h	/^typedef union Closure {$/;"	u
+Closure	.\gw_src\inc\lobject.h	/^} Closure;$/;"	t	typeref:union:Closure
+ClosureHeader	.\gw_src\inc\lobject.h	/^  ClosureHeader;$/;"	m	struct:CClosure
+ClosureHeader	.\gw_src\inc\lobject.h	/^  ClosureHeader;$/;"	m	struct:LClosure
+ClosureHeader	.\gw_src\inc\lobject.h	291;"	d
+CommonHeader	.\gw_src\inc\lobject.h	/^    CommonHeader;$/;"	m	struct:TString::__anon11
+CommonHeader	.\gw_src\inc\lobject.h	/^    CommonHeader;$/;"	m	struct:Udata::__anon12
+CommonHeader	.\gw_src\inc\lobject.h	/^  CommonHeader;$/;"	m	struct:GCheader
+CommonHeader	.\gw_src\inc\lobject.h	/^  CommonHeader;$/;"	m	struct:Proto
+CommonHeader	.\gw_src\inc\lobject.h	/^  CommonHeader;$/;"	m	struct:Table
+CommonHeader	.\gw_src\inc\lobject.h	/^  CommonHeader;$/;"	m	struct:UpVal
+CommonHeader	.\gw_src\inc\lobject.h	43;"	d
+CommonHeader	.\gw_src\inc\lstate.h	/^  CommonHeader;$/;"	m	struct:lua_State
+ConsControl	.\gw_src\lua_src\lparser.c	/^struct ConsControl {$/;"	s	file:
+DINumToDIStr	.\gw_src\preprocess.c	/^void DINumToDIStr(int arg1, uint8_t *result1, int num)$/;"	f
+DIStrToDINum	.\gw_src\preprocess.c	/^int DIStrToDINum(const uint8_t *code, int num)$/;"	f
+DLMSG	.\gw_src\lua_src\loadlib.c	236;"	d	file:
+DumpBlock	.\gw_src\lua_src\ldump.c	/^static void DumpBlock(const void* b, size_t size, DumpState* D)$/;"	f	file:
+DumpChar	.\gw_src\lua_src\ldump.c	/^static void DumpChar(int y, DumpState* D)$/;"	f	file:
+DumpCode	.\gw_src\lua_src\ldump.c	76;"	d	file:
+DumpConstants	.\gw_src\lua_src\ldump.c	/^static void DumpConstants(const Proto* f, DumpState* D)$/;"	f	file:
+DumpDebug	.\gw_src\lua_src\ldump.c	/^static void DumpDebug(const Proto* f, DumpState* D)$/;"	f	file:
+DumpFunction	.\gw_src\lua_src\ldump.c	/^static void DumpFunction(const Proto* f, const TString* p, DumpState* D)$/;"	f	file:
+DumpHeader	.\gw_src\lua_src\ldump.c	/^static void DumpHeader(DumpState* D)$/;"	f	file:
+DumpInt	.\gw_src\lua_src\ldump.c	/^static void DumpInt(int x, DumpState* D)$/;"	f	file:
+DumpMem	.\gw_src\lua_src\ldump.c	26;"	d	file:
+DumpNumber	.\gw_src\lua_src\ldump.c	/^static void DumpNumber(lua_Number x, DumpState* D)$/;"	f	file:
+DumpState	.\gw_src\lua_src\ldump.c	/^} DumpState;$/;"	t	typeref:struct:__anon21	file:
+DumpString	.\gw_src\lua_src\ldump.c	/^static void DumpString(const TString* s, DumpState* D)$/;"	f	file:
+DumpVar	.\gw_src\lua_src\ldump.c	27;"	d	file:
+DumpVector	.\gw_src\lua_src\ldump.c	/^static void DumpVector(const void* b, int n, size_t size, DumpState* D)$/;"	f	file:
+EOZ	.\gw_src\inc\lzio.h	16;"	d
+ERRFUNC	.\gw_src\lua_src\loadlib.c	40;"	d	file:
+ERRLIB	.\gw_src\lua_src\loadlib.c	39;"	d	file:
+EXTRA_STACK	.\gw_src\inc\lstate.h	29;"	d
+FIELD_KEY_VAL	.\gw_src\inc\global_var.h	/^}FIELD_KEY_VAL;$/;"	t	typeref:struct:__anon1
+FINALIZEDBIT	.\gw_src\inc\lgc.h	57;"	d
+FIRST_RESERVED	.\gw_src\inc\llex.h	14;"	d
+FIXEDBIT	.\gw_src\inc\lgc.h	60;"	d
+FLAGS	.\gw_src\lua_src\lstrlib.c	688;"	d	file:
+FREELIST_REF	.\gw_src\lua_src\lauxlib.c	28;"	d	file:
+FuncState	.\gw_src\inc\lparser.h	/^typedef struct FuncState {$/;"	s
+FuncState	.\gw_src\inc\lparser.h	/^} FuncState;$/;"	t	typeref:struct:FuncState
+G	.\gw_src\inc\lstate.h	130;"	d
+GATEWAY_NO	.\gw_src\lua.c	/^char GATEWAY_NO[10] = {0};$/;"	v
+GB_CN1011_Action	.\ph_bin\GB_format.lua	/^function GB_CN1011_Action(...)$/;"	f
+GB_CN1012_Action	.\ph_bin\GB_format.lua	/^function GB_CN1012_Action(...)$/;"	f
+GB_CN1072_Action	.\ph_bin\GB_format.lua	/^function GB_CN1072_Action(...)$/;"	f
+GB_CN2011_Action	.\ph_bin\GB_format.lua	/^function GB_CN2011_Action(...)$/;"	f
+GB_CN2012_Action	.\ph_bin\GB_format.lua	/^function GB_CN2012_Action(...)$/;"	f
+GB_CN2021_Action	.\ph_bin\GB_format.lua	/^function GB_CN2021_Action(...)$/;"	f
+GB_CN2022_Action	.\ph_bin\GB_format.lua	/^function GB_CN2022_Action(...)$/;"	f
+GB_CN2051_Action	.\ph_bin\GB_format.lua	/^function GB_CN2051_Action(...)$/;"	f
+GB_CN9011_Action	.\ph_bin\GB_format.lua	/^function GB_CN9011_Action(...)$/;"	f
+GB_CN9012_Action	.\ph_bin\GB_format.lua	/^function GB_CN9012_Action(...)$/;"	f
+GB_CN9013_Action	.\ph_bin\GB_format.lua	/^function GB_CN9013_Action(...)$/;"	f
+GB_CN9021_Action	.\ph_bin\GB_format.lua	/^function GB_CN9021_Action(...)$/;"	f
+GB_CN_Event	.\ph_bin\GB_format.lua	/^function GB_CN_Event(value, ...)$/;"	f
+GB_End_Action	.\ph_bin\GB_format.lua	/^function GB_End_Action(...)$/;"	f
+GB_Flag1_Action	.\ph_bin\GB_format.lua	/^function GB_Flag1_Action(...)$/;"	f
+GB_Flag_Event	.\ph_bin\GB_format.lua	/^function GB_Flag_Event(value, ...)$/;"	f
+GB_PW_Action	.\ph_bin\GB_format.lua	/^function GB_PW_Action(...)$/;"	f
+GB_PW_Event	.\ph_bin\GB_format.lua	/^function GB_PW_Event(...)$/;"	f
+GB_QN_Action	.\ph_bin\GB_format.lua	/^function GB_QN_Action(...)$/;"	f
+GB_QN_Event	.\ph_bin\GB_format.lua	/^function GB_QN_Event(...)$/;"	f
+GB_ST32_Action	.\ph_bin\GB_format.lua	/^function GB_ST32_Action(...)$/;"	f
+GB_ST91_Action	.\ph_bin\GB_format.lua	/^function GB_ST91_Action(...)$/;"	f
+GB_ST_Event	.\ph_bin\GB_format.lua	/^function GB_ST_Event(value, ...)$/;"	f
+GB_packet	.\gw_src\gateway.c	/^static uint8_t GB_packet[MAXGBLEN] = {'\\0'}; \/\/socket接收的IP端报文$/;"	v	file:
+GB_packet_len	.\gw_src\gateway.c	/^static int GB_packet_len = 0; \/\/socket接收的IP端报文长度$/;"	v	file:
+GB_packet_ret	.\gw_src\gateway.c	/^static uint8_t GB_packet_ret[MAXGBLEN] = {'\\0'}; \/\/IP端的返回报文$/;"	v	file:
+GCFINALIZECOST	.\gw_src\lua_src\lgc.c	29;"	d	file:
+GCObject	.\gw_src\inc\lobject.h	/^typedef union GCObject GCObject;$/;"	t	typeref:union:GCObject
+GCObject	.\gw_src\inc\lstate.h	/^union GCObject {$/;"	u
+GCSTEPSIZE	.\gw_src\lua_src\lgc.c	26;"	d	file:
+GCSWEEPCOST	.\gw_src\lua_src\lgc.c	28;"	d	file:
+GCSWEEPMAX	.\gw_src\lua_src\lgc.c	27;"	d	file:
+GCSfinalize	.\gw_src\inc\lgc.h	21;"	d
+GCSpause	.\gw_src\inc\lgc.h	17;"	d
+GCSpropagate	.\gw_src\inc\lgc.h	18;"	d
+GCSsweep	.\gw_src\inc\lgc.h	20;"	d
+GCSsweepstring	.\gw_src\inc\lgc.h	19;"	d
+GCTM	.\gw_src\lua_src\lgc.c	/^static void GCTM (lua_State *L) {$/;"	f	file:
+GCheader	.\gw_src\inc\lobject.h	/^typedef struct GCheader {$/;"	s
+GCheader	.\gw_src\inc\lobject.h	/^} GCheader;$/;"	t	typeref:struct:GCheader
+GCthreshold	.\gw_src\inc\lstate.h	/^  lu_mem GCthreshold;$/;"	m	struct:global_State
+GETARG_A	.\gw_src\inc\lopcodes.h	84;"	d
+GETARG_B	.\gw_src\inc\lopcodes.h	88;"	d
+GETARG_Bx	.\gw_src\inc\lopcodes.h	96;"	d
+GETARG_C	.\gw_src\inc\lopcodes.h	92;"	d
+GETARG_sBx	.\gw_src\inc\lopcodes.h	100;"	d
+GET_OPCODE	.\gw_src\inc\lopcodes.h	80;"	d
+HCStrToBU_CAry	.\gw_src\preprocess.c	/^int HCStrToBU_CAry(const uint8_t *code, uint8_t *result, int num)$/;"	f
+HCStrToDFStr	.\gw_src\preprocess.c	/^int HCStrToDFStr(const uint8_t *code, uint8_t *result, int num)$/;"	f
+HCStrToDINum	.\gw_src\preprocess.c	/^int HCStrToDINum(const uint8_t *code, int num)$/;"	f
+HCStrToDU_INum	.\gw_src\preprocess.c	/^int HCStrToDU_INum(const uint8_t *code, int num)$/;"	f
+HU_CNumToHCStr	.\gw_src\preprocess.c	/^void HU_CNumToHCStr(uint16_t hex, uint8_t *str)$/;"	f
+IF	.\gw_src\lua_src\lundump.c	31;"	d	file:
+IF	.\gw_src\lua_src\lundump.c	34;"	d	file:
+INDEXK	.\gw_src\inc\lopcodes.h	125;"	d
+IO_INPUT	.\gw_src\lua_src\liolib.c	23;"	d	file:
+IO_OUTPUT	.\gw_src\lua_src\liolib.c	24;"	d	file:
+IP_PORT_t	.\gw_src\inc\global_var.h	/^}IP_PORT_t;$/;"	t	typeref:struct:__anon4
+IS	.\gw_src\lua_src\luac.c	68;"	d	file:
+ISK	.\gw_src\inc\lopcodes.h	122;"	d
+Instruction	.\gw_src\inc\llimits.h	/^typedef lu_int32 Instruction;$/;"	t
+IntPoint	.\gw_src\inc\llimits.h	42;"	d
+KBx	.\gw_src\lua_src\lvm.c	355;"	d	file:
+KEYWEAK	.\gw_src\lua_src\lgc.c	47;"	d	file:
+KEYWEAKBIT	.\gw_src\inc\lgc.h	58;"	d
+KEY_HOOK	.\gw_src\lua_src\ldblib.c	/^static const char KEY_HOOK = 'h';$/;"	v	file:
+L	.\gw_src\inc\lauxlib.h	/^  lua_State *L;$/;"	m	struct:luaL_Buffer
+L	.\gw_src\inc\llex.h	/^  struct lua_State *L;$/;"	m	struct:LexState	typeref:struct:LexState::lua_State
+L	.\gw_src\inc\lparser.h	/^  struct lua_State *L;  \/* copy of the Lua state *\/$/;"	m	struct:FuncState	typeref:struct:FuncState::lua_State
+L	.\gw_src\inc\lzio.h	/^  lua_State *L;			\/* Lua state (for reader) *\/$/;"	m	struct:Zio
+L	.\gw_src\lua_src\ldump.c	/^ lua_State* L;$/;"	m	struct:__anon21	file:
+L	.\gw_src\lua_src\lstrlib.c	/^  lua_State *L;$/;"	m	struct:MatchState	file:
+L	.\gw_src\lua_src\lundump.c	/^ lua_State* L;$/;"	m	struct:__anon24	file:
+LAST_TAG	.\gw_src\inc\lobject.h	20;"	d
+LClosure	.\gw_src\inc\lobject.h	/^typedef struct LClosure {$/;"	s
+LClosure	.\gw_src\inc\lobject.h	/^} LClosure;$/;"	t	typeref:struct:LClosure
+LEVELS1	.\gw_src\lua_src\ldblib.c	319;"	d	file:
+LEVELS2	.\gw_src\lua_src\ldblib.c	320;"	d	file:
+LFIELDS_PER_FLUSH	.\gw_src\inc\lopcodes.h	265;"	d
+LG	.\gw_src\lua_src\lstate.c	/^typedef struct LG {$/;"	s	file:
+LG	.\gw_src\lua_src\lstate.c	/^} LG;$/;"	t	typeref:struct:LG	file:
+LHS_assign	.\gw_src\lua_src\lparser.c	/^struct LHS_assign {$/;"	s	file:
+LIBPREFIX	.\gw_src\lua_src\loadlib.c	32;"	d	file:
+LIB_FAIL	.\gw_src\lua_src\loadlib.c	232;"	d	file:
+LIB_FAIL	.\gw_src\lua_src\loadlib.c	233;"	d	file:
+LIB_FAIL	.\gw_src\lua_src\loadlib.c	35;"	d	file:
+LIMIT	.\gw_src\lua_src\lauxlib.c	395;"	d	file:
+LISTENQ	.\phclient.c	17;"	d	file:
+LUAC_FORMAT	.\gw_src\inc\lundump.h	31;"	d
+LUAC_HEADERSIZE	.\gw_src\inc\lundump.h	34;"	d
+LUAC_VERSION	.\gw_src\inc\lundump.h	28;"	d
+LUAI_BITSINT	.\gw_src\inc\luaconf.h	392;"	d
+LUAI_BITSINT	.\gw_src\inc\luaconf.h	395;"	d
+LUAI_DATA	.\gw_src\inc\luaconf.h	183;"	d
+LUAI_DATA	.\gw_src\inc\luaconf.h	188;"	d
+LUAI_DATA	.\gw_src\inc\luaconf.h	192;"	d
+LUAI_EXTRASPACE	.\gw_src\inc\luaconf.h	715;"	d
+LUAI_FUNC	.\gw_src\inc\luaconf.h	182;"	d
+LUAI_FUNC	.\gw_src\inc\luaconf.h	187;"	d
+LUAI_FUNC	.\gw_src\inc\luaconf.h	191;"	d
+LUAI_GCMUL	.\gw_src\inc\luaconf.h	313;"	d
+LUAI_GCPAUSE	.\gw_src\inc\luaconf.h	302;"	d
+LUAI_INT32	.\gw_src\inc\luaconf.h	415;"	d
+LUAI_INT32	.\gw_src\inc\luaconf.h	422;"	d
+LUAI_MAXCALLS	.\gw_src\inc\luaconf.h	435;"	d
+LUAI_MAXCCALLS	.\gw_src\inc\luaconf.h	468;"	d
+LUAI_MAXCSTACK	.\gw_src\inc\luaconf.h	446;"	d
+LUAI_MAXINT32	.\gw_src\inc\luaconf.h	416;"	d
+LUAI_MAXINT32	.\gw_src\inc\luaconf.h	423;"	d
+LUAI_MAXNUMBER2STR	.\gw_src\inc\luaconf.h	524;"	d
+LUAI_MAXUPVALUES	.\gw_src\inc\luaconf.h	482;"	d
+LUAI_MAXVARS	.\gw_src\inc\luaconf.h	475;"	d
+LUAI_MEM	.\gw_src\inc\luaconf.h	418;"	d
+LUAI_MEM	.\gw_src\inc\luaconf.h	425;"	d
+LUAI_THROW	.\gw_src\inc\luaconf.h	608;"	d
+LUAI_THROW	.\gw_src\inc\luaconf.h	615;"	d
+LUAI_THROW	.\gw_src\inc\luaconf.h	621;"	d
+LUAI_TRY	.\gw_src\inc\luaconf.h	609;"	d
+LUAI_TRY	.\gw_src\inc\luaconf.h	616;"	d
+LUAI_TRY	.\gw_src\inc\luaconf.h	622;"	d
+LUAI_UACNUMBER	.\gw_src\inc\luaconf.h	511;"	d
+LUAI_UINT32	.\gw_src\inc\luaconf.h	414;"	d
+LUAI_UINT32	.\gw_src\inc\luaconf.h	421;"	d
+LUAI_UMEM	.\gw_src\inc\luaconf.h	417;"	d
+LUAI_UMEM	.\gw_src\inc\luaconf.h	424;"	d
+LUAI_USER_ALIGNMENT_T	.\gw_src\inc\luaconf.h	595;"	d
+LUALIB_API	.\gw_src\inc\luaconf.h	169;"	d
+LUAL_BUFFERSIZE	.\gw_src\inc\luaconf.h	488;"	d
+LUA_ANSI	.\gw_src\inc\luaconf.h	28;"	d
+LUA_API	.\gw_src\inc\luaconf.h	157;"	d
+LUA_API	.\gw_src\inc\luaconf.h	159;"	d
+LUA_API	.\gw_src\inc\luaconf.h	164;"	d
+LUA_AUTHORS	.\gw_src\inc\lua.h	23;"	d
+LUA_CDIR	.\gw_src\inc\luaconf.h	89;"	d
+LUA_CDIR	.\gw_src\inc\luaconf.h	99;"	d
+LUA_COLIBNAME	.\gw_src\inc\lualib.h	18;"	d
+LUA_COMPAT_GETN	.\gw_src\inc\luaconf.h	322;"	d
+LUA_COMPAT_GFIND	.\gw_src\inc\luaconf.h	358;"	d
+LUA_COMPAT_LOADLIB	.\gw_src\inc\luaconf.h	329;"	d
+LUA_COMPAT_LSTR	.\gw_src\inc\luaconf.h	351;"	d
+LUA_COMPAT_MOD	.\gw_src\inc\luaconf.h	343;"	d
+LUA_COMPAT_OPENLIB	.\gw_src\inc\luaconf.h	366;"	d
+LUA_COMPAT_VARARG	.\gw_src\inc\luaconf.h	336;"	d
+LUA_COPYRIGHT	.\gw_src\inc\lua.h	22;"	d
+LUA_CORE	.\gw_src\lua_src\lapi.c	14;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lcode.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\ldebug.c	14;"	d	file:
+LUA_CORE	.\gw_src\lua_src\ldo.c	13;"	d	file:
+LUA_CORE	.\gw_src\lua_src\ldump.c	10;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lfunc.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lgc.c	10;"	d	file:
+LUA_CORE	.\gw_src\lua_src\llex.c	13;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lmem.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lobject.c	14;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lopcodes.c	8;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lparser.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lstate.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lstring.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\ltable.c	25;"	d	file:
+LUA_CORE	.\gw_src\lua_src\ltm.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\luac.c	13;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lundump.c	10;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lvm.c	13;"	d	file:
+LUA_CORE	.\gw_src\lua_src\lzio.c	11;"	d	file:
+LUA_CORE	.\gw_src\lua_src\print.c	11;"	d	file:
+LUA_CPATH	.\gw_src\inc\luaconf.h	70;"	d
+LUA_CPATH_DEFAULT	.\gw_src\inc\luaconf.h	103;"	d
+LUA_CPATH_DEFAULT	.\gw_src\inc\luaconf.h	93;"	d
+LUA_DBLIBNAME	.\gw_src\inc\lualib.h	36;"	d
+LUA_DIRSEP	.\gw_src\inc\luaconf.h	114;"	d
+LUA_DIRSEP	.\gw_src\inc\luaconf.h	116;"	d
+LUA_DL_DLL	.\gw_src\inc\luaconf.h	705;"	d
+LUA_DL_DLOPEN	.\gw_src\inc\luaconf.h	701;"	d
+LUA_DL_DYLD	.\gw_src\inc\luaconf.h	44;"	d
+LUA_ENVIRONINDEX	.\gw_src\inc\lua.h	37;"	d
+LUA_ERRERR	.\gw_src\inc\lua.h	47;"	d
+LUA_ERRFILE	.\gw_src\inc\lauxlib.h	32;"	d
+LUA_ERRMEM	.\gw_src\inc\lua.h	46;"	d
+LUA_ERRRUN	.\gw_src\inc\lua.h	44;"	d
+LUA_ERRSYNTAX	.\gw_src\inc\lua.h	45;"	d
+LUA_EXECDIR	.\gw_src\inc\luaconf.h	134;"	d
+LUA_FILEHANDLE	.\gw_src\inc\lualib.h	15;"	d
+LUA_GCCOLLECT	.\gw_src\inc\lua.h	223;"	d
+LUA_GCCOUNT	.\gw_src\inc\lua.h	224;"	d
+LUA_GCCOUNTB	.\gw_src\inc\lua.h	225;"	d
+LUA_GCRESTART	.\gw_src\inc\lua.h	222;"	d
+LUA_GCSETPAUSE	.\gw_src\inc\lua.h	227;"	d
+LUA_GCSETSTEPMUL	.\gw_src\inc\lua.h	228;"	d
+LUA_GCSTEP	.\gw_src\inc\lua.h	226;"	d
+LUA_GCSTOP	.\gw_src\inc\lua.h	221;"	d
+LUA_GLOBALSINDEX	.\gw_src\inc\lua.h	38;"	d
+LUA_HOOKCALL	.\gw_src\inc\lua.h	311;"	d
+LUA_HOOKCOUNT	.\gw_src\inc\lua.h	314;"	d
+LUA_HOOKLINE	.\gw_src\inc\lua.h	313;"	d
+LUA_HOOKRET	.\gw_src\inc\lua.h	312;"	d
+LUA_HOOKTAILRET	.\gw_src\inc\lua.h	315;"	d
+LUA_IDSIZE	.\gw_src\inc\luaconf.h	210;"	d
+LUA_IGMARK	.\gw_src\inc\luaconf.h	135;"	d
+LUA_INIT	.\gw_src\inc\luaconf.h	71;"	d
+LUA_INTEGER	.\gw_src\inc\luaconf.h	143;"	d
+LUA_INTFRMLEN	.\gw_src\inc\luaconf.h	741;"	d
+LUA_INTFRMLEN	.\gw_src\inc\luaconf.h	746;"	d
+LUA_INTFRM_T	.\gw_src\inc\luaconf.h	742;"	d
+LUA_INTFRM_T	.\gw_src\inc\luaconf.h	747;"	d
+LUA_IOLIBNAME	.\gw_src\inc\lualib.h	24;"	d
+LUA_LDIR	.\gw_src\inc\luaconf.h	88;"	d
+LUA_LDIR	.\gw_src\inc\luaconf.h	98;"	d
+LUA_LIB	.\gw_src\lua_src\lauxlib.c	21;"	d	file:
+LUA_LIB	.\gw_src\lua_src\lbaselib.c	15;"	d	file:
+LUA_LIB	.\gw_src\lua_src\ldblib.c	13;"	d	file:
+LUA_LIB	.\gw_src\lua_src\linit.c	9;"	d	file:
+LUA_LIB	.\gw_src\lua_src\liolib.c	14;"	d	file:
+LUA_LIB	.\gw_src\lua_src\lmathlib.c	12;"	d	file:
+LUA_LIB	.\gw_src\lua_src\loadlib.c	17;"	d	file:
+LUA_LIB	.\gw_src\lua_src\loslib.c	15;"	d	file:
+LUA_LIB	.\gw_src\lua_src\lstrlib.c	15;"	d	file:
+LUA_LIB	.\gw_src\lua_src\ltablib.c	11;"	d	file:
+LUA_LOADLIBNAME	.\gw_src\inc\lualib.h	39;"	d
+LUA_MASKCALL	.\gw_src\inc\lua.h	321;"	d
+LUA_MASKCOUNT	.\gw_src\inc\lua.h	324;"	d
+LUA_MASKLINE	.\gw_src\inc\lua.h	323;"	d
+LUA_MASKRET	.\gw_src\inc\lua.h	322;"	d
+LUA_MATHLIBNAME	.\gw_src\inc\lualib.h	33;"	d
+LUA_MAXCAPTURES	.\gw_src\inc\luaconf.h	633;"	d
+LUA_MAXINPUT	.\gw_src\inc\luaconf.h	262;"	d
+LUA_MINBUFFER	.\gw_src\inc\llimits.h	105;"	d
+LUA_MINSTACK	.\gw_src\inc\lua.h	87;"	d
+LUA_MULTRET	.\gw_src\inc\lua.h	30;"	d
+LUA_NOREF	.\gw_src\inc\lauxlib.h	159;"	d
+LUA_NUMBER	.\gw_src\inc\luaconf.h	505;"	d
+LUA_NUMBER_DOUBLE	.\gw_src\inc\luaconf.h	504;"	d
+LUA_NUMBER_FMT	.\gw_src\inc\luaconf.h	522;"	d
+LUA_NUMBER_SCAN	.\gw_src\inc\luaconf.h	521;"	d
+LUA_OFSEP	.\gw_src\lua_src\loadlib.c	29;"	d	file:
+LUA_OSLIBNAME	.\gw_src\inc\lualib.h	27;"	d
+LUA_PATH	.\gw_src\inc\luaconf.h	69;"	d
+LUA_PATHSEP	.\gw_src\inc\luaconf.h	132;"	d
+LUA_PATH_DEFAULT	.\gw_src\inc\luaconf.h	100;"	d
+LUA_PATH_DEFAULT	.\gw_src\inc\luaconf.h	90;"	d
+LUA_PATH_MARK	.\gw_src\inc\luaconf.h	133;"	d
+LUA_POF	.\gw_src\lua_src\loadlib.c	26;"	d	file:
+LUA_PROGNAME	.\gw_src\inc\luaconf.h	254;"	d
+LUA_PROMPT	.\gw_src\inc\luaconf.h	245;"	d
+LUA_PROMPT2	.\gw_src\inc\luaconf.h	246;"	d
+LUA_QL	.\gw_src\inc\luaconf.h	201;"	d
+LUA_QS	.\gw_src\inc\luaconf.h	202;"	d
+LUA_REFNIL	.\gw_src\inc\lauxlib.h	160;"	d
+LUA_REGISTRYINDEX	.\gw_src\inc\lua.h	36;"	d
+LUA_RELEASE	.\gw_src\inc\lua.h	20;"	d
+LUA_ROOT	.\gw_src\inc\luaconf.h	97;"	d
+LUA_SIGNATURE	.\gw_src\inc\lua.h	27;"	d
+LUA_STRLIBNAME	.\gw_src\inc\lualib.h	30;"	d
+LUA_TABLIBNAME	.\gw_src\inc\lualib.h	21;"	d
+LUA_TBOOLEAN	.\gw_src\inc\lua.h	75;"	d
+LUA_TDEADKEY	.\gw_src\inc\lobject.h	30;"	d
+LUA_TFUNCTION	.\gw_src\inc\lua.h	80;"	d
+LUA_TLIGHTUSERDATA	.\gw_src\inc\lua.h	76;"	d
+LUA_TMPNAMBUFSIZE	.\gw_src\inc\luaconf.h	648;"	d
+LUA_TMPNAMBUFSIZE	.\gw_src\inc\luaconf.h	656;"	d
+LUA_TNIL	.\gw_src\inc\lua.h	74;"	d
+LUA_TNONE	.\gw_src\inc\lua.h	72;"	d
+LUA_TNUMBER	.\gw_src\inc\lua.h	77;"	d
+LUA_TPROTO	.\gw_src\inc\lobject.h	28;"	d
+LUA_TSTRING	.\gw_src\inc\lua.h	78;"	d
+LUA_TTABLE	.\gw_src\inc\lua.h	79;"	d
+LUA_TTHREAD	.\gw_src\inc\lua.h	82;"	d
+LUA_TUPVAL	.\gw_src\inc\lobject.h	29;"	d
+LUA_TUSERDATA	.\gw_src\inc\lua.h	81;"	d
+LUA_USE_DLOPEN	.\gw_src\inc\luaconf.h	38;"	d
+LUA_USE_ISATTY	.\gw_src\inc\luaconf.h	56;"	d
+LUA_USE_MKSTEMP	.\gw_src\inc\luaconf.h	55;"	d
+LUA_USE_POPEN	.\gw_src\inc\luaconf.h	57;"	d
+LUA_USE_POSIX	.\gw_src\inc\luaconf.h	37;"	d
+LUA_USE_POSIX	.\gw_src\inc\luaconf.h	43;"	d
+LUA_USE_READLINE	.\gw_src\inc\luaconf.h	39;"	d
+LUA_USE_ULONGJMP	.\gw_src\inc\luaconf.h	58;"	d
+LUA_VERSION	.\gw_src\inc\lua.h	19;"	d
+LUA_VERSION_NUM	.\gw_src\inc\lua.h	21;"	d
+LUA_WIN	.\gw_src\inc\luaconf.h	33;"	d
+LUA_YIELD	.\gw_src\inc\lua.h	43;"	d
+L_ESC	.\gw_src\lua_src\lstrlib.c	182;"	d	file:
+L_Umaxalign	.\gw_src\inc\llimits.h	/^typedef LUAI_USER_ALIGNMENT_T L_Umaxalign;$/;"	t
+LexState	.\gw_src\inc\llex.h	/^typedef struct LexState {$/;"	s
+LexState	.\gw_src\inc\llex.h	/^} LexState;$/;"	t	typeref:struct:LexState
+LoadBlock	.\gw_src\lua_src\lundump.c	/^static void LoadBlock(LoadState* S, void* b, size_t size)$/;"	f	file:
+LoadByte	.\gw_src\lua_src\lundump.c	44;"	d	file:
+LoadChar	.\gw_src\lua_src\lundump.c	/^static int LoadChar(LoadState* S)$/;"	f	file:
+LoadCode	.\gw_src\lua_src\lundump.c	/^static void LoadCode(LoadState* S, Proto* f)$/;"	f	file:
+LoadConstants	.\gw_src\lua_src\lundump.c	/^static void LoadConstants(LoadState* S, Proto* f)$/;"	f	file:
+LoadDebug	.\gw_src\lua_src\lundump.c	/^static void LoadDebug(LoadState* S, Proto* f)$/;"	f	file:
+LoadF	.\gw_src\lua_src\lauxlib.c	/^typedef struct LoadF {$/;"	s	file:
+LoadF	.\gw_src\lua_src\lauxlib.c	/^} LoadF;$/;"	t	typeref:struct:LoadF	file:
+LoadFunction	.\gw_src\lua_src\lundump.c	/^static Proto* LoadFunction(LoadState* S, TString* p)$/;"	f	file:
+LoadHeader	.\gw_src\lua_src\lundump.c	/^static void LoadHeader(LoadState* S)$/;"	f	file:
+LoadInt	.\gw_src\lua_src\lundump.c	/^static int LoadInt(LoadState* S)$/;"	f	file:
+LoadMem	.\gw_src\lua_src\lundump.c	43;"	d	file:
+LoadNumber	.\gw_src\lua_src\lundump.c	/^static lua_Number LoadNumber(LoadState* S)$/;"	f	file:
+LoadS	.\gw_src\lua_src\lauxlib.c	/^typedef struct LoadS {$/;"	s	file:
+LoadS	.\gw_src\lua_src\lauxlib.c	/^} LoadS;$/;"	t	typeref:struct:LoadS	file:
+LoadState	.\gw_src\lua_src\lundump.c	/^} LoadState;$/;"	t	typeref:struct:__anon24	file:
+LoadString	.\gw_src\lua_src\lundump.c	/^static TString* LoadString(LoadState* S)$/;"	f	file:
+LoadVar	.\gw_src\lua_src\lundump.c	45;"	d	file:
+LoadVector	.\gw_src\lua_src\lundump.c	46;"	d	file:
+LocVar	.\gw_src\inc\lobject.h	/^typedef struct LocVar {$/;"	s
+LocVar	.\gw_src\inc\lobject.h	/^} LocVar;$/;"	t	typeref:struct:LocVar
+MASK0	.\gw_src\inc\lopcodes.h	74;"	d
+MASK1	.\gw_src\inc\lopcodes.h	71;"	d
+MAXARG_A	.\gw_src\inc\lopcodes.h	65;"	d
+MAXARG_B	.\gw_src\inc\lopcodes.h	66;"	d
+MAXARG_Bx	.\gw_src\inc\lopcodes.h	57;"	d
+MAXARG_Bx	.\gw_src\inc\lopcodes.h	60;"	d
+MAXARG_C	.\gw_src\inc\lopcodes.h	67;"	d
+MAXARG_sBx	.\gw_src\inc\lopcodes.h	58;"	d
+MAXARG_sBx	.\gw_src\inc\lopcodes.h	61;"	d
+MAXASIZE	.\gw_src\lua_src\ltable.c	47;"	d	file:
+MAXBITS	.\gw_src\lua_src\ltable.c	42;"	d	file:
+MAXBITS	.\gw_src\lua_src\ltable.c	44;"	d	file:
+MAXGBLEN	.\gw_src\inc\global_var.h	37;"	d
+MAXINDEXRK	.\gw_src\inc\lopcodes.h	127;"	d
+MAXLEN1	.\gw_src\inc\global_var.h	5;"	d
+MAXLEN2	.\gw_src\inc\global_var.h	9;"	d
+MAXLEN3	.\gw_src\inc\global_var.h	13;"	d
+MAXLEN4	.\gw_src\inc\global_var.h	17;"	d
+MAXLEN5	.\gw_src\inc\global_var.h	21;"	d
+MAXLEN6	.\gw_src\inc\global_var.h	25;"	d
+MAXLEN7	.\gw_src\inc\global_var.h	29;"	d
+MAXLEN8	.\gw_src\inc\global_var.h	33;"	d
+MAXLINE	.\phclient.c	18;"	d	file:
+MAXLINE	.\tcpserver.c	10;"	d	file:
+MAXLINE	.\udpserver.c	9;"	d	file:
+MAXSLLEN	.\gw_src\inc\global_var.h	41;"	d
+MAXSRC	.\gw_src\lua_src\llex.c	75;"	d	file:
+MAXSTACK	.\gw_src\inc\llimits.h	93;"	d
+MAXTAGLOOP	.\gw_src\lua_src\lvm.c	32;"	d	file:
+MAX_FORMAT	.\gw_src\lua_src\lstrlib.c	693;"	d	file:
+MAX_INT	.\gw_src\inc\llimits.h	35;"	d
+MAX_ITEM	.\gw_src\lua_src\lstrlib.c	686;"	d	file:
+MAX_LUMEM	.\gw_src\inc\llimits.h	32;"	d
+MAX_SIZET	.\gw_src\inc\llimits.h	30;"	d
+MEMERRMSG	.\gw_src\inc\lmem.h	16;"	d
+MINSIZEARRAY	.\gw_src\lua_src\lmem.c	43;"	d	file:
+MINSTRTABSIZE	.\gw_src\inc\llimits.h	99;"	d
+MN	.\gw_src\inc\global_var.h	/^	uint8_t MN[MAXLEN2];$/;"	m	struct:__anon3
+MN_PW	.\gw_src\inc\global_var.h	/^}MN_PW;$/;"	t	typeref:struct:__anon3
+MatchState	.\gw_src\lua_src\lstrlib.c	/^typedef struct MatchState {$/;"	s	file:
+MatchState	.\gw_src\lua_src\lstrlib.c	/^} MatchState;$/;"	t	typeref:struct:MatchState	file:
+Mbuffer	.\gw_src\inc\lzio.h	/^typedef struct Mbuffer {$/;"	s
+Mbuffer	.\gw_src\inc\lzio.h	/^} Mbuffer;$/;"	t	typeref:struct:Mbuffer
+NO_JUMP	.\gw_src\inc\lcode.h	20;"	d
+NO_REG	.\gw_src\inc\lopcodes.h	136;"	d
+NUM_OPCODES	.\gw_src\inc\lopcodes.h	211;"	d
+NUM_RESERVED	.\gw_src\inc\llex.h	36;"	d
+NUM_TAGS	.\gw_src\inc\lobject.h	22;"	d
+Node	.\gw_src\inc\lobject.h	/^typedef struct Node {$/;"	s
+Node	.\gw_src\inc\lobject.h	/^} Node;$/;"	t	typeref:struct:Node
+OPR_ADD	.\gw_src\inc\lcode.h	/^  OPR_ADD, OPR_SUB, OPR_MUL, OPR_DIV, OPR_MOD, OPR_POW,$/;"	e	enum:BinOpr
+OPR_AND	.\gw_src\inc\lcode.h	/^  OPR_AND, OPR_OR,$/;"	e	enum:BinOpr
+OPR_CONCAT	.\gw_src\inc\lcode.h	/^  OPR_CONCAT,$/;"	e	enum:BinOpr
+OPR_DIV	.\gw_src\inc\lcode.h	/^  OPR_ADD, OPR_SUB, OPR_MUL, OPR_DIV, OPR_MOD, OPR_POW,$/;"	e	enum:BinOpr
+OPR_EQ	.\gw_src\inc\lcode.h	/^  OPR_NE, OPR_EQ,$/;"	e	enum:BinOpr
+OPR_GE	.\gw_src\inc\lcode.h	/^  OPR_LT, OPR_LE, OPR_GT, OPR_GE,$/;"	e	enum:BinOpr
+OPR_GT	.\gw_src\inc\lcode.h	/^  OPR_LT, OPR_LE, OPR_GT, OPR_GE,$/;"	e	enum:BinOpr
+OPR_LE	.\gw_src\inc\lcode.h	/^  OPR_LT, OPR_LE, OPR_GT, OPR_GE,$/;"	e	enum:BinOpr
+OPR_LEN	.\gw_src\inc\lcode.h	/^typedef enum UnOpr { OPR_MINUS, OPR_NOT, OPR_LEN, OPR_NOUNOPR } UnOpr;$/;"	e	enum:UnOpr
+OPR_LT	.\gw_src\inc\lcode.h	/^  OPR_LT, OPR_LE, OPR_GT, OPR_GE,$/;"	e	enum:BinOpr
+OPR_MINUS	.\gw_src\inc\lcode.h	/^typedef enum UnOpr { OPR_MINUS, OPR_NOT, OPR_LEN, OPR_NOUNOPR } UnOpr;$/;"	e	enum:UnOpr
+OPR_MOD	.\gw_src\inc\lcode.h	/^  OPR_ADD, OPR_SUB, OPR_MUL, OPR_DIV, OPR_MOD, OPR_POW,$/;"	e	enum:BinOpr
+OPR_MUL	.\gw_src\inc\lcode.h	/^  OPR_ADD, OPR_SUB, OPR_MUL, OPR_DIV, OPR_MOD, OPR_POW,$/;"	e	enum:BinOpr
+OPR_NE	.\gw_src\inc\lcode.h	/^  OPR_NE, OPR_EQ,$/;"	e	enum:BinOpr
+OPR_NOBINOPR	.\gw_src\inc\lcode.h	/^  OPR_NOBINOPR$/;"	e	enum:BinOpr
+OPR_NOT	.\gw_src\inc\lcode.h	/^typedef enum UnOpr { OPR_MINUS, OPR_NOT, OPR_LEN, OPR_NOUNOPR } UnOpr;$/;"	e	enum:UnOpr
+OPR_NOUNOPR	.\gw_src\inc\lcode.h	/^typedef enum UnOpr { OPR_MINUS, OPR_NOT, OPR_LEN, OPR_NOUNOPR } UnOpr;$/;"	e	enum:UnOpr
+OPR_OR	.\gw_src\inc\lcode.h	/^  OPR_AND, OPR_OR,$/;"	e	enum:BinOpr
+OPR_POW	.\gw_src\inc\lcode.h	/^  OPR_ADD, OPR_SUB, OPR_MUL, OPR_DIV, OPR_MOD, OPR_POW,$/;"	e	enum:BinOpr
+OPR_SUB	.\gw_src\inc\lcode.h	/^  OPR_ADD, OPR_SUB, OPR_MUL, OPR_DIV, OPR_MOD, OPR_POW,$/;"	e	enum:BinOpr
+OPTION	.\gw_src\lua.c	/^char OPTION[10] = {0};$/;"	v
+OP_ADD	.\gw_src\inc\lopcodes.h	/^OP_ADD,\/*	A B C	R(A) := RK(B) + RK(C)				*\/$/;"	e	enum:__anon16
+OP_CALL	.\gw_src\inc\lopcodes.h	/^OP_CALL,\/*	A B C	R(A), ... ,R(A+C-2) := R(A)(R(A+1), ... ,R(A+B-1)) *\/$/;"	e	enum:__anon16
+OP_CLOSE	.\gw_src\inc\lopcodes.h	/^OP_CLOSE,\/*	A 	close all variables in the stack up to (>=) R(A)*\/$/;"	e	enum:__anon16
+OP_CLOSURE	.\gw_src\inc\lopcodes.h	/^OP_CLOSURE,\/*	A Bx	R(A) := closure(KPROTO[Bx], R(A), ... ,R(A+n))	*\/$/;"	e	enum:__anon16
+OP_CONCAT	.\gw_src\inc\lopcodes.h	/^OP_CONCAT,\/*	A B C	R(A) := R(B).. ... ..R(C)			*\/$/;"	e	enum:__anon16
+OP_DIV	.\gw_src\inc\lopcodes.h	/^OP_DIV,\/*	A B C	R(A) := RK(B) \/ RK(C)				*\/$/;"	e	enum:__anon16
+OP_EQ	.\gw_src\inc\lopcodes.h	/^OP_EQ,\/*	A B C	if ((RK(B) == RK(C)) ~= A) then pc++		*\/$/;"	e	enum:__anon16
+OP_FORLOOP	.\gw_src\inc\lopcodes.h	/^OP_FORLOOP,\/*	A sBx	R(A)+=R(A+2);$/;"	e	enum:__anon16
+OP_FORPREP	.\gw_src\inc\lopcodes.h	/^OP_FORPREP,\/*	A sBx	R(A)-=R(A+2); pc+=sBx				*\/$/;"	e	enum:__anon16
+OP_GETGLOBAL	.\gw_src\inc\lopcodes.h	/^OP_GETGLOBAL,\/*	A Bx	R(A) := Gbl[Kst(Bx)]				*\/$/;"	e	enum:__anon16
+OP_GETTABLE	.\gw_src\inc\lopcodes.h	/^OP_GETTABLE,\/*	A B C	R(A) := R(B)[RK(C)]				*\/$/;"	e	enum:__anon16
+OP_GETUPVAL	.\gw_src\inc\lopcodes.h	/^OP_GETUPVAL,\/*	A B	R(A) := UpValue[B]				*\/$/;"	e	enum:__anon16
+OP_JMP	.\gw_src\inc\lopcodes.h	/^OP_JMP,\/*	sBx	pc+=sBx					*\/$/;"	e	enum:__anon16
+OP_LE	.\gw_src\inc\lopcodes.h	/^OP_LE,\/*	A B C	if ((RK(B) <= RK(C)) ~= A) then pc++  		*\/$/;"	e	enum:__anon16
+OP_LEN	.\gw_src\inc\lopcodes.h	/^OP_LEN,\/*	A B	R(A) := length of R(B)				*\/$/;"	e	enum:__anon16
+OP_LOADBOOL	.\gw_src\inc\lopcodes.h	/^OP_LOADBOOL,\/*	A B C	R(A) := (Bool)B; if (C) pc++			*\/$/;"	e	enum:__anon16
+OP_LOADK	.\gw_src\inc\lopcodes.h	/^OP_LOADK,\/*	A Bx	R(A) := Kst(Bx)					*\/$/;"	e	enum:__anon16
+OP_LOADNIL	.\gw_src\inc\lopcodes.h	/^OP_LOADNIL,\/*	A B	R(A) := ... := R(B) := nil			*\/$/;"	e	enum:__anon16
+OP_LT	.\gw_src\inc\lopcodes.h	/^OP_LT,\/*	A B C	if ((RK(B) <  RK(C)) ~= A) then pc++  		*\/$/;"	e	enum:__anon16
+OP_MOD	.\gw_src\inc\lopcodes.h	/^OP_MOD,\/*	A B C	R(A) := RK(B) % RK(C)				*\/$/;"	e	enum:__anon16
+OP_MOVE	.\gw_src\inc\lopcodes.h	/^OP_MOVE,\/*	A B	R(A) := R(B)					*\/$/;"	e	enum:__anon16
+OP_MUL	.\gw_src\inc\lopcodes.h	/^OP_MUL,\/*	A B C	R(A) := RK(B) * RK(C)				*\/$/;"	e	enum:__anon16
+OP_NEWTABLE	.\gw_src\inc\lopcodes.h	/^OP_NEWTABLE,\/*	A B C	R(A) := {} (size = B,C)				*\/$/;"	e	enum:__anon16
+OP_NOT	.\gw_src\inc\lopcodes.h	/^OP_NOT,\/*	A B	R(A) := not R(B)				*\/$/;"	e	enum:__anon16
+OP_POW	.\gw_src\inc\lopcodes.h	/^OP_POW,\/*	A B C	R(A) := RK(B) ^ RK(C)				*\/$/;"	e	enum:__anon16
+OP_RETURN	.\gw_src\inc\lopcodes.h	/^OP_RETURN,\/*	A B	return R(A), ... ,R(A+B-2)	(see note)	*\/$/;"	e	enum:__anon16
+OP_SELF	.\gw_src\inc\lopcodes.h	/^OP_SELF,\/*	A B C	R(A+1) := R(B); R(A) := R(B)[RK(C)]		*\/$/;"	e	enum:__anon16
+OP_SETGLOBAL	.\gw_src\inc\lopcodes.h	/^OP_SETGLOBAL,\/*	A Bx	Gbl[Kst(Bx)] := R(A)				*\/$/;"	e	enum:__anon16
+OP_SETLIST	.\gw_src\inc\lopcodes.h	/^OP_SETLIST,\/*	A B C	R(A)[(C-1)*FPF+i] := R(A+i), 1 <= i <= B	*\/$/;"	e	enum:__anon16
+OP_SETTABLE	.\gw_src\inc\lopcodes.h	/^OP_SETTABLE,\/*	A B C	R(A)[RK(B)] := RK(C)				*\/$/;"	e	enum:__anon16
+OP_SETUPVAL	.\gw_src\inc\lopcodes.h	/^OP_SETUPVAL,\/*	A B	UpValue[B] := R(A)				*\/$/;"	e	enum:__anon16
+OP_SUB	.\gw_src\inc\lopcodes.h	/^OP_SUB,\/*	A B C	R(A) := RK(B) - RK(C)				*\/$/;"	e	enum:__anon16
+OP_TAILCALL	.\gw_src\inc\lopcodes.h	/^OP_TAILCALL,\/*	A B C	return R(A)(R(A+1), ... ,R(A+B-1))		*\/$/;"	e	enum:__anon16
+OP_TEST	.\gw_src\inc\lopcodes.h	/^OP_TEST,\/*	A C	if not (R(A) <=> C) then pc++			*\/ $/;"	e	enum:__anon16
+OP_TESTSET	.\gw_src\inc\lopcodes.h	/^OP_TESTSET,\/*	A B C	if (R(B) <=> C) then R(A) := R(B) else pc++	*\/ $/;"	e	enum:__anon16
+OP_TFORLOOP	.\gw_src\inc\lopcodes.h	/^OP_TFORLOOP,\/*	A C	R(A+3), ... ,R(A+2+C) := R(A)(R(A+1), R(A+2)); $/;"	e	enum:__anon16
+OP_UNM	.\gw_src\inc\lopcodes.h	/^OP_UNM,\/*	A B	R(A) := -R(B)					*\/$/;"	e	enum:__anon16
+OP_VARARG	.\gw_src\inc\lopcodes.h	/^OP_VARARG\/*	A B	R(A), R(A+1), ..., R(A+B-1) = vararg		*\/$/;"	e	enum:__anon16
+OUTPUT	.\gw_src\lua_src\luac.c	27;"	d	file:
+O_CREATE_TCP	.\gw_src\gateway.c	/^int O_CREATE_TCP = 0; \/\/用于是否创建tcp发送线程的标志$/;"	v
+O_CREATE_UDP	.\gw_src\gateway.c	/^int O_CREATE_UDP = 0; \/\/用于是否创建udp发送线程的标志$/;"	v
+OpArgK	.\gw_src\inc\lopcodes.h	/^  OpArgK   \/* argument is a constant or register\/constant *\/$/;"	e	enum:OpArgMask
+OpArgMask	.\gw_src\inc\lopcodes.h	/^enum OpArgMask {$/;"	g
+OpArgN	.\gw_src\inc\lopcodes.h	/^  OpArgN,  \/* argument is not used *\/$/;"	e	enum:OpArgMask
+OpArgR	.\gw_src\inc\lopcodes.h	/^  OpArgR,  \/* argument is a register or a jump offset *\/$/;"	e	enum:OpArgMask
+OpArgU	.\gw_src\inc\lopcodes.h	/^  OpArgU,  \/* argument is used *\/$/;"	e	enum:OpArgMask
+OpCode	.\gw_src\inc\lopcodes.h	/^} OpCode;$/;"	t	typeref:enum:__anon16
+OpMode	.\gw_src\inc\lopcodes.h	/^enum OpMode {iABC, iABx, iAsBx};  \/* basic instruction format *\/$/;"	g
+Output	.\gw_src\lua_src\luac.c	/^static char Output[]={ OUTPUT };	\/* default output file name *\/$/;"	v	file:
+PACKET_KEY_VAL	.\gw_src\inc\global_var.h	/^}PACKET_KEY_VAL;$/;"	t	typeref:struct:__anon2
+PACKET_t	.\gw_src\inc\global_var.h	/^}PACKET_t;$/;"	t	typeref:struct:__anon5
+PCRC	.\gw_src\inc\ldo.h	33;"	d
+PCRLUA	.\gw_src\inc\ldo.h	32;"	d
+PCRYIELD	.\gw_src\inc\ldo.h	34;"	d
+PI	.\gw_src\lua_src\lmathlib.c	20;"	d	file:
+PI	.\gw_src\lua_src\lmathlib.c	21;"	d	file:
+POF	.\gw_src\lua_src\loadlib.c	155;"	d	file:
+POF	.\gw_src\lua_src\loadlib.c	156;"	d	file:
+POF	.\gw_src\lua_src\loadlib.c	34;"	d	file:
+PORT	.\gw_src\gateway.c	/^static uint8_t PORT[MAXLEN4]  = {'\\0'}; \/\/串口所在路径$/;"	v	file:
+POS_A	.\gw_src\inc\lopcodes.h	45;"	d
+POS_B	.\gw_src\inc\lopcodes.h	47;"	d
+POS_Bx	.\gw_src\inc\lopcodes.h	48;"	d
+POS_C	.\gw_src\inc\lopcodes.h	46;"	d
+POS_OP	.\gw_src\inc\lopcodes.h	44;"	d
+PROGNAME	.\gw_src\lua_src\luac.c	26;"	d	file:
+PW	.\gw_src\inc\global_var.h	/^	uint8_t PW[MAXLEN2];$/;"	m	struct:__anon3
+Pfunc	.\gw_src\inc\ldo.h	/^typedef void (*Pfunc) (lua_State *L, void *ud);$/;"	t
+PrintCode	.\gw_src\lua_src\print.c	/^static void PrintCode(const Proto* f)$/;"	f	file:
+PrintConstant	.\gw_src\lua_src\print.c	/^static void PrintConstant(const Proto* f, int i)$/;"	f	file:
+PrintConstants	.\gw_src\lua_src\print.c	/^static void PrintConstants(const Proto* f)$/;"	f	file:
+PrintFunction	.\gw_src\lua_src\print.c	/^void PrintFunction(const Proto* f, int full)$/;"	f
+PrintFunction	.\gw_src\lua_src\print.c	18;"	d	file:
+PrintHeader	.\gw_src\lua_src\print.c	/^static void PrintHeader(const Proto* f)$/;"	f	file:
+PrintLocals	.\gw_src\lua_src\print.c	/^static void PrintLocals(const Proto* f)$/;"	f	file:
+PrintString	.\gw_src\lua_src\print.c	/^static void PrintString(const TString* ts)$/;"	f	file:
+PrintUpvalues	.\gw_src\lua_src\print.c	/^static void PrintUpvalues(const Proto* f)$/;"	f	file:
+Protect	.\gw_src\lua_src\lvm.c	361;"	d	file:
+Proto	.\gw_src\inc\lobject.h	/^typedef struct Proto {$/;"	s
+Proto	.\gw_src\inc\lobject.h	/^} Proto;$/;"	t	typeref:struct:Proto
+RA	.\gw_src\lua_src\lvm.c	347;"	d	file:
+RADIANS_PER_DEGREE	.\gw_src\lua_src\lmathlib.c	22;"	d	file:
+RB	.\gw_src\lua_src\lvm.c	349;"	d	file:
+RC	.\gw_src\lua_src\lvm.c	350;"	d	file:
+RESERVED	.\gw_src\inc\llex.h	/^enum RESERVED {$/;"	g
+RKASK	.\gw_src\inc\lopcodes.h	130;"	d
+RKB	.\gw_src\lua_src\lvm.c	351;"	d	file:
+RKC	.\gw_src\lua_src\lvm.c	353;"	d	file:
+S	.\gw_src\lua_src\print.c	159;"	d	file:
+SERV_PORT	.\phclient.c	12;"	d	file:
+SERV_PORT	.\tcpserver.c	11;"	d	file:
+SERV_PORT	.\udpserver.c	10;"	d	file:
+SETARG_A	.\gw_src\inc\lopcodes.h	85;"	d
+SETARG_B	.\gw_src\inc\lopcodes.h	89;"	d
+SETARG_Bx	.\gw_src\inc\lopcodes.h	97;"	d
+SETARG_C	.\gw_src\inc\lopcodes.h	93;"	d
+SETARG_sBx	.\gw_src\inc\lopcodes.h	101;"	d
+SET_OPCODE	.\gw_src\inc\lopcodes.h	81;"	d
+SFIXEDBIT	.\gw_src\inc\lgc.h	61;"	d
+SIZE_A	.\gw_src\inc\lopcodes.h	40;"	d
+SIZE_B	.\gw_src\inc\lopcodes.h	38;"	d
+SIZE_Bx	.\gw_src\inc\lopcodes.h	39;"	d
+SIZE_C	.\gw_src\inc\lopcodes.h	37;"	d
+SIZE_OP	.\gw_src\inc\lopcodes.h	42;"	d
+SL_buffer	.\gw_src\gateway.c	/^static uint8_t SL_buffer[MAXSLLEN] = {'\\0'}; \/\/存储从串口接收的十六进制比特串$/;"	v	file:
+SL_buflen	.\gw_src\gateway.c	/^static int 	   SL_buflen = 0;				 \/\/串口接收的十六进制比特串的长度$/;"	v	file:
+SL_packet	.\gw_src\gateway.c	/^static uint8_t SL_packet[MAXSLLEN] = {'\\0'}; \/\/存储串口十六进制比特串转化的ASCII字符串$/;"	v	file:
+SPECIALS	.\gw_src\lua_src\lstrlib.c	183;"	d	file:
+SParser	.\gw_src\lua_src\ldo.c	/^struct SParser {  \/* data to `f_parser' *\/$/;"	s	file:
+SS	.\gw_src\lua_src\print.c	158;"	d	file:
+SemInfo	.\gw_src\inc\llex.h	/^} SemInfo;  \/* semantics information *\/$/;"	t	typeref:union:__anon9
+Sigfunc	.\phclient.c	/^typedef void Sigfunc(int);$/;"	t	file:
+Sizeof	.\gw_src\lua_src\print.c	20;"	d	file:
+Smain	.\gw_src\lua.c	/^struct Smain {$/;"	s	file:
+Smain	.\gw_src\lua_src\luac.c	/^struct Smain {$/;"	s	file:
+StkId	.\gw_src\inc\lobject.h	/^typedef TValue *StkId;  \/* index to stack elements *\/$/;"	t
+TK_AND	.\gw_src\inc\llex.h	/^  TK_AND = FIRST_RESERVED, TK_BREAK,$/;"	e	enum:RESERVED
+TK_BREAK	.\gw_src\inc\llex.h	/^  TK_AND = FIRST_RESERVED, TK_BREAK,$/;"	e	enum:RESERVED
+TK_CONCAT	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_DO	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_DOTS	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_ELSE	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_ELSEIF	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_END	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_EOS	.\gw_src\inc\llex.h	/^  TK_NAME, TK_STRING, TK_EOS$/;"	e	enum:RESERVED
+TK_EQ	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_FALSE	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_FOR	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_FUNCTION	.\gw_src\inc\llex.h	/^  TK_DO, TK_ELSE, TK_ELSEIF, TK_END, TK_FALSE, TK_FOR, TK_FUNCTION,$/;"	e	enum:RESERVED
+TK_GE	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_IF	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_IN	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_LE	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_LOCAL	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_NAME	.\gw_src\inc\llex.h	/^  TK_NAME, TK_STRING, TK_EOS$/;"	e	enum:RESERVED
+TK_NE	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_NIL	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_NOT	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_NUMBER	.\gw_src\inc\llex.h	/^  TK_CONCAT, TK_DOTS, TK_EQ, TK_GE, TK_LE, TK_NE, TK_NUMBER,$/;"	e	enum:RESERVED
+TK_OR	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_REPEAT	.\gw_src\inc\llex.h	/^  TK_IF, TK_IN, TK_LOCAL, TK_NIL, TK_NOT, TK_OR, TK_REPEAT,$/;"	e	enum:RESERVED
+TK_RETURN	.\gw_src\inc\llex.h	/^  TK_RETURN, TK_THEN, TK_TRUE, TK_UNTIL, TK_WHILE,$/;"	e	enum:RESERVED
+TK_STRING	.\gw_src\inc\llex.h	/^  TK_NAME, TK_STRING, TK_EOS$/;"	e	enum:RESERVED
+TK_THEN	.\gw_src\inc\llex.h	/^  TK_RETURN, TK_THEN, TK_TRUE, TK_UNTIL, TK_WHILE,$/;"	e	enum:RESERVED
+TK_TRUE	.\gw_src\inc\llex.h	/^  TK_RETURN, TK_THEN, TK_TRUE, TK_UNTIL, TK_WHILE,$/;"	e	enum:RESERVED
+TK_UNTIL	.\gw_src\inc\llex.h	/^  TK_RETURN, TK_THEN, TK_TRUE, TK_UNTIL, TK_WHILE,$/;"	e	enum:RESERVED
+TK_WHILE	.\gw_src\inc\llex.h	/^  TK_RETURN, TK_THEN, TK_TRUE, TK_UNTIL, TK_WHILE,$/;"	e	enum:RESERVED
+TKey	.\gw_src\inc\lobject.h	/^typedef union TKey {$/;"	u
+TKey	.\gw_src\inc\lobject.h	/^} TKey;$/;"	t	typeref:union:TKey
+TMS	.\gw_src\inc\ltm.h	/^} TMS;$/;"	t	typeref:enum:__anon20
+TM_ADD	.\gw_src\inc\ltm.h	/^  TM_ADD,$/;"	e	enum:__anon20
+TM_CALL	.\gw_src\inc\ltm.h	/^  TM_CALL,$/;"	e	enum:__anon20
+TM_CONCAT	.\gw_src\inc\ltm.h	/^  TM_CONCAT,$/;"	e	enum:__anon20
+TM_DIV	.\gw_src\inc\ltm.h	/^  TM_DIV,$/;"	e	enum:__anon20
+TM_EQ	.\gw_src\inc\ltm.h	/^  TM_EQ,  \/* last tag method with `fast' access *\/$/;"	e	enum:__anon20
+TM_GC	.\gw_src\inc\ltm.h	/^  TM_GC,$/;"	e	enum:__anon20
+TM_INDEX	.\gw_src\inc\ltm.h	/^  TM_INDEX,$/;"	e	enum:__anon20
+TM_LE	.\gw_src\inc\ltm.h	/^  TM_LE,$/;"	e	enum:__anon20
+TM_LEN	.\gw_src\inc\ltm.h	/^  TM_LEN,$/;"	e	enum:__anon20
+TM_LT	.\gw_src\inc\ltm.h	/^  TM_LT,$/;"	e	enum:__anon20
+TM_MOD	.\gw_src\inc\ltm.h	/^  TM_MOD,$/;"	e	enum:__anon20
+TM_MODE	.\gw_src\inc\ltm.h	/^  TM_MODE,$/;"	e	enum:__anon20
+TM_MUL	.\gw_src\inc\ltm.h	/^  TM_MUL,$/;"	e	enum:__anon20
+TM_N	.\gw_src\inc\ltm.h	/^  TM_N		\/* number of elements in the enum *\/$/;"	e	enum:__anon20
+TM_NEWINDEX	.\gw_src\inc\ltm.h	/^  TM_NEWINDEX,$/;"	e	enum:__anon20
+TM_POW	.\gw_src\inc\ltm.h	/^  TM_POW,$/;"	e	enum:__anon20
+TM_SUB	.\gw_src\inc\ltm.h	/^  TM_SUB,$/;"	e	enum:__anon20
+TM_UNM	.\gw_src\inc\ltm.h	/^  TM_UNM,$/;"	e	enum:__anon20
+TOKEN_LEN	.\gw_src\inc\llex.h	17;"	d
+TString	.\gw_src\inc\lobject.h	/^typedef union TString {$/;"	u
+TString	.\gw_src\inc\lobject.h	/^} TString;$/;"	t	typeref:union:TString
+TValue	.\gw_src\inc\lobject.h	/^} TValue;$/;"	t	typeref:struct:lua_TValue
+TValuefields	.\gw_src\inc\lobject.h	/^    TValuefields;$/;"	m	struct:TKey::__anon15
+TValuefields	.\gw_src\inc\lobject.h	/^  TValuefields;$/;"	m	struct:lua_TValue
+TValuefields	.\gw_src\inc\lobject.h	71;"	d
+Table	.\gw_src\inc\lobject.h	/^typedef struct Table {$/;"	s
+Table	.\gw_src\inc\lobject.h	/^} Table;$/;"	t	typeref:struct:Table
+Token	.\gw_src\inc\llex.h	/^typedef struct Token {$/;"	s
+Token	.\gw_src\inc\llex.h	/^} Token;$/;"	t	typeref:struct:Token
+UNARY_PRIORITY	.\gw_src\lua_src\lparser.c	821;"	d	file:
+UNUSED	.\gw_src\inc\llimits.h	70;"	d
+Udata	.\gw_src\inc\lobject.h	/^typedef union Udata {$/;"	u
+Udata	.\gw_src\inc\lobject.h	/^} Udata;$/;"	t	typeref:union:Udata
+UnOpr	.\gw_src\inc\lcode.h	/^typedef enum UnOpr { OPR_MINUS, OPR_NOT, OPR_LEN, OPR_NOUNOPR } UnOpr;$/;"	g
+UnOpr	.\gw_src\inc\lcode.h	/^typedef enum UnOpr { OPR_MINUS, OPR_NOT, OPR_LEN, OPR_NOUNOPR } UnOpr;$/;"	t	typeref:enum:UnOpr
+UpVal	.\gw_src\inc\lobject.h	/^typedef struct UpVal {$/;"	s
+UpVal	.\gw_src\inc\lobject.h	/^} UpVal;$/;"	t	typeref:struct:UpVal
+VALUEWEAK	.\gw_src\lua_src\lgc.c	48;"	d	file:
+VALUEWEAKBIT	.\gw_src\inc\lgc.h	59;"	d
+VARARG_HASARG	.\gw_src\inc\lobject.h	257;"	d
+VARARG_ISVARARG	.\gw_src\inc\lobject.h	258;"	d
+VARARG_NEEDSARG	.\gw_src\inc\lobject.h	259;"	d
+VCALL	.\gw_src\inc\lparser.h	/^  VCALL,	\/* info = instruction pc *\/$/;"	e	enum:__anon17
+VFALSE	.\gw_src\inc\lparser.h	/^  VFALSE,$/;"	e	enum:__anon17
+VGLOBAL	.\gw_src\inc\lparser.h	/^  VGLOBAL,	\/* info = index of table; aux = index of global name in `k' *\/$/;"	e	enum:__anon17
+VINDEXED	.\gw_src\inc\lparser.h	/^  VINDEXED,	\/* info = table register; aux = index register (or `k') *\/$/;"	e	enum:__anon17
+VJMP	.\gw_src\inc\lparser.h	/^  VJMP,		\/* info = instruction pc *\/$/;"	e	enum:__anon17
+VK	.\gw_src\inc\lparser.h	/^  VK,		\/* info = index of constant in `k' *\/$/;"	e	enum:__anon17
+VKNUM	.\gw_src\inc\lparser.h	/^  VKNUM,	\/* nval = numerical value *\/$/;"	e	enum:__anon17
+VLOCAL	.\gw_src\inc\lparser.h	/^  VLOCAL,	\/* info = local register *\/$/;"	e	enum:__anon17
+VNIL	.\gw_src\inc\lparser.h	/^  VNIL,$/;"	e	enum:__anon17
+VNONRELOC	.\gw_src\inc\lparser.h	/^  VNONRELOC,	\/* info = result register *\/$/;"	e	enum:__anon17
+VOID	.\gw_src\lua_src\print.c	21;"	d	file:
+VRELOCABLE	.\gw_src\inc\lparser.h	/^  VRELOCABLE,	\/* info = instruction pc *\/$/;"	e	enum:__anon17
+VTRUE	.\gw_src\inc\lparser.h	/^  VTRUE,$/;"	e	enum:__anon17
+VUPVAL	.\gw_src\inc\lparser.h	/^  VUPVAL,       \/* info = index of upvalue in `upvalues' *\/$/;"	e	enum:__anon17
+VVARARG	.\gw_src\inc\lparser.h	/^  VVARARG	\/* info = instruction pc *\/$/;"	e	enum:__anon17
+VVOID	.\gw_src\inc\lparser.h	/^  VVOID,	\/* no value *\/$/;"	e	enum:__anon17
+Value	.\gw_src\inc\lobject.h	/^} Value;$/;"	t	typeref:union:__anon10
+WHITE0BIT	.\gw_src\inc\lgc.h	54;"	d
+WHITE1BIT	.\gw_src\inc\lgc.h	55;"	d
+WHITEBITS	.\gw_src\inc\lgc.h	62;"	d
+Z	.\gw_src\lua_src\lundump.c	/^ ZIO* Z;$/;"	m	struct:__anon24	file:
+ZIO	.\gw_src\inc\lzio.h	/^typedef struct Zio ZIO;$/;"	t	typeref:struct:Zio
+Zio	.\gw_src\inc\lzio.h	/^struct Zio {$/;"	s
+_CLIENTADDR_	.\gw_src\gateway.c	/^static uint8_t _CLIENTADDR_[20] = {'\\0'}; \/\/客户端(发送请求)IP号$/;"	v	file:
+_GATEWAY_H_	.\gw_src\inc\gateway.h	2;"	d
+_GLOBAL_VAR_H_	.\gw_src\inc\global_var.h	2;"	d
+_LUA_AUXI_H_	.\gw_src\inc\lua_auxi.h	2;"	d
+_LUA_GATEWAY_H_	.\gw_src\inc\lua_gateway.h	2;"	d
+_LUA_H_	.\gw_src\inc\gateway.h	27;"	d
+_LUA_H_	.\gw_src\inc\lua_auxi.h	10;"	d
+_LUA_H_	.\gw_src\inc\sensor.h	2;"	d
+_PREPROCESS_H_	.\gw_src\inc\preprocess.h	2;"	d
+abs_index	.\gw_src\lua_src\lauxlib.c	32;"	d	file:
+actvar	.\gw_src\inc\lparser.h	/^  unsigned short actvar[LUAI_MAXVARS];  \/* declared-variable stack *\/$/;"	m	struct:FuncState
+add_s	.\gw_src\lua_src\lstrlib.c	/^static void add_s (MatchState *ms, luaL_Buffer *b, const char *s,$/;"	f	file:
+add_value	.\gw_src\lua_src\lstrlib.c	/^static void add_value (MatchState *ms, luaL_Buffer *b, const char *s,$/;"	f	file:
+addfield	.\gw_src\lua_src\ltablib.c	/^static void addfield (lua_State *L, luaL_Buffer *b, int i) {$/;"	f	file:
+addinfo	.\gw_src\lua_src\ldebug.c	/^static void addinfo (lua_State *L, const char *msg) {$/;"	f	file:
+addintlen	.\gw_src\lua_src\lstrlib.c	/^static void addintlen (char *form) {$/;"	f	file:
+addk	.\gw_src\lua_src\lcode.c	/^static int addk (FuncState *fs, TValue *k, TValue *v) {$/;"	f	file:
+addquoted	.\gw_src\lua_src\lstrlib.c	/^static void addquoted (lua_State *L, luaL_Buffer *b, int arg) {$/;"	f	file:
+adjust_assign	.\gw_src\lua_src\lparser.c	/^static void adjust_assign (LexState *ls, int nvars, int nexps, expdesc *e) {$/;"	f	file:
+adjust_varargs	.\gw_src\lua_src\ldo.c	/^static StkId adjust_varargs (lua_State *L, Proto *p, int actual) {$/;"	f	file:
+adjustlocalvars	.\gw_src\lua_src\lparser.c	/^static void adjustlocalvars (LexState *ls, int nvars) {$/;"	f	file:
+adjustresults	.\gw_src\lua_src\lapi.c	768;"	d	file:
+adjuststack	.\gw_src\lua_src\lauxlib.c	/^static void adjuststack (luaL_Buffer *B) {$/;"	f	file:
+allowhook	.\gw_src\inc\lstate.h	/^  lu_byte allowhook;$/;"	m	struct:lua_State
+anchor_token	.\gw_src\lua_src\lparser.c	/^static void anchor_token (LexState *ls) {$/;"	f	file:
+api_check	.\gw_src\inc\llimits.h	58;"	d
+api_check	.\gw_src\inc\llimits.h	64;"	d
+api_checknelems	.\gw_src\lua_src\lapi.c	41;"	d	file:
+api_checkvalidindex	.\gw_src\lua_src\lapi.c	43;"	d	file:
+api_incr_top	.\gw_src\lua_src\lapi.c	45;"	d	file:
+argc	.\gw_src\lua.c	/^  int argc;$/;"	m	struct:Smain	file:
+argc	.\gw_src\lua_src\luac.c	/^ int argc;$/;"	m	struct:Smain	file:
+argv	.\gw_src\lua.c	/^  char **argv;$/;"	m	struct:Smain	file:
+argv	.\gw_src\lua_src\luac.c	/^ char** argv;$/;"	m	struct:Smain	file:
+arith_op	.\gw_src\lua_src\lvm.c	364;"	d	file:
+array	.\gw_src\inc\lobject.h	/^  TValue *array;  \/* array part *\/$/;"	m	struct:Table
+arrayindex	.\gw_src\lua_src\ltable.c	/^static int arrayindex (const TValue *key) {$/;"	f	file:
+assemFieldValue	.\gw_src\gateway.c	/^int assemFieldValue(lua_State *L)$/;"	f
+assemGBPacket	.\bx_bin_v0\bx_format.lua	/^function assemGBPacket(s_pGBPac, OPTION, ...)$/;"	f
+assemGBPacket	.\qt_bin\main.lua	/^function assemGBPacket(s_pGBPac, ...)$/;"	f
+assemPacket	.\gw_src\gateway.c	/^int assemPacket(lua_State *L)$/;"	f
+assignment	.\gw_src\lua_src\lparser.c	/^static void assignment (LexState *ls, struct LHS_assign *lh, int nvars) {$/;"	f	file:
+atomic	.\gw_src\lua_src\lgc.c	/^static void atomic (lua_State *L) {$/;"	f	file:
+aux	.\gw_src\inc\lparser.h	/^    struct { int info, aux; } s;$/;"	m	struct:expdesc::__anon18::__anon19
+aux_close	.\gw_src\lua_src\liolib.c	/^static int aux_close (lua_State *L) {$/;"	f	file:
+aux_getn	.\gw_src\lua_src\ltablib.c	19;"	d	file:
+aux_lines	.\gw_src\lua_src\liolib.c	/^static void aux_lines (lua_State *L, int idx, int toclose) {$/;"	f	file:
+aux_upvalue	.\gw_src\lua_src\lapi.c	/^static const char *aux_upvalue (StkId fi, int n, TValue **val) {$/;"	f	file:
+auxgetinfo	.\gw_src\lua_src\ldebug.c	/^static int auxgetinfo (lua_State *L, const char *what, lua_Debug *ar,$/;"	f	file:
+auxopen	.\gw_src\lua_src\lbaselib.c	/^static void auxopen (lua_State *L, const char *name,$/;"	f	file:
+auxresume	.\gw_src\lua_src\lbaselib.c	/^static int auxresume (lua_State *L, lua_State *co, int narg) {$/;"	f	file:
+auxsort	.\gw_src\lua_src\ltablib.c	/^static void auxsort (lua_State *L, int l, int u) {$/;"	f	file:
+auxupvalue	.\gw_src\lua_src\ldblib.c	/^static int auxupvalue (lua_State *L, int get) {$/;"	f	file:
+b	.\gw_src\inc\lobject.h	/^  int b;$/;"	m	union:__anon10
+b	.\gw_src\lua_src\ldo.c	/^  luai_jmpbuf b;$/;"	m	struct:lua_longjmp	file:
+b	.\gw_src\lua_src\lundump.c	/^ Mbuffer* b;$/;"	m	struct:__anon24	file:
+base	.\gw_src\inc\lstate.h	/^  StkId base;  \/* base for this function *\/$/;"	m	struct:CallInfo
+base	.\gw_src\inc\lstate.h	/^  StkId base;  \/* base of current function *\/$/;"	m	struct:lua_State
+baseCcalls	.\gw_src\inc\lstate.h	/^  unsigned short baseCcalls;  \/* nested C calls when resuming coroutine *\/$/;"	m	struct:lua_State
+base_ci	.\gw_src\inc\lstate.h	/^  CallInfo *base_ci;  \/* array of CallInfo's *\/$/;"	m	struct:lua_State
+base_funcs	.\gw_src\lua_src\lbaselib.c	/^static const luaL_Reg base_funcs[] = {$/;"	v	file:
+base_open	.\gw_src\lua_src\lbaselib.c	/^static void base_open (lua_State *L) {$/;"	f	file:
+basehookcount	.\gw_src\inc\lstate.h	/^  int basehookcount;$/;"	m	struct:lua_State
+bit2mask	.\gw_src\inc\lgc.h	31;"	d
+bitmask	.\gw_src\inc\lgc.h	30;"	d
+bl	.\gw_src\inc\lparser.h	/^  struct BlockCnt *bl;  \/* chain of current blocks *\/$/;"	m	struct:FuncState	typeref:struct:FuncState::BlockCnt
+black2gray	.\gw_src\lua_src\lgc.c	38;"	d	file:
+block	.\gw_src\lua_src\lparser.c	/^static void block (LexState *ls) {$/;"	f	file:
+block_follow	.\gw_src\lua_src\lparser.c	/^static int block_follow (int token) {$/;"	f	file:
+body	.\gw_src\lua_src\lparser.c	/^static void body (LexState *ls, expdesc *e, int needself, int line) {$/;"	f	file:
+boolK	.\gw_src\lua_src\lcode.c	/^static int boolK (FuncState *fs, int b) {$/;"	f	file:
+breaklist	.\gw_src\lua_src\lparser.c	/^  int breaklist;  \/* list of jumps out of this loop *\/$/;"	m	struct:BlockCnt	file:
+breakstat	.\gw_src\lua_src\lparser.c	/^static void breakstat (LexState *ls) {$/;"	f	file:
+buff	.\gw_src\inc\llex.h	/^  Mbuffer *buff;  \/* buffer for tokens *\/$/;"	m	struct:LexState
+buff	.\gw_src\inc\lstate.h	/^  Mbuffer buff;  \/* temporary buffer for string concatentation *\/$/;"	m	struct:global_State
+buff	.\gw_src\lua_src\lauxlib.c	/^  char buff[LUAL_BUFFERSIZE];$/;"	m	struct:LoadF	file:
+buff	.\gw_src\lua_src\ldo.c	/^  Mbuffer buff;  \/* buffer to be used by the scanner *\/$/;"	m	struct:SParser	file:
+buffer	.\gw_src\inc\global_var.h	/^	PACKET_t buffer[4];$/;"	m	struct:__anon6
+buffer	.\gw_src\inc\lauxlib.h	/^  char buffer[LUAL_BUFFERSIZE];$/;"	m	struct:luaL_Buffer
+buffer	.\gw_src\inc\lzio.h	/^  char *buffer;$/;"	m	struct:Mbuffer
+bufffree	.\gw_src\lua_src\lauxlib.c	393;"	d	file:
+bufflen	.\gw_src\lua_src\lauxlib.c	392;"	d	file:
+buffreplace	.\gw_src\lua_src\llex.c	/^static void buffreplace (LexState *ls, char from, char to) {$/;"	f	file:
+buffsize	.\gw_src\inc\lzio.h	/^  size_t buffsize;$/;"	m	struct:Mbuffer
+bvalue	.\gw_src\inc\lobject.h	100;"	d
+c	.\gw_src\inc\lobject.h	/^  CClosure c;$/;"	m	union:Closure
+callTM	.\gw_src\lua_src\lvm.c	/^static void callTM (lua_State *L, const TValue *f, const TValue *p1,$/;"	f	file:
+callTMres	.\gw_src\lua_src\lvm.c	/^static void callTMres (lua_State *L, StkId res, const TValue *f,$/;"	f	file:
+call_binTM	.\gw_src\lua_src\lvm.c	/^static int call_binTM (lua_State *L, const TValue *p1, const TValue *p2,$/;"	f	file:
+call_orderTM	.\gw_src\lua_src\lvm.c	/^static int call_orderTM (lua_State *L, const TValue *p1, const TValue *p2,$/;"	f	file:
+callallgcTM	.\gw_src\lua_src\lstate.c	/^static void callallgcTM (lua_State *L, void *ud) {$/;"	f	file:
+callrethooks	.\gw_src\lua_src\ldo.c	/^static StkId callrethooks (lua_State *L, StkId firstResult) {$/;"	f	file:
+cannot	.\gw_src\lua_src\luac.c	/^static void cannot(const char* what)$/;"	f	file:
+capture	.\gw_src\lua_src\lstrlib.c	/^  } capture[LUA_MAXCAPTURES];$/;"	m	struct:MatchState	typeref:struct:MatchState::__anon23	file:
+capture_to_close	.\gw_src\lua_src\lstrlib.c	/^static int capture_to_close (MatchState *ms) {$/;"	f	file:
+cast	.\gw_src\inc\llimits.h	75;"	d
+cast_byte	.\gw_src\inc\llimits.h	78;"	d
+cast_int	.\gw_src\inc\llimits.h	80;"	d
+cast_num	.\gw_src\inc\llimits.h	79;"	d
+ceillog2	.\gw_src\inc\lobject.h	367;"	d
+changewhite	.\gw_src\inc\lgc.h	72;"	d
+char2int	.\gw_src\inc\lzio.h	20;"	d
+check	.\gw_src\lua_src\ldebug.c	268;"	d	file:
+check	.\gw_src\lua_src\ldebug.c	477;"	d	file:
+check	.\gw_src\lua_src\lparser.c	/^static void check (LexState *ls, int c) {$/;"	f	file:
+checkArgMode	.\gw_src\lua_src\ldebug.c	/^static int checkArgMode (const Proto *pt, int r, enum OpArgMask mode) {$/;"	f	file:
+checkMonitorNum	.\gw_src\gateway.c	/^int checkMonitorNum(lua_State *L)$/;"	f
+checkPacket	.\gw_src\gateway.c	/^int checkPacket(lua_State *L)$/;"	f
+checkSizes	.\gw_src\lua_src\lgc.c	/^static void checkSizes (lua_State *L) {$/;"	f	file:
+check_capture	.\gw_src\lua_src\lstrlib.c	/^static int check_capture (MatchState *ms, int l) {$/;"	f	file:
+check_condition	.\gw_src\lua_src\lparser.c	100;"	d	file:
+check_conflict	.\gw_src\lua_src\lparser.c	/^static void check_conflict (LexState *ls, struct LHS_assign *lh, expdesc *v) {$/;"	f	file:
+check_exp	.\gw_src\inc\llimits.h	57;"	d
+check_exp	.\gw_src\inc\llimits.h	63;"	d
+check_match	.\gw_src\lua_src\lparser.c	/^static void check_match (LexState *ls, int what, int who, int where) {$/;"	f	file:
+check_next	.\gw_src\lua_src\llex.c	/^static int check_next (LexState *ls, const char *set) {$/;"	f	file:
+check_type	.\gw_src\inc\global_var.h	/^	int check_type;$/;"	m	struct:__anon2
+checkconsistency	.\gw_src\inc\lobject.h	108;"	d
+checkint	.\gw_src\lua_src\lauxlib.c	/^static int checkint (lua_State *L, int topop) {$/;"	f	file:
+checkjump	.\gw_src\lua_src\ldebug.c	270;"	d	file:
+checkjump	.\gw_src\lua_src\ldebug.c	478;"	d	file:
+checkliveness	.\gw_src\inc\lobject.h	111;"	d
+checkname	.\gw_src\lua_src\lparser.c	/^static void checkname(LexState *ls, expdesc *e) {$/;"	f	file:
+checknext	.\gw_src\lua_src\lparser.c	/^static void checknext (LexState *ls, int c) {$/;"	f	file:
+checkopenop	.\gw_src\lua_src\ldebug.c	288;"	d	file:
+checkreg	.\gw_src\lua_src\ldebug.c	272;"	d	file:
+checkreg	.\gw_src\lua_src\ldebug.c	479;"	d	file:
+checkresults	.\gw_src\lua_src\lapi.c	772;"	d	file:
+checkstacksizes	.\gw_src\lua_src\lgc.c	/^static void checkstacksizes (lua_State *L, StkId max) {$/;"	f	file:
+chunk	.\gw_src\lua_src\lparser.c	/^static void chunk (LexState *ls) {$/;"	f	file:
+ci	.\gw_src\inc\lstate.h	/^  CallInfo *ci;  \/* call info for current function *\/$/;"	m	struct:lua_State
+ci_func	.\gw_src\inc\lstate.h	60;"	d
+cl	.\gw_src\inc\lstate.h	/^  union Closure cl;$/;"	m	union:GCObject	typeref:union:GCObject::Closure
+classend	.\gw_src\lua_src\lstrlib.c	/^static const char *classend (MatchState *ms, const char *p) {$/;"	f	file:
+cleartable	.\gw_src\lua_src\lgc.c	/^static void cleartable (GCObject *l) {$/;"	f	file:
+close_func	.\gw_src\lua_src\lparser.c	/^static void close_func (LexState *ls) {$/;"	f	file:
+close_state	.\gw_src\lua_src\lstate.c	/^static void close_state (lua_State *L) {$/;"	f	file:
+closelistfield	.\gw_src\lua_src\lparser.c	/^static void closelistfield (FuncState *fs, struct ConsControl *cc) {$/;"	f	file:
+clvalue	.\gw_src\inc\lobject.h	98;"	d
+co_funcs	.\gw_src\lua_src\lbaselib.c	/^static const luaL_Reg co_funcs[] = {$/;"	v	file:
+code	.\gw_src\inc\lobject.h	/^  Instruction *code;$/;"	m	struct:Proto
+code_label	.\gw_src\lua_src\lcode.c	/^static int code_label (FuncState *fs, int A, int b, int jump) {$/;"	f	file:
+codearith	.\gw_src\lua_src\lcode.c	/^static void codearith (FuncState *fs, OpCode op, expdesc *e1, expdesc *e2) {$/;"	f	file:
+codecomp	.\gw_src\lua_src\lcode.c	/^static void codecomp (FuncState *fs, OpCode op, int cond, expdesc *e1,$/;"	f	file:
+codenot	.\gw_src\lua_src\lcode.c	/^static void codenot (FuncState *fs, expdesc *e) {$/;"	f	file:
+codestring	.\gw_src\lua_src\lparser.c	/^static void codestring (LexState *ls, expdesc *e, TString *s) {$/;"	f	file:
+collectargs	.\gw_src\lua.c	/^static int collectargs (char **argv, int *pi, int *pv, int *pe) {$/;"	f	file:
+collectvalidlines	.\gw_src\lua_src\ldebug.c	/^static void collectvalidlines (lua_State *L, Closure *f) {$/;"	f	file:
+combine	.\gw_src\lua_src\luac.c	/^static const Proto* combine(lua_State* L, int n)$/;"	f	file:
+command_type	.\gw_src\inc\global_var.h	/^	int command_type;$/;"	m	struct:__anon2
+computesizes	.\gw_src\lua_src\ltable.c	/^static int computesizes (int nums[], int *narray) {$/;"	f	file:
+cond	.\gw_src\lua_src\lparser.c	/^static int cond (LexState *ls) {$/;"	f	file:
+condhardstacktests	.\gw_src\inc\llimits.h	123;"	d
+condhardstacktests	.\gw_src\inc\llimits.h	125;"	d
+condjump	.\gw_src\lua_src\lcode.c	/^static int condjump (FuncState *fs, OpCode op, int A, int B, int C) {$/;"	f	file:
+connectField	.\gw_src\gateway.c	/^int connectField(lua_State *L)$/;"	f
+connectFields	.\gw_src\gateway.c	/^int connectFields(lua_State *L)$/;"	f
+connect_nonb	.\gw_src\gateway.c	/^static int connect_nonb(int sockfd, const struct sockaddr *saptr, socklen_t salen, int nsec)$/;"	f	file:
+constfolding	.\gw_src\lua_src\lcode.c	/^static int constfolding (OpCode op, expdesc *e1, expdesc *e2) {$/;"	f	file:
+constructor	.\gw_src\lua_src\lparser.c	/^static void constructor (LexState *ls, expdesc *t) {$/;"	f	file:
+copyFields	.\gw_src\gateway.c	/^int copyFields(lua_State *L)$/;"	f
+correctstack	.\gw_src\lua_src\ldo.c	/^static void correctstack (lua_State *L, TValue *oldstack) {$/;"	f	file:
+costatus	.\gw_src\lua_src\lbaselib.c	/^static int costatus (lua_State *L, lua_State *co) {$/;"	f	file:
+countFieldsLen	.\gw_src\gateway.c	/^int countFieldsLen(lua_State *L)$/;"	f
+countint	.\gw_src\lua_src\ltable.c	/^static int countint (const TValue *key, int *nums) {$/;"	f	file:
+createmeta	.\gw_src\lua_src\liolib.c	/^static void createmeta (lua_State *L) {$/;"	f	file:
+createmetatable	.\gw_src\lua_src\lstrlib.c	/^static void createmetatable (lua_State *L) {$/;"	f	file:
+createstdfile	.\gw_src\lua_src\liolib.c	/^static void createstdfile (lua_State *L, FILE *f, int k, const char *fname) {$/;"	f	file:
+currIsNewline	.\gw_src\lua_src\llex.c	33;"	d	file:
+curr_func	.\gw_src\inc\lstate.h	59;"	d
+current	.\gw_src\inc\llex.h	/^  int current;  \/* current character (charint) *\/$/;"	m	struct:LexState
+currentline	.\gw_src\inc\lua.h	/^  int currentline;	\/* (l) *\/$/;"	m	struct:lua_Debug
+currentline	.\gw_src\lua_src\ldebug.c	/^static int currentline (lua_State *L, CallInfo *ci) {$/;"	f	file:
+currentpc	.\gw_src\lua_src\ldebug.c	/^static int currentpc (lua_State *L, CallInfo *ci) {$/;"	f	file:
+currentwhite	.\gw_src\inc\lstate.h	/^  lu_byte currentwhite;$/;"	m	struct:global_State
+data	.\gw_src\inc\lzio.h	/^  void* data;			\/* additional data *\/$/;"	m	struct:Zio
+data	.\gw_src\lua_src\ldump.c	/^ void* data;$/;"	m	struct:__anon21	file:
+data_type	.\gw_src\inc\global_var.h	/^	int data_type;$/;"	m	struct:__anon1
+db_debug	.\gw_src\lua_src\ldblib.c	/^static int db_debug (lua_State *L) {$/;"	f	file:
+db_errorfb	.\gw_src\lua_src\ldblib.c	/^static int db_errorfb (lua_State *L) {$/;"	f	file:
+db_getfenv	.\gw_src\lua_src\ldblib.c	/^static int db_getfenv (lua_State *L) {$/;"	f	file:
+db_gethook	.\gw_src\lua_src\ldblib.c	/^static int db_gethook (lua_State *L) {$/;"	f	file:
+db_getinfo	.\gw_src\lua_src\ldblib.c	/^static int db_getinfo (lua_State *L) {$/;"	f	file:
+db_getlocal	.\gw_src\lua_src\ldblib.c	/^static int db_getlocal (lua_State *L) {$/;"	f	file:
+db_getmetatable	.\gw_src\lua_src\ldblib.c	/^static int db_getmetatable (lua_State *L) {$/;"	f	file:
+db_getregistry	.\gw_src\lua_src\ldblib.c	/^static int db_getregistry (lua_State *L) {$/;"	f	file:
+db_getupvalue	.\gw_src\lua_src\ldblib.c	/^static int db_getupvalue (lua_State *L) {$/;"	f	file:
+db_setfenv	.\gw_src\lua_src\ldblib.c	/^static int db_setfenv (lua_State *L) {$/;"	f	file:
+db_sethook	.\gw_src\lua_src\ldblib.c	/^static int db_sethook (lua_State *L) {$/;"	f	file:
+db_setlocal	.\gw_src\lua_src\ldblib.c	/^static int db_setlocal (lua_State *L) {$/;"	f	file:
+db_setmetatable	.\gw_src\lua_src\ldblib.c	/^static int db_setmetatable (lua_State *L) {$/;"	f	file:
+db_setupvalue	.\gw_src\lua_src\ldblib.c	/^static int db_setupvalue (lua_State *L) {$/;"	f	file:
+dblib	.\gw_src\lua_src\ldblib.c	/^static const luaL_Reg dblib[] = {$/;"	v	file:
+decpoint	.\gw_src\inc\llex.h	/^  char decpoint;  \/* locale decimal point *\/$/;"	m	struct:LexState
+defFieldFormat	.\gw_src\gateway.c	/^static int defFieldFormat(lua_State *L, PACKET_KEY_VAL *pPKVPac, char *name)$/;"	f	file:
+defPacketFormat	.\gw_src\gateway.c	/^int defPacketFormat(lua_State *L)$/;"	f
+discharge2anyreg	.\gw_src\lua_src\lcode.c	/^static void discharge2anyreg (FuncState *fs, expdesc *e) {$/;"	f	file:
+discharge2reg	.\gw_src\lua_src\lcode.c	/^static void discharge2reg (FuncState *fs, expdesc *e, int reg) {$/;"	f	file:
+dischargejpc	.\gw_src\lua_src\lcode.c	/^static void dischargejpc (FuncState *fs) {$/;"	f	file:
+doargs	.\gw_src\lua_src\luac.c	/^static int doargs(int argc, char* argv[])$/;"	f	file:
+docall	.\gw_src\lua.c	/^static int docall (lua_State *L, int narg, int clear) {$/;"	f	file:
+dofile	.\gw_src\lua.c	/^static int dofile (lua_State *L, const char *name) {$/;"	f	file:
+dogatewayno	.\gw_src\lua.c	/^static int dogatewayno(const char *no)$/;"	f	file:
+dojump	.\gw_src\lua_src\lvm.c	358;"	d	file:
+dolibrary	.\gw_src\lua.c	/^static int dolibrary (lua_State *L, const char *name) {$/;"	f	file:
+dooption	.\gw_src\lua.c	/^static int dooption(const char *opt)$/;"	f	file:
+dooptions	.\gw_src\lua_src\loadlib.c	/^static void dooptions (lua_State *L, int n) {$/;"	f	file:
+dostring	.\gw_src\lua.c	/^static int dostring (lua_State *L, const char *s, const char *name) {$/;"	f	file:
+dotty	.\gw_src\lua.c	/^static void dotty (lua_State *L) {$/;"	f	file:
+dummy	.\gw_src\inc\lobject.h	/^  L_Umaxalign dummy;  \/* ensures maximum alignment for `local' udata *\/$/;"	m	union:Udata
+dummy	.\gw_src\inc\lobject.h	/^  L_Umaxalign dummy;  \/* ensures maximum alignment for strings *\/$/;"	m	union:TString
+dummynode	.\gw_src\lua_src\ltable.c	73;"	d	file:
+dummynode_	.\gw_src\lua_src\ltable.c	/^static const Node dummynode_ = {$/;"	v	file:
+dumping	.\gw_src\lua_src\luac.c	/^static int dumping=1;			\/* dump bytecodes? *\/$/;"	v	file:
+emptybuffer	.\gw_src\lua_src\lauxlib.c	/^static int emptybuffer (luaL_Buffer *B) {$/;"	f	file:
+end_capture	.\gw_src\lua_src\lstrlib.c	/^static const char *end_capture (MatchState *ms, const char *s,$/;"	f	file:
+end_ci	.\gw_src\inc\lstate.h	/^  CallInfo *end_ci;  \/* points after end of ci array*\/$/;"	m	struct:lua_State
+endpc	.\gw_src\inc\lobject.h	/^  int endpc;    \/* first point where variable is dead *\/$/;"	m	struct:LocVar
+enterblock	.\gw_src\lua_src\lparser.c	/^static void enterblock (FuncState *fs, BlockCnt *bl, lu_byte isbreakable) {$/;"	f	file:
+enterlevel	.\gw_src\lua_src\lparser.c	/^static void enterlevel (LexState *ls) {$/;"	f	file:
+env	.\gw_src\inc\lobject.h	/^    struct Table *env;$/;"	m	struct:Udata::__anon12	typeref:struct:Udata::__anon12::Table
+env	.\gw_src\inc\lstate.h	/^  TValue env;  \/* temporary place for environments *\/$/;"	m	struct:lua_State
+equalobj	.\gw_src\inc\lvm.h	21;"	d
+errfile	.\gw_src\lua_src\lauxlib.c	/^static int errfile (lua_State *L, const char *what, int fnameindex) {$/;"	f	file:
+errfunc	.\gw_src\inc\lstate.h	/^  ptrdiff_t errfunc;  \/* current error handling function (stack index) *\/$/;"	m	struct:lua_State
+error	.\gw_src\lua_src\lundump.c	/^static void error(LoadState* S, const char* why)$/;"	f	file:
+error	.\gw_src\lua_src\lundump.c	32;"	d	file:
+errorJmp	.\gw_src\inc\lstate.h	/^  struct lua_longjmp *errorJmp;  \/* current error recover point *\/$/;"	m	struct:lua_State	typeref:struct:lua_State::lua_longjmp
+error_expected	.\gw_src\lua_src\lparser.c	/^static void error_expected (LexState *ls, int token) {$/;"	f	file:
+errorfromcode	.\gw_src\lua_src\loadlib.c	/^static const char *errorfromcode (NSObjectFileImageReturnCode ret) {$/;"	f	file:
+errorlimit	.\gw_src\lua_src\lparser.c	/^static void errorlimit (FuncState *fs, int limit, const char *what) {$/;"	f	file:
+estimate	.\gw_src\inc\lstate.h	/^  lu_mem estimate;  \/* an estimate of number of bytes actually in use *\/$/;"	m	struct:global_State
+event	.\gw_src\inc\lua.h	/^  int event;$/;"	m	struct:lua_Debug
+exHumidity	.\gw_src\sensor.c	/^int exHumidity(lua_State *L)$/;"	f
+exLight	.\gw_src\sensor.c	/^int exLight(lua_State *L)\/\/参数：转换前的电压，光照强度$/;"	f
+exOldHumidity	.\gw_src\sensor.c	/^int exOldHumidity(lua_State *L)\/\/湿度转换公式$/;"	f
+exOldTemperature	.\gw_src\sensor.c	/^int exOldTemperature(lua_State *L)\/\/温度转换$/;"	f
+exSalt	.\gw_src\sensor.c	/^int exSalt(lua_State *L)$/;"	f
+exTemperature	.\gw_src\sensor.c	/^int exTemperature(lua_State *L)$/;"	f
+exVoltage	.\gw_src\sensor.c	/^int exVoltage(lua_State *L)\/\/电压转换$/;"	f
+exp1	.\gw_src\lua_src\lparser.c	/^static int exp1 (LexState *ls) {$/;"	f	file:
+exp2reg	.\gw_src\lua_src\lcode.c	/^static void exp2reg (FuncState *fs, expdesc *e, int reg) {$/;"	f	file:
+expdesc	.\gw_src\inc\lparser.h	/^typedef struct expdesc {$/;"	s
+expdesc	.\gw_src\inc\lparser.h	/^} expdesc;$/;"	t	typeref:struct:expdesc
+expkind	.\gw_src\inc\lparser.h	/^} expkind;$/;"	t	typeref:enum:__anon17
+explist1	.\gw_src\lua_src\lparser.c	/^static int explist1 (LexState *ls, expdesc *v) {$/;"	f	file:
+expr	.\gw_src\lua_src\lparser.c	/^static void expr (LexState *ls, expdesc *v) {$/;"	f	file:
+exprstat	.\gw_src\lua_src\lparser.c	/^static void exprstat (LexState *ls) {$/;"	f	file:
+extraline	.\gw_src\lua_src\lauxlib.c	/^  int extraline;$/;"	m	struct:LoadF	file:
+f	.\gw_src\inc\lobject.h	/^  lua_CFunction f;$/;"	m	struct:CClosure
+f	.\gw_src\inc\lparser.h	/^  Proto *f;  \/* current function header *\/$/;"	m	struct:FuncState
+f	.\gw_src\inc\lparser.h	/^  int f;  \/* patch list of `exit when false' *\/$/;"	m	struct:expdesc
+f	.\gw_src\lua_src\lauxlib.c	/^  FILE *f;$/;"	m	struct:LoadF	file:
+f_Ccall	.\gw_src\lua_src\lapi.c	/^static void f_Ccall (lua_State *L, void *ud) {$/;"	f	file:
+f_call	.\gw_src\lua_src\lapi.c	/^static void f_call (lua_State *L, void *ud) {$/;"	f	file:
+f_flush	.\gw_src\lua_src\liolib.c	/^static int f_flush (lua_State *L) {$/;"	f	file:
+f_isLua	.\gw_src\inc\lstate.h	61;"	d
+f_lines	.\gw_src\lua_src\liolib.c	/^static int f_lines (lua_State *L) {$/;"	f	file:
+f_luaopen	.\gw_src\lua_src\lstate.c	/^static void f_luaopen (lua_State *L, void *ud) {$/;"	f	file:
+f_parser	.\gw_src\lua_src\ldo.c	/^static void f_parser (lua_State *L, void *ud) {$/;"	f	file:
+f_read	.\gw_src\lua_src\liolib.c	/^static int f_read (lua_State *L) {$/;"	f	file:
+f_seek	.\gw_src\lua_src\liolib.c	/^static int f_seek (lua_State *L) {$/;"	f	file:
+f_setvbuf	.\gw_src\lua_src\liolib.c	/^static int f_setvbuf (lua_State *L) {$/;"	f	file:
+f_write	.\gw_src\lua_src\liolib.c	/^static int f_write (lua_State *L) {$/;"	f	file:
+fasttm	.\gw_src\inc\ltm.h	44;"	d
+fatal	.\gw_src\lua_src\luac.c	/^static void fatal(const char* message)$/;"	f	file:
+field	.\gw_src\lua_src\lparser.c	/^static void field (LexState *ls, expdesc *v) {$/;"	f	file:
+field_num	.\gw_src\inc\global_var.h	/^	int field_num;$/;"	m	struct:__anon2
+fileerror	.\gw_src\lua_src\liolib.c	/^static void fileerror (lua_State *L, int arg, const char *filename) {$/;"	f	file:
+findfile	.\gw_src\lua_src\loadlib.c	/^static const char *findfile (lua_State *L, const char *name,$/;"	f	file:
+findindex	.\gw_src\lua_src\ltable.c	/^static int findindex (lua_State *L, Table *t, StkId key) {$/;"	f	file:
+findlocal	.\gw_src\lua_src\ldebug.c	/^static const char *findlocal (lua_State *L, CallInfo *ci, int n) {$/;"	f	file:
+fixjump	.\gw_src\lua_src\lcode.c	/^static void fixjump (FuncState *fs, int pc, int dest) {$/;"	f	file:
+flags	.\gw_src\inc\lobject.h	/^  lu_byte flags;  \/* 1<<p means tagmethod(p) is not present *\/ $/;"	m	struct:Table
+fld_index1	.\gw_src\gateway.c	/^static int 		fld_index1 = 0; \/\/与头指针对应的IP端报文的数组标号$/;"	v	file:
+fld_index2	.\gw_src\gateway.c	/^static int 		fld_index2 = 0; \/\/与尾指针对应的IP端报文的数组标号$/;"	v	file:
+fld_kv	.\gw_src\inc\global_var.h	/^	FIELD_KEY_VAL fld_kv[MAXLEN3];$/;"	m	struct:__anon2
+flib	.\gw_src\lua_src\liolib.c	/^static const luaL_Reg flib[] = {$/;"	v	file:
+fnames	.\gw_src\lua_src\liolib.c	/^static const char *const fnames[] = {"input", "output"};$/;"	v	file:
+forbody	.\gw_src\lua_src\lparser.c	/^static void forbody (LexState *ls, int base, int line, int nvars, int isnum) {$/;"	f	file:
+foreach	.\gw_src\lua_src\ltablib.c	/^static int foreach (lua_State *L) {$/;"	f	file:
+foreachi	.\gw_src\lua_src\ltablib.c	/^static int foreachi (lua_State *L) {$/;"	f	file:
+forlist	.\gw_src\lua_src\lparser.c	/^static void forlist (LexState *ls, TString *indexname) {$/;"	f	file:
+fornum	.\gw_src\lua_src\lparser.c	/^static void fornum (LexState *ls, TString *varname, int line) {$/;"	f	file:
+forstat	.\gw_src\lua_src\lparser.c	/^static void forstat (LexState *ls, int line) {$/;"	f	file:
+frealloc	.\gw_src\inc\lstate.h	/^  lua_Alloc frealloc;  \/* function to reallocate memory *\/$/;"	m	struct:global_State
+freeexp	.\gw_src\lua_src\lcode.c	/^static void freeexp (FuncState *fs, expdesc *e) {$/;"	f	file:
+freeobj	.\gw_src\lua_src\lgc.c	/^static void freeobj (lua_State *L, GCObject *o) {$/;"	f	file:
+freereg	.\gw_src\inc\lparser.h	/^  int freereg;  \/* first free register *\/$/;"	m	struct:FuncState
+freereg	.\gw_src\lua_src\lcode.c	/^static void freereg (FuncState *fs, int reg) {$/;"	f	file:
+freestack	.\gw_src\lua_src\lstate.c	/^static void freestack (lua_State *L, lua_State *L1) {$/;"	f	file:
+fromstate	.\gw_src\lua_src\lstate.c	28;"	d	file:
+fs	.\gw_src\inc\llex.h	/^  struct FuncState *fs;  \/* `FuncState' is private to the parser *\/$/;"	m	struct:LexState	typeref:struct:LexState::FuncState
+func	.\gw_src\inc\lauxlib.h	/^  lua_CFunction func;$/;"	m	struct:luaL_Reg
+func	.\gw_src\inc\lstate.h	/^  StkId func;  \/* function index in the stack *\/$/;"	m	struct:CallInfo
+func	.\gw_src\lua_src\lapi.c	/^  StkId func;$/;"	m	struct:CallS	file:
+func	.\gw_src\lua_src\lapi.c	/^  lua_CFunction func;$/;"	m	struct:CCallS	file:
+funcargs	.\gw_src\lua_src\lparser.c	/^static void funcargs (LexState *ls, expdesc *f) {$/;"	f	file:
+funcinfo	.\gw_src\lua_src\ldebug.c	/^static void funcinfo (lua_Debug *ar, Closure *cl) {$/;"	f	file:
+funcname	.\gw_src\lua_src\lparser.c	/^static int funcname (LexState *ls, expdesc *v) {$/;"	f	file:
+funcstat	.\gw_src\lua_src\lparser.c	/^static void funcstat (LexState *ls, int line) {$/;"	f	file:
+g	.\gw_src\lua_src\lstate.c	/^  global_State g;$/;"	m	struct:LG	file:
+g_iofile	.\gw_src\lua_src\liolib.c	/^static int g_iofile (lua_State *L, int f, const char *mode) {$/;"	f	file:
+g_read	.\gw_src\lua_src\liolib.c	/^static int g_read (lua_State *L, FILE *f, int first) {$/;"	f	file:
+g_write	.\gw_src\lua_src\liolib.c	/^static int g_write (lua_State *L, FILE *f, int arg) {$/;"	f	file:
+gc	.\gw_src\inc\lobject.h	/^  GCObject *gc;$/;"	m	union:__anon10
+gcdept	.\gw_src\inc\lstate.h	/^  lu_mem gcdept;  \/* how much GC is `behind schedule' *\/$/;"	m	struct:global_State
+gch	.\gw_src\inc\lstate.h	/^  GCheader gch;$/;"	m	union:GCObject
+gclist	.\gw_src\inc\lobject.h	/^  GCObject *gclist;$/;"	m	struct:Proto
+gclist	.\gw_src\inc\lobject.h	/^  GCObject *gclist;$/;"	m	struct:Table
+gclist	.\gw_src\inc\lstate.h	/^  GCObject *gclist;$/;"	m	struct:lua_State
+gco2cl	.\gw_src\inc\lstate.h	153;"	d
+gco2h	.\gw_src\inc\lstate.h	154;"	d
+gco2p	.\gw_src\inc\lstate.h	155;"	d
+gco2th	.\gw_src\inc\lstate.h	159;"	d
+gco2ts	.\gw_src\inc\lstate.h	150;"	d
+gco2u	.\gw_src\inc\lstate.h	152;"	d
+gco2uv	.\gw_src\inc\lstate.h	156;"	d
+gcpause	.\gw_src\inc\lstate.h	/^  int gcpause;  \/* size of pause between successive GCs *\/$/;"	m	struct:global_State
+gcstate	.\gw_src\inc\lstate.h	/^  lu_byte gcstate;  \/* state of garbage collector *\/$/;"	m	struct:global_State
+gcstepmul	.\gw_src\inc\lstate.h	/^  int gcstepmul;  \/* GC `granularity' *\/$/;"	m	struct:global_State
+gctm	.\gw_src\lua_src\loadlib.c	/^static int gctm (lua_State *L) {$/;"	f	file:
+gcvalue	.\gw_src\inc\lobject.h	91;"	d
+generic_reader	.\gw_src\lua_src\lbaselib.c	/^static const char *generic_reader (lua_State *L, void *ud, size_t *size) {$/;"	f	file:
+getBMode	.\gw_src\inc\lopcodes.h	255;"	d
+getCMode	.\gw_src\inc\lopcodes.h	256;"	d
+getCommandArgs	.\gw_src\gateway.c	/^int getCommandArgs(lua_State *L)$/;"	f
+getF	.\gw_src\lua_src\lauxlib.c	/^static const char *getF (lua_State *L, void *ud, size_t *size) {$/;"	f	file:
+getField	.\gw_src\gateway.c	/^int getField(lua_State *L)$/;"	f
+getFieldValue	.\gw_src\gateway.c	/^int getFieldValue(lua_State *L)$/;"	f
+getFieldValue_	.\gw_src\gateway.c	/^static int getFieldValue_(const PACKET_KEY_VAL *pArg1, const uint8_t *pcArg2, uint8_t *cResult1)$/;"	f	file:
+getField_	.\gw_src\gateway.c	/^static int getField_(const PACKET_KEY_VAL *pArg1, const uint8_t *pcArg2, uint8_t *cResult1)$/;"	f	file:
+getField_nn	.\gw_src\lua_auxi.c	/^int getField_nn(lua_State *L, int key, int *result)$/;"	f
+getField_ns	.\gw_src\lua_auxi.c	/^int getField_ns(lua_State *L, int key, uint8_t *result)$/;"	f
+getField_sn	.\gw_src\lua_auxi.c	/^int getField_sn(lua_State *L, const uint8_t *key, int *result)$/;"	f
+getOpMode	.\gw_src\inc\lopcodes.h	254;"	d
+getPassWord	.\gw_src\gateway.c	/^int getPassWord(lua_State *L)$/;"	f
+getS	.\gw_src\lua_src\lauxlib.c	/^static const char *getS (lua_State *L, void *ud, size_t *size) {$/;"	f	file:
+getSystemTime	.\gw_src\gateway.c	/^int getSystemTime(lua_State *L)$/;"	f
+get_compTM	.\gw_src\lua_src\lvm.c	/^static const TValue *get_compTM (lua_State *L, Table *mt1, Table *mt2,$/;"	f	file:
+get_prompt	.\gw_src\lua.c	/^static const char *get_prompt (lua_State *L, int firstline) {$/;"	f	file:
+getargs	.\gw_src\lua.c	/^static int getargs (lua_State *L, char **argv, int n) {$/;"	f	file:
+getbinopr	.\gw_src\lua_src\lparser.c	/^static BinOpr getbinopr (int op) {$/;"	f	file:
+getboolfield	.\gw_src\lua_src\loslib.c	/^static int getboolfield (lua_State *L, const char *key) {$/;"	f	file:
+getcode	.\gw_src\inc\lcode.h	39;"	d
+getcurrenv	.\gw_src\lua_src\lapi.c	/^static Table *getcurrenv (lua_State *L) {$/;"	f	file:
+getfield	.\gw_src\lua_src\loslib.c	/^static int getfield (lua_State *L, const char *key, int d) {$/;"	f	file:
+getfreepos	.\gw_src\lua_src\ltable.c	/^static Node *getfreepos (Table *t) {$/;"	f	file:
+getfunc	.\gw_src\lua_src\lbaselib.c	/^static void getfunc (lua_State *L, int opt) {$/;"	f	file:
+getfuncname	.\gw_src\lua_src\ldebug.c	/^static const char *getfuncname (lua_State *L, CallInfo *ci, const char **name) {$/;"	f	file:
+gethooktable	.\gw_src\lua_src\ldblib.c	/^static void gethooktable (lua_State *L) {$/;"	f	file:
+getiofile	.\gw_src\lua_src\liolib.c	/^static FILE *getiofile (lua_State *L, int findex) {$/;"	f	file:
+getjump	.\gw_src\lua_src\lcode.c	/^static int getjump (FuncState *fs, int pc) {$/;"	f	file:
+getjumpcontrol	.\gw_src\lua_src\lcode.c	/^static Instruction *getjumpcontrol (FuncState *fs, int pc) {$/;"	f	file:
+getline	.\gw_src\inc\ldebug.h	16;"	d
+getlocvar	.\gw_src\lua_src\lparser.c	32;"	d	file:
+getluaproto	.\gw_src\lua_src\ldebug.c	/^static Proto *getluaproto (CallInfo *ci) {$/;"	f	file:
+getn	.\gw_src\lua_src\ltablib.c	/^static int getn (lua_State *L) {$/;"	f	file:
+getobjname	.\gw_src\lua_src\ldebug.c	/^static const char *getobjname (lua_State *L, CallInfo *ci, int stackpos,$/;"	f	file:
+getsizes	.\gw_src\lua_src\lauxlib.c	/^static void getsizes (lua_State *L) {$/;"	f	file:
+getstr	.\gw_src\inc\lobject.h	210;"	d
+getthread	.\gw_src\lua_src\ldblib.c	/^static lua_State *getthread (lua_State *L, int *arg) {$/;"	f	file:
+gettimestamp	.\gw_src\preprocess.c	/^int gettimestamp(char *time_now)$/;"	f
+getunopr	.\gw_src\lua_src\lparser.c	/^static UnOpr getunopr (int op) {$/;"	f	file:
+gfasttm	.\gw_src\inc\ltm.h	41;"	d
+gfind_nodef	.\gw_src\lua_src\lstrlib.c	/^static int gfind_nodef (lua_State *L) {$/;"	f	file:
+gkey	.\gw_src\inc\ltable.h	14;"	d
+globalL	.\gw_src\lua.c	/^static lua_State *globalL = NULL;$/;"	v	file:
+global_State	.\gw_src\inc\lstate.h	/^typedef struct global_State {$/;"	s
+global_State	.\gw_src\inc\lstate.h	/^} global_State;$/;"	t	typeref:struct:global_State
+gmatch	.\gw_src\lua_src\lstrlib.c	/^static int gmatch (lua_State *L) {$/;"	f	file:
+gmatch_aux	.\gw_src\lua_src\lstrlib.c	/^static int gmatch_aux (lua_State *L) {$/;"	f	file:
+gnext	.\gw_src\inc\ltable.h	16;"	d
+gnode	.\gw_src\inc\ltable.h	13;"	d
+gray	.\gw_src\inc\lstate.h	/^  GCObject *gray;  \/* list of gray objects *\/$/;"	m	struct:global_State
+gray2black	.\gw_src\inc\lgc.h	73;"	d
+grayagain	.\gw_src\inc\lstate.h	/^  GCObject *grayagain;  \/* list of objects to be traversed atomically *\/$/;"	m	struct:global_State
+growCI	.\gw_src\lua_src\ldo.c	/^static CallInfo *growCI (lua_State *L) {$/;"	f	file:
+gt	.\gw_src\inc\lstate.h	22;"	d
+gval	.\gw_src\inc\ltable.h	15;"	d
+h	.\gw_src\inc\lparser.h	/^  Table *h;  \/* table to find (and reuse) elements in `k' *\/$/;"	m	struct:FuncState
+h	.\gw_src\inc\lstate.h	/^  struct Table h;$/;"	m	union:GCObject	typeref:struct:GCObject::Table
+handle_luainit	.\gw_src\lua.c	/^static int handle_luainit (lua_State *L) {$/;"	f	file:
+handle_script	.\gw_src\lua.c	/^static int handle_script (lua_State *L, char **argv, int n) {$/;"	f	file:
+hash	.\gw_src\inc\lobject.h	/^    unsigned int hash;$/;"	m	struct:TString::__anon11
+hash	.\gw_src\inc\lstate.h	/^  GCObject **hash;$/;"	m	struct:stringtable
+hashboolean	.\gw_src\lua_src\ltable.c	53;"	d	file:
+hashmod	.\gw_src\lua_src\ltable.c	60;"	d	file:
+hashnum	.\gw_src\lua_src\ltable.c	/^static Node *hashnum (const Table *t, lua_Number n) {$/;"	f	file:
+hashpointer	.\gw_src\lua_src\ltable.c	63;"	d	file:
+hashpow2	.\gw_src\lua_src\ltable.c	50;"	d	file:
+hashstr	.\gw_src\lua_src\ltable.c	52;"	d	file:
+hasjumps	.\gw_src\lua_src\lcode.c	27;"	d	file:
+hasmultret	.\gw_src\lua_src\lparser.c	30;"	d	file:
+havekey	.\gw_src\inc\global_var.h	/^	int havekey;$/;"	m	struct:__anon1
+hj212CRC16	.\gw_src\preprocess.c	/^uint16_t hj212CRC16(const char *buf, int lenth)$/;"	f
+hook	.\gw_src\inc\lstate.h	/^  lua_Hook hook;$/;"	m	struct:lua_State
+hookcount	.\gw_src\inc\lstate.h	/^  int hookcount;$/;"	m	struct:lua_State
+hookf	.\gw_src\lua_src\ldblib.c	/^static void hookf (lua_State *L, lua_Debug *ar) {$/;"	f	file:
+hookmask	.\gw_src\inc\lstate.h	/^  lu_byte hookmask;$/;"	m	struct:lua_State
+hvalue	.\gw_src\inc\lobject.h	99;"	d
+iABC	.\gw_src\inc\lopcodes.h	/^enum OpMode {iABC, iABx, iAsBx};  \/* basic instruction format *\/$/;"	e	enum:OpMode
+iABx	.\gw_src\inc\lopcodes.h	/^enum OpMode {iABC, iABx, iAsBx};  \/* basic instruction format *\/$/;"	e	enum:OpMode
+iAsBx	.\gw_src\inc\lopcodes.h	/^enum OpMode {iABC, iABx, iAsBx};  \/* basic instruction format *\/$/;"	e	enum:OpMode
+i_ci	.\gw_src\inc\lua.h	/^  int i_ci;  \/* active function *\/$/;"	m	struct:lua_Debug
+i_key	.\gw_src\inc\lobject.h	/^  TKey i_key;$/;"	m	struct:Node
+i_val	.\gw_src\inc\lobject.h	/^  TValue i_val;$/;"	m	struct:Node
+ifstat	.\gw_src\lua_src\lparser.c	/^static void ifstat (LexState *ls, int line) {$/;"	f	file:
+inc_ci	.\gw_src\lua_src\ldo.c	260;"	d	file:
+inclinenumber	.\gw_src\lua_src\llex.c	/^static void inclinenumber (LexState *ls) {$/;"	f	file:
+incomplete	.\gw_src\lua.c	/^static int incomplete (lua_State *L, int status) {$/;"	f	file:
+incr_top	.\gw_src\inc\ldo.h	22;"	d
+index2adr	.\gw_src\lua_src\lapi.c	/^static TValue *index2adr (lua_State *L, int idx) {$/;"	f	file:
+indexupvalue	.\gw_src\lua_src\lparser.c	/^static int indexupvalue (FuncState *fs, TString *name, expdesc *v) {$/;"	f	file:
+info	.\gw_src\inc\lparser.h	/^    struct { int info, aux; } s;$/;"	m	struct:expdesc::__anon18::__anon19
+info	.\gw_src\inc\lparser.h	/^  lu_byte info;$/;"	m	struct:upvaldesc
+info_tailcall	.\gw_src\lua_src\ldebug.c	/^static void info_tailcall (lua_Debug *ar) {$/;"	f	file:
+init	.\gw_src\lua_src\lstrlib.c	/^    const char *init;$/;"	m	struct:MatchState::__anon23	file:
+init_exp	.\gw_src\lua_src\lparser.c	/^static void init_exp (expdesc *e, expkind k, int i) {$/;"	f	file:
+invertjump	.\gw_src\lua_src\lcode.c	/^static void invertjump (FuncState *fs, expdesc *e) {$/;"	f	file:
+io_close	.\gw_src\lua_src\liolib.c	/^static int io_close (lua_State *L) {$/;"	f	file:
+io_fclose	.\gw_src\lua_src\liolib.c	/^static int io_fclose (lua_State *L) {$/;"	f	file:
+io_flush	.\gw_src\lua_src\liolib.c	/^static int io_flush (lua_State *L) {$/;"	f	file:
+io_gc	.\gw_src\lua_src\liolib.c	/^static int io_gc (lua_State *L) {$/;"	f	file:
+io_input	.\gw_src\lua_src\liolib.c	/^static int io_input (lua_State *L) {$/;"	f	file:
+io_lines	.\gw_src\lua_src\liolib.c	/^static int io_lines (lua_State *L) {$/;"	f	file:
+io_noclose	.\gw_src\lua_src\liolib.c	/^static int io_noclose (lua_State *L) {$/;"	f	file:
+io_open	.\gw_src\lua_src\liolib.c	/^static int io_open (lua_State *L) {$/;"	f	file:
+io_output	.\gw_src\lua_src\liolib.c	/^static int io_output (lua_State *L) {$/;"	f	file:
+io_pclose	.\gw_src\lua_src\liolib.c	/^static int io_pclose (lua_State *L) {$/;"	f	file:
+io_popen	.\gw_src\lua_src\liolib.c	/^static int io_popen (lua_State *L) {$/;"	f	file:
+io_read	.\gw_src\lua_src\liolib.c	/^static int io_read (lua_State *L) {$/;"	f	file:
+io_readline	.\gw_src\lua_src\liolib.c	/^static int io_readline (lua_State *L) {$/;"	f	file:
+io_tmpfile	.\gw_src\lua_src\liolib.c	/^static int io_tmpfile (lua_State *L) {$/;"	f	file:
+io_tostring	.\gw_src\lua_src\liolib.c	/^static int io_tostring (lua_State *L) {$/;"	f	file:
+io_type	.\gw_src\lua_src\liolib.c	/^static int io_type (lua_State *L) {$/;"	f	file:
+io_write	.\gw_src\lua_src\liolib.c	/^static int io_write (lua_State *L) {$/;"	f	file:
+iolib	.\gw_src\lua_src\liolib.c	/^static const luaL_Reg iolib[] = {$/;"	v	file:
+ip	.\gw_src\inc\global_var.h	/^	uint8_t ip[MAXLEN2];$/;"	m	struct:__anon4
+ip_port	.\gw_src\gateway.c	/^IP_PORT_t ip_port = {0}; \/\/远程服务器的地址,端口$/;"	v
+ipairsaux	.\gw_src\lua_src\lbaselib.c	/^static int ipairsaux (lua_State *L) {$/;"	f	file:
+isLfunction	.\gw_src\inc\lobject.h	316;"	d
+isLua	.\gw_src\inc\lstate.h	62;"	d
+is_vararg	.\gw_src\inc\lobject.h	/^  lu_byte is_vararg;$/;"	m	struct:Proto
+isblack	.\gw_src\inc\lgc.h	66;"	d
+isbreakable	.\gw_src\lua_src\lparser.c	/^  lu_byte isbreakable;  \/* true if `block' is a loop *\/$/;"	m	struct:BlockCnt	file:
+iscfunction	.\gw_src\inc\lobject.h	315;"	d
+iscleared	.\gw_src\lua_src\lgc.c	/^static int iscleared (const TValue *o, int iskey) {$/;"	f	file:
+iscollectable	.\gw_src\inc\lobject.h	189;"	d
+isdead	.\gw_src\inc\lgc.h	70;"	d
+isfinalized	.\gw_src\lua_src\lgc.c	43;"	d	file:
+isgray	.\gw_src\inc\lgc.h	67;"	d
+isinstack	.\gw_src\lua_src\ldebug.c	/^static int isinstack (CallInfo *ci, const TValue *o) {$/;"	f	file:
+isnumeral	.\gw_src\lua_src\lcode.c	/^static int isnumeral(expdesc *e) {$/;"	f	file:
+iswhite	.\gw_src\inc\lgc.h	65;"	d
+jpc	.\gw_src\inc\lparser.h	/^  int jpc;  \/* list of pending jumps to `pc' *\/$/;"	m	struct:FuncState
+judgePacketRT	.\ph_bin\GB_format.lua	/^function judgePacketRT(pac_key, ...)$/;"	f
+jumponcond	.\gw_src\lua_src\lcode.c	/^static int jumponcond (FuncState *fs, expdesc *e, int cond) {$/;"	f	file:
+k	.\gw_src\inc\lobject.h	/^  TValue *k;  \/* constants used by the function *\/$/;"	m	struct:Proto
+k	.\gw_src\inc\lparser.h	/^  expkind k;$/;"	m	struct:expdesc
+k	.\gw_src\inc\lparser.h	/^  lu_byte k;$/;"	m	struct:upvaldesc
+key	.\gw_src\inc\global_var.h	/^	uint8_t key[MAXLEN3];$/;"	m	struct:__anon1
+key2tval	.\gw_src\inc\ltable.h	18;"	d
+kname	.\gw_src\lua_src\ldebug.c	/^static const char *kname (Proto *p, int c) {$/;"	f	file:
+l	.\gw_src\inc\lobject.h	/^    } l;$/;"	m	union:UpVal::__anon13	typeref:struct:UpVal::__anon13::__anon14
+l	.\gw_src\inc\lobject.h	/^  LClosure l;$/;"	m	union:Closure
+l	.\gw_src\lua_src\lstate.c	/^  lua_State l;$/;"	m	struct:LG	file:
+l_G	.\gw_src\inc\lstate.h	/^  global_State *l_G;$/;"	m	struct:lua_State
+l_alloc	.\gw_src\lua_src\lauxlib.c	/^static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize) {$/;"	f	file:
+l_d	.\gw_src\inc\luaconf.h	/^union luai_Cast { double l_d; long l_l; };$/;"	m	union:luai_Cast
+l_gt	.\gw_src\inc\lstate.h	/^  TValue l_gt;  \/* table of globals *\/$/;"	m	struct:lua_State
+l_isfalse	.\gw_src\inc\lobject.h	103;"	d
+l_l	.\gw_src\inc\luaconf.h	/^union luai_Cast { double l_d; long l_l; };$/;"	m	union:luai_Cast
+l_mem	.\gw_src\inc\llimits.h	/^typedef LUAI_MEM l_mem;$/;"	t
+l_message	.\gw_src\lua.c	/^static void l_message (const char *pname, const char *msg) {$/;"	f	file:
+l_registry	.\gw_src\inc\lstate.h	/^  TValue l_registry;$/;"	m	struct:global_State
+l_setbit	.\gw_src\inc\lgc.h	32;"	d
+l_strcmp	.\gw_src\lua_src\lvm.c	/^static int l_strcmp (const TString *ls, const TString *rs) {$/;"	f	file:
+l_uacNumber	.\gw_src\inc\llimits.h	/^typedef LUAI_UACNUMBER l_uacNumber;$/;"	t
+laction	.\gw_src\lua.c	/^static void laction (int i) {$/;"	f	file:
+lapi_c	.\gw_src\lua_src\lapi.c	13;"	d	file:
+lapi_h	.\gw_src\inc\lapi.h	8;"	d
+lassemFieldValue	.\gw_src\lua_gateway.c	/^static int lassemFieldValue(lua_State *L)$/;"	f	file:
+lassemPacket	.\gw_src\lua_gateway.c	/^static int lassemPacket(lua_State *L)$/;"	f	file:
+lastfree	.\gw_src\inc\lobject.h	/^  Node *lastfree;  \/* any free position is before this position *\/$/;"	m	struct:Table
+lastline	.\gw_src\inc\llex.h	/^  int lastline;  \/* line of last token `consumed' *\/$/;"	m	struct:LexState
+lastlinedefined	.\gw_src\inc\lobject.h	/^  int lastlinedefined;$/;"	m	struct:Proto
+lastlinedefined	.\gw_src\inc\lua.h	/^  int lastlinedefined;	\/* (S) *\/$/;"	m	struct:lua_Debug
+lastlistfield	.\gw_src\lua_src\lparser.c	/^static void lastlistfield (FuncState *fs, struct ConsControl *cc) {$/;"	f	file:
+lasttarget	.\gw_src\inc\lparser.h	/^  int lasttarget;   \/* `pc' of last `jump target' *\/$/;"	m	struct:FuncState
+lauxlib_c	.\gw_src\lua_src\lauxlib.c	20;"	d	file:
+lauxlib_h	.\gw_src\inc\lauxlib.h	9;"	d
+lbaselib_c	.\gw_src\lua_src\lbaselib.c	14;"	d	file:
+lcheckMonitorNum	.\gw_src\lua_gateway.c	/^static int lcheckMonitorNum(lua_State *L)$/;"	f	file:
+lcheckPacket	.\gw_src\lua_gateway.c	/^static int lcheckPacket(lua_State *L)$/;"	f	file:
+lcode_c	.\gw_src\lua_src\lcode.c	10;"	d	file:
+lcode_h	.\gw_src\inc\lcode.h	8;"	d
+lconfig_h	.\gw_src\inc\luaconf.h	9;"	d
+lconnectField	.\gw_src\lua_gateway.c	/^static int lconnectField(lua_State *L)$/;"	f	file:
+lconnectFields	.\gw_src\lua_gateway.c	/^static int lconnectFields(lua_State *L)$/;"	f	file:
+lcopyFields	.\gw_src\lua_gateway.c	/^static int lcopyFields(lua_State *L)$/;"	f	file:
+lcountFieldsLen	.\gw_src\lua_gateway.c	/^static int lcountFieldsLen(lua_State *L)$/;"	f	file:
+ldblib_c	.\gw_src\lua_src\ldblib.c	12;"	d	file:
+ldebug_c	.\gw_src\lua_src\ldebug.c	13;"	d	file:
+ldebug_h	.\gw_src\inc\ldebug.h	8;"	d
+ldefPacketFormat	.\gw_src\lua_gateway.c	/^static int ldefPacketFormat(lua_State *L)$/;"	f	file:
+ldo_c	.\gw_src\lua_src\ldo.c	12;"	d	file:
+ldo_h	.\gw_src\inc\ldo.h	8;"	d
+ldump_c	.\gw_src\lua_src\ldump.c	9;"	d	file:
+leaveblock	.\gw_src\lua_src\lparser.c	/^static void leaveblock (FuncState *fs) {$/;"	f	file:
+leavelevel	.\gw_src\lua_src\lparser.c	282;"	d	file:
+left	.\gw_src\lua_src\lparser.c	/^  lu_byte left;  \/* left priority for each binary operator *\/$/;"	m	struct:__anon22	file:
+len	.\gw_src\inc\global_var.h	/^	int len;$/;"	m	struct:__anon1
+len	.\gw_src\inc\global_var.h	/^	int len;$/;"	m	struct:__anon5
+len	.\gw_src\inc\lobject.h	/^    size_t len;$/;"	m	struct:TString::__anon11
+len	.\gw_src\inc\lobject.h	/^    size_t len;$/;"	m	struct:Udata::__anon12
+len	.\gw_src\lua_src\lstrlib.c	/^    ptrdiff_t len;$/;"	m	struct:MatchState::__anon23	file:
+lerror	.\gw_src\lua_auxi.c	/^int lerror(lua_State *L, uint8_t *fmt, ...)$/;"	f
+lessequal	.\gw_src\lua_src\lvm.c	/^static int lessequal (lua_State *L, const TValue *l, const TValue *r) {$/;"	f	file:
+level	.\gw_src\lua_src\lstrlib.c	/^  int level;  \/* total number of captures (finished or unfinished) *\/$/;"	m	struct:MatchState	file:
+lexHumidity	.\gw_src\lua_gateway.c	/^static int lexHumidity(lua_State *L)$/;"	f	file:
+lexLight	.\gw_src\lua_gateway.c	/^static int lexLight(lua_State *L)$/;"	f	file:
+lexOldHumidity	.\gw_src\lua_gateway.c	/^static int lexOldHumidity(lua_State *L)$/;"	f	file:
+lexOldTemperature	.\gw_src\lua_gateway.c	/^static int lexOldTemperature(lua_State *L)$/;"	f	file:
+lexSalt	.\gw_src\lua_gateway.c	/^static int lexSalt(lua_State *L)$/;"	f	file:
+lexTemperature	.\gw_src\lua_gateway.c	/^static int lexTemperature(lua_State *L)$/;"	f	file:
+lexVoltage	.\gw_src\lua_gateway.c	/^static int lexVoltage(lua_State *L)$/;"	f	file:
+lfunc_c	.\gw_src\lua_src\lfunc.c	10;"	d	file:
+lfunc_h	.\gw_src\inc\lfunc.h	8;"	d
+lgateway	.\gw_src\lua_gateway.c	/^static const struct luaL_Reg lgateway[] =$/;"	v	typeref:struct:luaL_Reg	file:
+lgc_c	.\gw_src\lua_src\lgc.c	9;"	d	file:
+lgc_h	.\gw_src\inc\lgc.h	8;"	d
+lgetCommandArgs	.\gw_src\lua_gateway.c	/^static int lgetCommandArgs(lua_State *L)$/;"	f	file:
+lgetField	.\gw_src\lua_gateway.c	/^static int lgetField(lua_State *L)$/;"	f	file:
+lgetFieldValue	.\gw_src\lua_gateway.c	/^static int lgetFieldValue(lua_State *L)$/;"	f	file:
+lgetPassWord	.\gw_src\lua_gateway.c	/^static int lgetPassWord(lua_State *L)$/;"	f	file:
+lgetSystemTime	.\gw_src\lua_gateway.c	/^static int lgetSystemTime(lua_State *L)$/;"	f	file:
+libsize	.\gw_src\lua_src\lauxlib.c	/^static int libsize (const luaL_Reg *l) {$/;"	f	file:
+linedefined	.\gw_src\inc\lobject.h	/^  int linedefined;$/;"	m	struct:Proto
+linedefined	.\gw_src\inc\lua.h	/^  int linedefined;	\/* (S) *\/$/;"	m	struct:lua_Debug
+lineinfo	.\gw_src\inc\lobject.h	/^  int *lineinfo;  \/* map from opcodes to source lines *\/$/;"	m	struct:Proto
+linenumber	.\gw_src\inc\llex.h	/^  int linenumber;  \/* input line counter *\/$/;"	m	struct:LexState
+linit_c	.\gw_src\lua_src\linit.c	8;"	d	file:
+liolib_c	.\gw_src\lua_src\liolib.c	13;"	d	file:
+listfield	.\gw_src\lua_src\lparser.c	/^static void listfield (LexState *ls, struct ConsControl *cc) {$/;"	f	file:
+listing	.\gw_src\lua_src\luac.c	/^static int listing=0;			\/* list bytecodes? *\/$/;"	v	file:
+ll_funcs	.\gw_src\lua_src\loadlib.c	/^static const luaL_Reg ll_funcs[] = {$/;"	v	file:
+ll_load	.\gw_src\lua_src\loadlib.c	/^static void *ll_load (lua_State *L, const char *path) {$/;"	f	file:
+ll_loadfunc	.\gw_src\lua_src\loadlib.c	/^static int ll_loadfunc (lua_State *L, const char *path, const char *sym) {$/;"	f	file:
+ll_loadlib	.\gw_src\lua_src\loadlib.c	/^static int ll_loadlib (lua_State *L) {$/;"	f	file:
+ll_module	.\gw_src\lua_src\loadlib.c	/^static int ll_module (lua_State *L) {$/;"	f	file:
+ll_register	.\gw_src\lua_src\loadlib.c	/^static void **ll_register (lua_State *L, const char *path) {$/;"	f	file:
+ll_require	.\gw_src\lua_src\loadlib.c	/^static int ll_require (lua_State *L) {$/;"	f	file:
+ll_seeall	.\gw_src\lua_src\loadlib.c	/^static int ll_seeall (lua_State *L) {$/;"	f	file:
+ll_sym	.\gw_src\lua_src\loadlib.c	/^static lua_CFunction ll_sym (lua_State *L, void *lib, const char *sym) {$/;"	f	file:
+ll_unloadlib	.\gw_src\lua_src\loadlib.c	/^static void ll_unloadlib (void *lib) {$/;"	f	file:
+llex	.\gw_src\lua_src\llex.c	/^static int llex (LexState *ls, SemInfo *seminfo) {$/;"	f	file:
+llex_c	.\gw_src\lua_src\llex.c	12;"	d	file:
+llex_h	.\gw_src\inc\llex.h	8;"	d
+llimits_h	.\gw_src\inc\llimits.h	8;"	d
+lmathlib_c	.\gw_src\lua_src\lmathlib.c	11;"	d	file:
+lmem_c	.\gw_src\lua_src\lmem.c	10;"	d	file:
+lmem_h	.\gw_src\inc\lmem.h	8;"	d
+lmemfind	.\gw_src\lua_src\lstrlib.c	/^static const char *lmemfind (const char *s1, size_t l1,$/;"	f	file:
+lmod	.\gw_src\inc\lobject.h	355;"	d
+lnewBuffer	.\gw_src\lua_gateway.c	/^static int lnewBuffer(lua_State *L)$/;"	f	file:
+lnewPKV	.\gw_src\lua_gateway.c	/^static int lnewPKV(lua_State *L)$/;"	f	file:
+load_aux	.\gw_src\lua_src\lbaselib.c	/^static int load_aux (lua_State *L, int status) {$/;"	f	file:
+loader_C	.\gw_src\lua_src\loadlib.c	/^static int loader_C (lua_State *L) {$/;"	f	file:
+loader_Croot	.\gw_src\lua_src\loadlib.c	/^static int loader_Croot (lua_State *L) {$/;"	f	file:
+loader_Lua	.\gw_src\lua_src\loadlib.c	/^static int loader_Lua (lua_State *L) {$/;"	f	file:
+loader_preload	.\gw_src\lua_src\loadlib.c	/^static int loader_preload (lua_State *L) {$/;"	f	file:
+loaderror	.\gw_src\lua_src\loadlib.c	/^static void loaderror (lua_State *L, const char *filename) {$/;"	f	file:
+loaders	.\gw_src\lua_src\loadlib.c	/^static const lua_CFunction loaders[] =$/;"	v	file:
+loadlib_c	.\gw_src\lua_src\loadlib.c	16;"	d	file:
+loadline	.\gw_src\lua.c	/^static int loadline (lua_State *L) {$/;"	f	file:
+lobject_c	.\gw_src\lua_src\lobject.c	13;"	d	file:
+lobject_h	.\gw_src\inc\lobject.h	9;"	d
+localfunc	.\gw_src\lua_src\lparser.c	/^static void localfunc (LexState *ls) {$/;"	f	file:
+localstat	.\gw_src\lua_src\lparser.c	/^static void localstat (LexState *ls) {$/;"	f	file:
+locvars	.\gw_src\inc\lobject.h	/^  struct LocVar *locvars;  \/* information about local variables *\/$/;"	m	struct:Proto	typeref:struct:Proto::LocVar
+lookahead	.\gw_src\inc\llex.h	/^  Token lookahead;  \/* look ahead token *\/$/;"	m	struct:LexState
+lopcodes_c	.\gw_src\lua_src\lopcodes.c	7;"	d	file:
+lopcodes_h	.\gw_src\inc\lopcodes.h	8;"	d
+loslib_c	.\gw_src\lua_src\loslib.c	14;"	d	file:
+lparser_c	.\gw_src\lua_src\lparser.c	10;"	d	file:
+lparser_h	.\gw_src\inc\lparser.h	8;"	d
+lrawgeti	.\gw_src\lua_auxi.c	/^void lrawgeti(lua_State *L, int key, int *nresult, uint8_t *sresult) \/\/ The access is raw; that is, it does not invoke metamethods.$/;"	f
+lrecGBPacket	.\gw_src\lua_gateway.c	/^static int lrecGBPacket(lua_State *L)$/;"	f	file:
+lrecSLPacket	.\gw_src\lua_gateway.c	/^static int lrecSLPacket(lua_State *L)$/;"	f	file:
+lrecXDPacket	.\gw_src\lua_gateway.c	/^static int lrecXDPacket(lua_State *L)$/;"	f	file:
+lregister	.\gw_src\lua_gateway.c	/^void lregister(lua_State *L)$/;"	f
+lresoSLPacket	.\gw_src\lua_gateway.c	/^static int lresoSLPacket(lua_State *L)$/;"	f	file:
+ls	.\gw_src\inc\lparser.h	/^  struct LexState *ls;  \/* lexical state *\/$/;"	m	struct:FuncState	typeref:struct:FuncState::LexState
+lsendGBPacket	.\gw_src\lua_gateway.c	/^static int lsendGBPacket(lua_State *L)$/;"	f	file:
+lsensor	.\gw_src\lua_gateway.c	/^static const struct luaL_Reg lsensor[] =$/;"	v	typeref:struct:luaL_Reg	file:
+lsepField	.\gw_src\lua_gateway.c	/^static int lsepField(lua_State *L)$/;"	f	file:
+lsepPacket	.\gw_src\lua_gateway.c	/^static int lsepPacket(lua_State *L)$/;"	f	file:
+lsetGBPacket	.\gw_src\lua_gateway.c	/^static int lsetGBPacket(lua_State *L)$/;"	f	file:
+lsetGBRTPacket	.\gw_src\lua_gateway.c	/^static int lsetGBRTPacket(lua_State *L)$/;"	f	file:
+lsetPassWord	.\gw_src\lua_gateway.c	/^static int lsetPassWord(lua_State *L)$/;"	f	file:
+lsetPort	.\gw_src\lua_gateway.c	/^static int lsetPort(lua_State *L)$/;"	f	file:
+lsetSLPacket	.\gw_src\lua_gateway.c	/^static int lsetSLPacket(lua_State *L)$/;"	f	file:
+lsetSystemTime	.\gw_src\lua_gateway.c	/^static int lsetSystemTime(lua_State *L)$/;"	f	file:
+lsizenode	.\gw_src\inc\lobject.h	/^  lu_byte lsizenode;  \/* log2 of size of `node' array *\/$/;"	m	struct:Table
+lsleep	.\gw_src\lua_gateway.c	/^static int lsleep(lua_State *L)$/;"	f	file:
+lstate_c	.\gw_src\lua_src\lstate.c	10;"	d	file:
+lstate_h	.\gw_src\inc\lstate.h	8;"	d
+lstop	.\gw_src\lua.c	/^static void lstop (lua_State *L, lua_Debug *ar) {$/;"	f	file:
+lstring_c	.\gw_src\lua_src\lstring.c	10;"	d	file:
+lstring_h	.\gw_src\inc\lstring.h	8;"	d
+lstrlib_c	.\gw_src\lua_src\lstrlib.c	14;"	d	file:
+ltable_c	.\gw_src\lua_src\ltable.c	24;"	d	file:
+ltable_h	.\gw_src\inc\ltable.h	8;"	d
+ltablib_c	.\gw_src\lua_src\ltablib.c	10;"	d	file:
+ltm_c	.\gw_src\lua_src\ltm.c	10;"	d	file:
+ltm_h	.\gw_src\inc\ltm.h	8;"	d
+lu_byte	.\gw_src\inc\llimits.h	/^typedef unsigned char lu_byte;$/;"	t
+lu_int32	.\gw_src\inc\llimits.h	/^typedef LUAI_UINT32 lu_int32;$/;"	t
+lu_mem	.\gw_src\inc\llimits.h	/^typedef LUAI_UMEM lu_mem;$/;"	t
+luaA_pushobject	.\gw_src\lua_src\lapi.c	/^void luaA_pushobject (lua_State *L, const TValue *o) {$/;"	f
+luaB_assert	.\gw_src\lua_src\lbaselib.c	/^static int luaB_assert (lua_State *L) {$/;"	f	file:
+luaB_auxwrap	.\gw_src\lua_src\lbaselib.c	/^static int luaB_auxwrap (lua_State *L) {$/;"	f	file:
+luaB_cocreate	.\gw_src\lua_src\lbaselib.c	/^static int luaB_cocreate (lua_State *L) {$/;"	f	file:
+luaB_collectgarbage	.\gw_src\lua_src\lbaselib.c	/^static int luaB_collectgarbage (lua_State *L) {$/;"	f	file:
+luaB_coresume	.\gw_src\lua_src\lbaselib.c	/^static int luaB_coresume (lua_State *L) {$/;"	f	file:
+luaB_corunning	.\gw_src\lua_src\lbaselib.c	/^static int luaB_corunning (lua_State *L) {$/;"	f	file:
+luaB_costatus	.\gw_src\lua_src\lbaselib.c	/^static int luaB_costatus (lua_State *L) {$/;"	f	file:
+luaB_cowrap	.\gw_src\lua_src\lbaselib.c	/^static int luaB_cowrap (lua_State *L) {$/;"	f	file:
+luaB_dofile	.\gw_src\lua_src\lbaselib.c	/^static int luaB_dofile (lua_State *L) {$/;"	f	file:
+luaB_error	.\gw_src\lua_src\lbaselib.c	/^static int luaB_error (lua_State *L) {$/;"	f	file:
+luaB_gcinfo	.\gw_src\lua_src\lbaselib.c	/^static int luaB_gcinfo (lua_State *L) {$/;"	f	file:
+luaB_getfenv	.\gw_src\lua_src\lbaselib.c	/^static int luaB_getfenv (lua_State *L) {$/;"	f	file:
+luaB_getmetatable	.\gw_src\lua_src\lbaselib.c	/^static int luaB_getmetatable (lua_State *L) {$/;"	f	file:
+luaB_ipairs	.\gw_src\lua_src\lbaselib.c	/^static int luaB_ipairs (lua_State *L) {$/;"	f	file:
+luaB_load	.\gw_src\lua_src\lbaselib.c	/^static int luaB_load (lua_State *L) {$/;"	f	file:
+luaB_loadfile	.\gw_src\lua_src\lbaselib.c	/^static int luaB_loadfile (lua_State *L) {$/;"	f	file:
+luaB_loadstring	.\gw_src\lua_src\lbaselib.c	/^static int luaB_loadstring (lua_State *L) {$/;"	f	file:
+luaB_newproxy	.\gw_src\lua_src\lbaselib.c	/^static int luaB_newproxy (lua_State *L) {$/;"	f	file:
+luaB_next	.\gw_src\lua_src\lbaselib.c	/^static int luaB_next (lua_State *L) {$/;"	f	file:
+luaB_pairs	.\gw_src\lua_src\lbaselib.c	/^static int luaB_pairs (lua_State *L) {$/;"	f	file:
+luaB_pcall	.\gw_src\lua_src\lbaselib.c	/^static int luaB_pcall (lua_State *L) {$/;"	f	file:
+luaB_print	.\gw_src\lua_src\lbaselib.c	/^static int luaB_print (lua_State *L) {$/;"	f	file:
+luaB_rawequal	.\gw_src\lua_src\lbaselib.c	/^static int luaB_rawequal (lua_State *L) {$/;"	f	file:
+luaB_rawget	.\gw_src\lua_src\lbaselib.c	/^static int luaB_rawget (lua_State *L) {$/;"	f	file:
+luaB_rawset	.\gw_src\lua_src\lbaselib.c	/^static int luaB_rawset (lua_State *L) {$/;"	f	file:
+luaB_select	.\gw_src\lua_src\lbaselib.c	/^static int luaB_select (lua_State *L) {$/;"	f	file:
+luaB_setfenv	.\gw_src\lua_src\lbaselib.c	/^static int luaB_setfenv (lua_State *L) {$/;"	f	file:
+luaB_setmetatable	.\gw_src\lua_src\lbaselib.c	/^static int luaB_setmetatable (lua_State *L) {$/;"	f	file:
+luaB_tonumber	.\gw_src\lua_src\lbaselib.c	/^static int luaB_tonumber (lua_State *L) {$/;"	f	file:
+luaB_tostring	.\gw_src\lua_src\lbaselib.c	/^static int luaB_tostring (lua_State *L) {$/;"	f	file:
+luaB_type	.\gw_src\lua_src\lbaselib.c	/^static int luaB_type (lua_State *L) {$/;"	f	file:
+luaB_unpack	.\gw_src\lua_src\lbaselib.c	/^static int luaB_unpack (lua_State *L) {$/;"	f	file:
+luaB_xpcall	.\gw_src\lua_src\lbaselib.c	/^static int luaB_xpcall (lua_State *L) {$/;"	f	file:
+luaB_yield	.\gw_src\lua_src\lbaselib.c	/^static int luaB_yield (lua_State *L) {$/;"	f	file:
+luaC_barrier	.\gw_src\inc\lgc.h	86;"	d
+luaC_barrierback	.\gw_src\lua_src\lgc.c	/^void luaC_barrierback (lua_State *L, Table *t) {$/;"	f
+luaC_barrierf	.\gw_src\lua_src\lgc.c	/^void luaC_barrierf (lua_State *L, GCObject *o, GCObject *v) {$/;"	f
+luaC_barriert	.\gw_src\inc\lgc.h	89;"	d
+luaC_callGCTM	.\gw_src\lua_src\lgc.c	/^void luaC_callGCTM (lua_State *L) {$/;"	f
+luaC_checkGC	.\gw_src\inc\lgc.h	80;"	d
+luaC_freeall	.\gw_src\lua_src\lgc.c	/^void luaC_freeall (lua_State *L) {$/;"	f
+luaC_fullgc	.\gw_src\lua_src\lgc.c	/^void luaC_fullgc (lua_State *L) {$/;"	f
+luaC_link	.\gw_src\lua_src\lgc.c	/^void luaC_link (lua_State *L, GCObject *o, lu_byte tt) {$/;"	f
+luaC_linkupval	.\gw_src\lua_src\lgc.c	/^void luaC_linkupval (lua_State *L, UpVal *uv) {$/;"	f
+luaC_objbarrier	.\gw_src\inc\lgc.h	92;"	d
+luaC_objbarriert	.\gw_src\inc\lgc.h	96;"	d
+luaC_separateudata	.\gw_src\lua_src\lgc.c	/^size_t luaC_separateudata (lua_State *L, int all) {$/;"	f
+luaC_step	.\gw_src\lua_src\lgc.c	/^void luaC_step (lua_State *L) {$/;"	f
+luaC_white	.\gw_src\inc\lgc.h	77;"	d
+luaD_call	.\gw_src\lua_src\ldo.c	/^void luaD_call (lua_State *L, StkId func, int nResults) {$/;"	f
+luaD_callhook	.\gw_src\lua_src\ldo.c	/^void luaD_callhook (lua_State *L, int event, int line) {$/;"	f
+luaD_checkstack	.\gw_src\inc\ldo.h	16;"	d
+luaD_growstack	.\gw_src\lua_src\ldo.c	/^void luaD_growstack (lua_State *L, int n) {$/;"	f
+luaD_pcall	.\gw_src\lua_src\ldo.c	/^int luaD_pcall (lua_State *L, Pfunc func, void *u,$/;"	f
+luaD_poscall	.\gw_src\lua_src\ldo.c	/^int luaD_poscall (lua_State *L, StkId firstResult) {$/;"	f
+luaD_precall	.\gw_src\lua_src\ldo.c	/^int luaD_precall (lua_State *L, StkId func, int nresults) {$/;"	f
+luaD_protectedparser	.\gw_src\lua_src\ldo.c	/^int luaD_protectedparser (lua_State *L, ZIO *z, const char *name) {$/;"	f
+luaD_rawrunprotected	.\gw_src\lua_src\ldo.c	/^int luaD_rawrunprotected (lua_State *L, Pfunc f, void *ud) {$/;"	f
+luaD_reallocCI	.\gw_src\lua_src\ldo.c	/^void luaD_reallocCI (lua_State *L, int newsize) {$/;"	f
+luaD_reallocstack	.\gw_src\lua_src\ldo.c	/^void luaD_reallocstack (lua_State *L, int newsize) {$/;"	f
+luaD_seterrorobj	.\gw_src\lua_src\ldo.c	/^void luaD_seterrorobj (lua_State *L, int errcode, StkId oldtop) {$/;"	f
+luaD_throw	.\gw_src\lua_src\ldo.c	/^void luaD_throw (lua_State *L, int errcode) {$/;"	f
+luaE_freethread	.\gw_src\lua_src\lstate.c	/^void luaE_freethread (lua_State *L, lua_State *L1) {$/;"	f
+luaE_newthread	.\gw_src\lua_src\lstate.c	/^lua_State *luaE_newthread (lua_State *L) {$/;"	f
+luaF_close	.\gw_src\lua_src\lfunc.c	/^void luaF_close (lua_State *L, StkId level) {$/;"	f
+luaF_findupval	.\gw_src\lua_src\lfunc.c	/^UpVal *luaF_findupval (lua_State *L, StkId level) {$/;"	f
+luaF_freeclosure	.\gw_src\lua_src\lfunc.c	/^void luaF_freeclosure (lua_State *L, Closure *c) {$/;"	f
+luaF_freeproto	.\gw_src\lua_src\lfunc.c	/^void luaF_freeproto (lua_State *L, Proto *f) {$/;"	f
+luaF_freeupval	.\gw_src\lua_src\lfunc.c	/^void luaF_freeupval (lua_State *L, UpVal *uv) {$/;"	f
+luaF_getlocalname	.\gw_src\lua_src\lfunc.c	/^const char *luaF_getlocalname (const Proto *f, int local_number, int pc) {$/;"	f
+luaF_newCclosure	.\gw_src\lua_src\lfunc.c	/^Closure *luaF_newCclosure (lua_State *L, int nelems, Table *e) {$/;"	f
+luaF_newLclosure	.\gw_src\lua_src\lfunc.c	/^Closure *luaF_newLclosure (lua_State *L, int nelems, Table *e) {$/;"	f
+luaF_newproto	.\gw_src\lua_src\lfunc.c	/^Proto *luaF_newproto (lua_State *L) {$/;"	f
+luaF_newupval	.\gw_src\lua_src\lfunc.c	/^UpVal *luaF_newupval (lua_State *L) {$/;"	f
+luaG_aritherror	.\gw_src\lua_src\ldebug.c	/^void luaG_aritherror (lua_State *L, const TValue *p1, const TValue *p2) {$/;"	f
+luaG_checkcode	.\gw_src\lua_src\ldebug.c	/^int luaG_checkcode (const Proto *pt) {$/;"	f
+luaG_checkopenop	.\gw_src\lua_src\ldebug.c	/^int luaG_checkopenop (Instruction i) {$/;"	f
+luaG_concaterror	.\gw_src\lua_src\ldebug.c	/^void luaG_concaterror (lua_State *L, StkId p1, StkId p2) {$/;"	f
+luaG_errormsg	.\gw_src\lua_src\ldebug.c	/^void luaG_errormsg (lua_State *L) {$/;"	f
+luaG_ordererror	.\gw_src\lua_src\ldebug.c	/^int luaG_ordererror (lua_State *L, const TValue *p1, const TValue *p2) {$/;"	f
+luaG_runerror	.\gw_src\lua_src\ldebug.c	/^void luaG_runerror (lua_State *L, const char *fmt, ...) {$/;"	f
+luaG_typeerror	.\gw_src\lua_src\ldebug.c	/^void luaG_typeerror (lua_State *L, const TValue *o, const char *op) {$/;"	f
+luaH_free	.\gw_src\lua_src\ltable.c	/^void luaH_free (lua_State *L, Table *t) {$/;"	f
+luaH_get	.\gw_src\lua_src\ltable.c	/^const TValue *luaH_get (Table *t, const TValue *key) {$/;"	f
+luaH_getn	.\gw_src\lua_src\ltable.c	/^int luaH_getn (Table *t) {$/;"	f
+luaH_getnum	.\gw_src\lua_src\ltable.c	/^const TValue *luaH_getnum (Table *t, int key) {$/;"	f
+luaH_getstr	.\gw_src\lua_src\ltable.c	/^const TValue *luaH_getstr (Table *t, TString *key) {$/;"	f
+luaH_isdummy	.\gw_src\lua_src\ltable.c	/^int luaH_isdummy (Node *n) { return n == dummynode; }$/;"	f
+luaH_mainposition	.\gw_src\lua_src\ltable.c	/^Node *luaH_mainposition (const Table *t, const TValue *key) {$/;"	f
+luaH_new	.\gw_src\lua_src\ltable.c	/^Table *luaH_new (lua_State *L, int narray, int nhash) {$/;"	f
+luaH_next	.\gw_src\lua_src\ltable.c	/^int luaH_next (lua_State *L, Table *t, StkId key) {$/;"	f
+luaH_resizearray	.\gw_src\lua_src\ltable.c	/^void luaH_resizearray (lua_State *L, Table *t, int nasize) {$/;"	f
+luaH_set	.\gw_src\lua_src\ltable.c	/^TValue *luaH_set (lua_State *L, Table *t, const TValue *key) {$/;"	f
+luaH_setnum	.\gw_src\lua_src\ltable.c	/^TValue *luaH_setnum (lua_State *L, Table *t, int key) {$/;"	f
+luaH_setstr	.\gw_src\lua_src\ltable.c	/^TValue *luaH_setstr (lua_State *L, Table *t, TString *key) {$/;"	f
+luaI_openlib	.\gw_src\inc\lauxlib.h	27;"	d
+luaI_openlib	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaI_openlib (lua_State *L, const char *libname,$/;"	f
+luaK_checkstack	.\gw_src\lua_src\lcode.c	/^void luaK_checkstack (FuncState *fs, int n) {$/;"	f
+luaK_code	.\gw_src\lua_src\lcode.c	/^static int luaK_code (FuncState *fs, Instruction i, int line) {$/;"	f	file:
+luaK_codeABC	.\gw_src\lua_src\lcode.c	/^int luaK_codeABC (FuncState *fs, OpCode o, int a, int b, int c) {$/;"	f
+luaK_codeABx	.\gw_src\lua_src\lcode.c	/^int luaK_codeABx (FuncState *fs, OpCode o, int a, unsigned int bc) {$/;"	f
+luaK_codeAsBx	.\gw_src\inc\lcode.h	41;"	d
+luaK_concat	.\gw_src\lua_src\lcode.c	/^void luaK_concat (FuncState *fs, int *l1, int l2) {$/;"	f
+luaK_dischargevars	.\gw_src\lua_src\lcode.c	/^void luaK_dischargevars (FuncState *fs, expdesc *e) {$/;"	f
+luaK_exp2RK	.\gw_src\lua_src\lcode.c	/^int luaK_exp2RK (FuncState *fs, expdesc *e) {$/;"	f
+luaK_exp2anyreg	.\gw_src\lua_src\lcode.c	/^int luaK_exp2anyreg (FuncState *fs, expdesc *e) {$/;"	f
+luaK_exp2nextreg	.\gw_src\lua_src\lcode.c	/^void luaK_exp2nextreg (FuncState *fs, expdesc *e) {$/;"	f
+luaK_exp2val	.\gw_src\lua_src\lcode.c	/^void luaK_exp2val (FuncState *fs, expdesc *e) {$/;"	f
+luaK_fixline	.\gw_src\lua_src\lcode.c	/^void luaK_fixline (FuncState *fs, int line) {$/;"	f
+luaK_getlabel	.\gw_src\lua_src\lcode.c	/^int luaK_getlabel (FuncState *fs) {$/;"	f
+luaK_goiffalse	.\gw_src\lua_src\lcode.c	/^static void luaK_goiffalse (FuncState *fs, expdesc *e) {$/;"	f	file:
+luaK_goiftrue	.\gw_src\lua_src\lcode.c	/^void luaK_goiftrue (FuncState *fs, expdesc *e) {$/;"	f
+luaK_indexed	.\gw_src\lua_src\lcode.c	/^void luaK_indexed (FuncState *fs, expdesc *t, expdesc *k) {$/;"	f
+luaK_infix	.\gw_src\lua_src\lcode.c	/^void luaK_infix (FuncState *fs, BinOpr op, expdesc *v) {$/;"	f
+luaK_jump	.\gw_src\lua_src\lcode.c	/^int luaK_jump (FuncState *fs) {$/;"	f
+luaK_nil	.\gw_src\lua_src\lcode.c	/^void luaK_nil (FuncState *fs, int from, int n) {$/;"	f
+luaK_numberK	.\gw_src\lua_src\lcode.c	/^int luaK_numberK (FuncState *fs, lua_Number r) {$/;"	f
+luaK_patchlist	.\gw_src\lua_src\lcode.c	/^void luaK_patchlist (FuncState *fs, int list, int target) {$/;"	f
+luaK_patchtohere	.\gw_src\lua_src\lcode.c	/^void luaK_patchtohere (FuncState *fs, int list) {$/;"	f
+luaK_posfix	.\gw_src\lua_src\lcode.c	/^void luaK_posfix (FuncState *fs, BinOpr op, expdesc *e1, expdesc *e2) {$/;"	f
+luaK_prefix	.\gw_src\lua_src\lcode.c	/^void luaK_prefix (FuncState *fs, UnOpr op, expdesc *e) {$/;"	f
+luaK_reserveregs	.\gw_src\lua_src\lcode.c	/^void luaK_reserveregs (FuncState *fs, int n) {$/;"	f
+luaK_ret	.\gw_src\lua_src\lcode.c	/^void luaK_ret (FuncState *fs, int first, int nret) {$/;"	f
+luaK_self	.\gw_src\lua_src\lcode.c	/^void luaK_self (FuncState *fs, expdesc *e, expdesc *key) {$/;"	f
+luaK_setlist	.\gw_src\lua_src\lcode.c	/^void luaK_setlist (FuncState *fs, int base, int nelems, int tostore) {$/;"	f
+luaK_setmultret	.\gw_src\inc\lcode.h	43;"	d
+luaK_setoneret	.\gw_src\lua_src\lcode.c	/^void luaK_setoneret (FuncState *fs, expdesc *e) {$/;"	f
+luaK_setreturns	.\gw_src\lua_src\lcode.c	/^void luaK_setreturns (FuncState *fs, expdesc *e, int nresults) {$/;"	f
+luaK_storevar	.\gw_src\lua_src\lcode.c	/^void luaK_storevar (FuncState *fs, expdesc *var, expdesc *ex) {$/;"	f
+luaK_stringK	.\gw_src\lua_src\lcode.c	/^int luaK_stringK (FuncState *fs, TString *s) {$/;"	f
+luaL_Buffer	.\gw_src\inc\lauxlib.h	/^typedef struct luaL_Buffer {$/;"	s
+luaL_Buffer	.\gw_src\inc\lauxlib.h	/^} luaL_Buffer;$/;"	t	typeref:struct:luaL_Buffer
+luaL_Reg	.\gw_src\inc\lauxlib.h	/^typedef struct luaL_Reg {$/;"	s
+luaL_Reg	.\gw_src\inc\lauxlib.h	/^} luaL_Reg;$/;"	t	typeref:struct:luaL_Reg
+luaL_addchar	.\gw_src\inc\lauxlib.h	136;"	d
+luaL_addlstring	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_addlstring (luaL_Buffer *B, const char *s, size_t l) {$/;"	f
+luaL_addsize	.\gw_src\inc\lauxlib.h	143;"	d
+luaL_addstring	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_addstring (luaL_Buffer *B, const char *s) {$/;"	f
+luaL_addvalue	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_addvalue (luaL_Buffer *B) {$/;"	f
+luaL_argcheck	.\gw_src\inc\lauxlib.h	100;"	d
+luaL_argerror	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_argerror (lua_State *L, int narg, const char *extramsg) {$/;"	f
+luaL_buffinit	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_buffinit (lua_State *L, luaL_Buffer *B) {$/;"	f
+luaL_callmeta	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_callmeta (lua_State *L, int obj, const char *event) {$/;"	f
+luaL_checkany	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_checkany (lua_State *L, int narg) {$/;"	f
+luaL_checkint	.\gw_src\inc\lauxlib.h	104;"	d
+luaL_checkinteger	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API lua_Integer luaL_checkinteger (lua_State *L, int narg) {$/;"	f
+luaL_checklong	.\gw_src\inc\lauxlib.h	106;"	d
+luaL_checklstring	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API const char *luaL_checklstring (lua_State *L, int narg, size_t *len) {$/;"	f
+luaL_checknumber	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API lua_Number luaL_checknumber (lua_State *L, int narg) {$/;"	f
+luaL_checkoption	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_checkoption (lua_State *L, int narg, const char *def,$/;"	f
+luaL_checkstack	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_checkstack (lua_State *L, int space, const char *mes) {$/;"	f
+luaL_checkstring	.\gw_src\inc\lauxlib.h	102;"	d
+luaL_checktype	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_checktype (lua_State *L, int narg, int t) {$/;"	f
+luaL_checkudata	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void *luaL_checkudata (lua_State *L, int ud, const char *tname) {$/;"	f
+luaL_dofile	.\gw_src\inc\lauxlib.h	111;"	d
+luaL_dostring	.\gw_src\inc\lauxlib.h	114;"	d
+luaL_error	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_error (lua_State *L, const char *fmt, ...) {$/;"	f
+luaL_findtable	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API const char *luaL_findtable (lua_State *L, int idx,$/;"	f
+luaL_getmetafield	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_getmetafield (lua_State *L, int obj, const char *event) {$/;"	f
+luaL_getmetatable	.\gw_src\inc\lauxlib.h	117;"	d
+luaL_getn	.\gw_src\inc\lauxlib.h	22;"	d
+luaL_getn	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_getn (lua_State *L, int t) {$/;"	f
+luaL_gsub	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API const char *luaL_gsub (lua_State *L, const char *s, const char *p,$/;"	f
+luaL_loadbuffer	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_loadbuffer (lua_State *L, const char *buff, size_t size,$/;"	f
+luaL_loadfile	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_loadfile (lua_State *L, const char *filename) {$/;"	f
+luaL_loadstring	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int (luaL_loadstring) (lua_State *L, const char *s) {$/;"	f
+luaL_newmetatable	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_newmetatable (lua_State *L, const char *tname) {$/;"	f
+luaL_newstate	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API lua_State *luaL_newstate (void) {$/;"	f
+luaL_openlibs	.\gw_src\lua_src\linit.c	/^LUALIB_API void luaL_openlibs (lua_State *L) {$/;"	f
+luaL_opt	.\gw_src\inc\lauxlib.h	119;"	d
+luaL_optint	.\gw_src\inc\lauxlib.h	105;"	d
+luaL_optinteger	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API lua_Integer luaL_optinteger (lua_State *L, int narg,$/;"	f
+luaL_optlong	.\gw_src\inc\lauxlib.h	107;"	d
+luaL_optlstring	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API const char *luaL_optlstring (lua_State *L, int narg,$/;"	f
+luaL_optnumber	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API lua_Number luaL_optnumber (lua_State *L, int narg, lua_Number def) {$/;"	f
+luaL_optstring	.\gw_src\inc\lauxlib.h	103;"	d
+luaL_prepbuffer	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API char *luaL_prepbuffer (luaL_Buffer *B) {$/;"	f
+luaL_pushresult	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_pushresult (luaL_Buffer *B) {$/;"	f
+luaL_putchar	.\gw_src\inc\lauxlib.h	141;"	d
+luaL_ref	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_ref (lua_State *L, int t) {$/;"	f
+luaL_reg	.\gw_src\inc\lauxlib.h	170;"	d
+luaL_register	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void (luaL_register) (lua_State *L, const char *libname,$/;"	f
+luaL_setn	.\gw_src\inc\lauxlib.h	23;"	d
+luaL_setn	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_setn (lua_State *L, int t, int n) {$/;"	f
+luaL_typename	.\gw_src\inc\lauxlib.h	109;"	d
+luaL_typerror	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API int luaL_typerror (lua_State *L, int narg, const char *tname) {$/;"	f
+luaL_unref	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_unref (lua_State *L, int t, int ref) {$/;"	f
+luaL_where	.\gw_src\lua_src\lauxlib.c	/^LUALIB_API void luaL_where (lua_State *L, int level) {$/;"	f
+luaM_free	.\gw_src\inc\lmem.h	25;"	d
+luaM_freearray	.\gw_src\inc\lmem.h	26;"	d
+luaM_freemem	.\gw_src\inc\lmem.h	24;"	d
+luaM_growaux_	.\gw_src\lua_src\lmem.c	/^void *luaM_growaux_ (lua_State *L, void *block, int *size, size_t size_elems,$/;"	f
+luaM_growvector	.\gw_src\inc\lmem.h	33;"	d
+luaM_malloc	.\gw_src\inc\lmem.h	28;"	d
+luaM_new	.\gw_src\inc\lmem.h	29;"	d
+luaM_newvector	.\gw_src\inc\lmem.h	30;"	d
+luaM_realloc_	.\gw_src\lua_src\lmem.c	/^void *luaM_realloc_ (lua_State *L, void *block, size_t osize, size_t nsize) {$/;"	f
+luaM_reallocv	.\gw_src\inc\lmem.h	19;"	d
+luaM_reallocvector	.\gw_src\inc\lmem.h	37;"	d
+luaM_toobig	.\gw_src\lua_src\lmem.c	/^void *luaM_toobig (lua_State *L) {$/;"	f
+luaO_chunkid	.\gw_src\lua_src\lobject.c	/^void luaO_chunkid (char *out, const char *source, size_t bufflen) {$/;"	f
+luaO_fb2int	.\gw_src\lua_src\lobject.c	/^int luaO_fb2int (int x) {$/;"	f
+luaO_int2fb	.\gw_src\lua_src\lobject.c	/^int luaO_int2fb (unsigned int x) {$/;"	f
+luaO_log2	.\gw_src\lua_src\lobject.c	/^int luaO_log2 (unsigned int x) {$/;"	f
+luaO_nilobject	.\gw_src\inc\lobject.h	363;"	d
+luaO_nilobject_	.\gw_src\inc\lobject.h	/^LUAI_DATA const TValue luaO_nilobject_;$/;"	v
+luaO_nilobject_	.\gw_src\lua_src\lobject.c	/^const TValue luaO_nilobject_ = {{NULL}, LUA_TNIL};$/;"	v
+luaO_pushfstring	.\gw_src\lua_src\lobject.c	/^const char *luaO_pushfstring (lua_State *L, const char *fmt, ...) {$/;"	f
+luaO_pushvfstring	.\gw_src\lua_src\lobject.c	/^const char *luaO_pushvfstring (lua_State *L, const char *fmt, va_list argp) {$/;"	f
+luaO_rawequalObj	.\gw_src\lua_src\lobject.c	/^int luaO_rawequalObj (const TValue *t1, const TValue *t2) {$/;"	f
+luaO_str2d	.\gw_src\lua_src\lobject.c	/^int luaO_str2d (const char *s, lua_Number *result) {$/;"	f
+luaP_opmodes	.\gw_src\inc\lopcodes.h	/^LUAI_DATA const lu_byte luaP_opmodes[NUM_OPCODES];$/;"	v
+luaP_opmodes	.\gw_src\lua_src\lopcodes.c	/^const lu_byte luaP_opmodes[NUM_OPCODES] = {$/;"	v
+luaP_opnames	.\gw_src\inc\lopcodes.h	/^LUAI_DATA const char *const luaP_opnames[NUM_OPCODES+1];  \/* opcode names *\/$/;"	v
+luaP_opnames	.\gw_src\lua_src\lopcodes.c	/^const char *const luaP_opnames[NUM_OPCODES+1] = {$/;"	v
+luaS_fix	.\gw_src\inc\lstring.h	24;"	d
+luaS_new	.\gw_src\inc\lstring.h	20;"	d
+luaS_newliteral	.\gw_src\inc\lstring.h	21;"	d
+luaS_newlstr	.\gw_src\lua_src\lstring.c	/^TString *luaS_newlstr (lua_State *L, const char *str, size_t l) {$/;"	f
+luaS_newudata	.\gw_src\lua_src\lstring.c	/^Udata *luaS_newudata (lua_State *L, size_t s, Table *e) {$/;"	f
+luaS_resize	.\gw_src\lua_src\lstring.c	/^void luaS_resize (lua_State *L, int newsize) {$/;"	f
+luaT_gettm	.\gw_src\lua_src\ltm.c	/^const TValue *luaT_gettm (Table *events, TMS event, TString *ename) {$/;"	f
+luaT_gettmbyobj	.\gw_src\lua_src\ltm.c	/^const TValue *luaT_gettmbyobj (lua_State *L, const TValue *o, TMS event) {$/;"	f
+luaT_init	.\gw_src\lua_src\ltm.c	/^void luaT_init (lua_State *L) {$/;"	f
+luaT_typenames	.\gw_src\inc\ltm.h	/^LUAI_DATA const char *const luaT_typenames[];$/;"	v
+luaT_typenames	.\gw_src\lua_src\ltm.c	/^const char *const luaT_typenames[] = {$/;"	v
+luaU_dump	.\gw_src\lua_src\ldump.c	/^int luaU_dump (lua_State* L, const Proto* f, lua_Writer w, void* data, int strip)$/;"	f
+luaU_header	.\gw_src\lua_src\lundump.c	/^void luaU_header (char* h)$/;"	f
+luaU_undump	.\gw_src\lua_src\lundump.c	/^Proto* luaU_undump (lua_State* L, ZIO* Z, Mbuffer* buff, const char* name)$/;"	f
+luaV_concat	.\gw_src\lua_src\lvm.c	/^void luaV_concat (lua_State *L, int total, int last) {$/;"	f
+luaV_equalval	.\gw_src\lua_src\lvm.c	/^int luaV_equalval (lua_State *L, const TValue *t1, const TValue *t2) {$/;"	f
+luaV_execute	.\gw_src\lua_src\lvm.c	/^void luaV_execute (lua_State *L, int nexeccalls) {$/;"	f
+luaV_gettable	.\gw_src\lua_src\lvm.c	/^void luaV_gettable (lua_State *L, const TValue *t, TValue *key, StkId val) {$/;"	f
+luaV_lessthan	.\gw_src\lua_src\lvm.c	/^int luaV_lessthan (lua_State *L, const TValue *l, const TValue *r) {$/;"	f
+luaV_settable	.\gw_src\lua_src\lvm.c	/^void luaV_settable (lua_State *L, const TValue *t, TValue *key, StkId val) {$/;"	f
+luaV_tonumber	.\gw_src\lua_src\lvm.c	/^const TValue *luaV_tonumber (const TValue *obj, TValue *n) {$/;"	f
+luaV_tostring	.\gw_src\lua_src\lvm.c	/^int luaV_tostring (lua_State *L, StkId obj) {$/;"	f
+luaX_init	.\gw_src\lua_src\llex.c	/^void luaX_init (lua_State *L) {$/;"	f
+luaX_lexerror	.\gw_src\lua_src\llex.c	/^void luaX_lexerror (LexState *ls, const char *msg, int token) {$/;"	f
+luaX_lookahead	.\gw_src\lua_src\llex.c	/^void luaX_lookahead (LexState *ls) {$/;"	f
+luaX_newstring	.\gw_src\lua_src\llex.c	/^TString *luaX_newstring (LexState *ls, const char *str, size_t l) {$/;"	f
+luaX_next	.\gw_src\lua_src\llex.c	/^void luaX_next (LexState *ls) {$/;"	f
+luaX_setinput	.\gw_src\lua_src\llex.c	/^void luaX_setinput (lua_State *L, LexState *ls, ZIO *z, TString *source) {$/;"	f
+luaX_syntaxerror	.\gw_src\lua_src\llex.c	/^void luaX_syntaxerror (LexState *ls, const char *msg) {$/;"	f
+luaX_token2str	.\gw_src\lua_src\llex.c	/^const char *luaX_token2str (LexState *ls, int token) {$/;"	f
+luaX_tokens	.\gw_src\inc\llex.h	/^LUAI_DATA const char *const luaX_tokens [];$/;"	v
+luaX_tokens	.\gw_src\lua_src\llex.c	/^const char *const luaX_tokens [] = {$/;"	v
+luaY_checklimit	.\gw_src\lua_src\lparser.c	34;"	d	file:
+luaY_parser	.\gw_src\lua_src\lparser.c	/^Proto *luaY_parser (lua_State *L, ZIO *z, Mbuffer *buff, const char *name) {$/;"	f
+luaZ_buffer	.\gw_src\inc\lzio.h	32;"	d
+luaZ_bufflen	.\gw_src\inc\lzio.h	34;"	d
+luaZ_fill	.\gw_src\lua_src\lzio.c	/^int luaZ_fill (ZIO *z) {$/;"	f
+luaZ_freebuffer	.\gw_src\inc\lzio.h	43;"	d
+luaZ_init	.\gw_src\lua_src\lzio.c	/^void luaZ_init (lua_State *L, ZIO *z, lua_Reader reader, void *data) {$/;"	f
+luaZ_initbuffer	.\gw_src\inc\lzio.h	30;"	d
+luaZ_lookahead	.\gw_src\lua_src\lzio.c	/^int luaZ_lookahead (ZIO *z) {$/;"	f
+luaZ_openspace	.\gw_src\lua_src\lzio.c	/^char *luaZ_openspace (lua_State *L, Mbuffer *buff, size_t n) {$/;"	f
+luaZ_read	.\gw_src\lua_src\lzio.c	/^size_t luaZ_read (ZIO *z, void *b, size_t n) {$/;"	f
+luaZ_resetbuffer	.\gw_src\inc\lzio.h	36;"	d
+luaZ_resizebuffer	.\gw_src\inc\lzio.h	39;"	d
+luaZ_sizebuffer	.\gw_src\inc\lzio.h	33;"	d
+lua_Alloc	.\gw_src\inc\lua.h	/^typedef void * (*lua_Alloc) (void *ud, void *ptr, size_t osize, size_t nsize);$/;"	t
+lua_CFunction	.\gw_src\inc\lua.h	/^typedef int (*lua_CFunction) (lua_State *L);$/;"	t
+lua_Chunkreader	.\gw_src\inc\lua.h	293;"	d
+lua_Chunkwriter	.\gw_src\inc\lua.h	294;"	d
+lua_Debug	.\gw_src\inc\lua.h	/^struct lua_Debug {$/;"	s
+lua_Debug	.\gw_src\inc\lua.h	/^typedef struct lua_Debug lua_Debug;  \/* activation record *\/$/;"	t	typeref:struct:lua_Debug
+lua_Hook	.\gw_src\inc\lua.h	/^typedef void (*lua_Hook) (lua_State *L, lua_Debug *ar);$/;"	t
+lua_Integer	.\gw_src\inc\lua.h	/^typedef LUA_INTEGER lua_Integer;$/;"	t
+lua_Number	.\gw_src\inc\lua.h	/^typedef LUA_NUMBER lua_Number;$/;"	t
+lua_Reader	.\gw_src\inc\lua.h	/^typedef const char * (*lua_Reader) (lua_State *L, void *ud, size_t *sz);$/;"	t
+lua_State	.\gw_src\inc\lstate.h	/^struct lua_State {$/;"	s
+lua_State	.\gw_src\inc\lua.h	/^typedef struct lua_State lua_State;$/;"	t	typeref:struct:lua_State
+lua_TValue	.\gw_src\inc\lobject.h	/^typedef struct lua_TValue {$/;"	s
+lua_Writer	.\gw_src\inc\lua.h	/^typedef int (*lua_Writer) (lua_State *L, const void* p, size_t sz, void* ud);$/;"	t
+lua_assert	.\gw_src\inc\llimits.h	62;"	d
+lua_assert	.\gw_src\inc\lualib.h	49;"	d
+lua_atpanic	.\gw_src\lua_src\lapi.c	/^LUA_API lua_CFunction lua_atpanic (lua_State *L, lua_CFunction panicf) {$/;"	f
+lua_c	.\gw_src\lua.c	13;"	d	file:
+lua_call	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_call (lua_State *L, int nargs, int nresults) {$/;"	f
+lua_checkstack	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_checkstack (lua_State *L, int size) {$/;"	f
+lua_close	.\gw_src\lua_src\lstate.c	/^LUA_API void lua_close (lua_State *L) {$/;"	f
+lua_concat	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_concat (lua_State *L, int n) {$/;"	f
+lua_cpcall	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_cpcall (lua_State *L, lua_CFunction func, void *ud) {$/;"	f
+lua_createtable	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_createtable (lua_State *L, int narray, int nrec) {$/;"	f
+lua_dump	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_dump (lua_State *L, lua_Writer writer, void *data) {$/;"	f
+lua_equal	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_equal (lua_State *L, int index1, int index2) {$/;"	f
+lua_error	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_error (lua_State *L) {$/;"	f
+lua_freeline	.\gw_src\inc\luaconf.h	281;"	d
+lua_freeline	.\gw_src\inc\luaconf.h	287;"	d
+lua_gc	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_gc (lua_State *L, int what, int data) {$/;"	f
+lua_getallocf	.\gw_src\lua_src\lapi.c	/^LUA_API lua_Alloc lua_getallocf (lua_State *L, void **ud) {$/;"	f
+lua_getfenv	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_getfenv (lua_State *L, int idx) {$/;"	f
+lua_getfield	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_getfield (lua_State *L, int idx, const char *k) {$/;"	f
+lua_getgccount	.\gw_src\inc\lua.h	291;"	d
+lua_getglobal	.\gw_src\inc\lua.h	277;"	d
+lua_gethook	.\gw_src\lua_src\ldebug.c	/^LUA_API lua_Hook lua_gethook (lua_State *L) {$/;"	f
+lua_gethookcount	.\gw_src\lua_src\ldebug.c	/^LUA_API int lua_gethookcount (lua_State *L) {$/;"	f
+lua_gethookmask	.\gw_src\lua_src\ldebug.c	/^LUA_API int lua_gethookmask (lua_State *L) {$/;"	f
+lua_getinfo	.\gw_src\lua_src\ldebug.c	/^LUA_API int lua_getinfo (lua_State *L, const char *what, lua_Debug *ar) {$/;"	f
+lua_getlocal	.\gw_src\lua_src\ldebug.c	/^LUA_API const char *lua_getlocal (lua_State *L, const lua_Debug *ar, int n) {$/;"	f
+lua_getmetatable	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_getmetatable (lua_State *L, int objindex) {$/;"	f
+lua_getref	.\gw_src\inc\lauxlib.h	167;"	d
+lua_getregistry	.\gw_src\inc\lua.h	289;"	d
+lua_getstack	.\gw_src\lua_src\ldebug.c	/^LUA_API int lua_getstack (lua_State *L, int level, lua_Debug *ar) {$/;"	f
+lua_gettable	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_gettable (lua_State *L, int idx) {$/;"	f
+lua_gettop	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_gettop (lua_State *L) {$/;"	f
+lua_getupvalue	.\gw_src\lua_src\lapi.c	/^LUA_API const char *lua_getupvalue (lua_State *L, int funcindex, int n) {$/;"	f
+lua_h	.\gw_src\inc\lua.h	10;"	d
+lua_ident	.\gw_src\lua_src\lapi.c	/^const char lua_ident[] =$/;"	v
+lua_insert	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_insert (lua_State *L, int idx) {$/;"	f
+lua_isboolean	.\gw_src\inc\lua.h	268;"	d
+lua_iscfunction	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_iscfunction (lua_State *L, int idx) {$/;"	f
+lua_isfunction	.\gw_src\inc\lua.h	264;"	d
+lua_islightuserdata	.\gw_src\inc\lua.h	266;"	d
+lua_isnil	.\gw_src\inc\lua.h	267;"	d
+lua_isnone	.\gw_src\inc\lua.h	270;"	d
+lua_isnoneornil	.\gw_src\inc\lua.h	271;"	d
+lua_isnumber	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_isnumber (lua_State *L, int idx) {$/;"	f
+lua_isstring	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_isstring (lua_State *L, int idx) {$/;"	f
+lua_istable	.\gw_src\inc\lua.h	265;"	d
+lua_isthread	.\gw_src\inc\lua.h	269;"	d
+lua_isuserdata	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_isuserdata (lua_State *L, int idx) {$/;"	f
+lua_lessthan	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_lessthan (lua_State *L, int index1, int index2) {$/;"	f
+lua_load	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_load (lua_State *L, lua_Reader reader, void *data,$/;"	f
+lua_lock	.\gw_src\inc\llimits.h	110;"	d
+lua_longjmp	.\gw_src\lua_src\ldo.c	/^struct lua_longjmp {$/;"	s	file:
+lua_newstate	.\gw_src\lua_src\lstate.c	/^LUA_API lua_State *lua_newstate (lua_Alloc f, void *ud) {$/;"	f
+lua_newtable	.\gw_src\inc\lua.h	256;"	d
+lua_newthread	.\gw_src\lua_src\lapi.c	/^LUA_API lua_State *lua_newthread (lua_State *L) {$/;"	f
+lua_newuserdata	.\gw_src\lua_src\lapi.c	/^LUA_API void *lua_newuserdata (lua_State *L, size_t size) {$/;"	f
+lua_next	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_next (lua_State *L, int idx) {$/;"	f
+lua_number2int	.\gw_src\inc\luaconf.h	563;"	d
+lua_number2int	.\gw_src\inc\luaconf.h	571;"	d
+lua_number2int	.\gw_src\inc\luaconf.h	580;"	d
+lua_number2integer	.\gw_src\inc\luaconf.h	564;"	d
+lua_number2integer	.\gw_src\inc\luaconf.h	573;"	d
+lua_number2integer	.\gw_src\inc\luaconf.h	581;"	d
+lua_number2str	.\gw_src\inc\luaconf.h	523;"	d
+lua_objlen	.\gw_src\lua_src\lapi.c	/^LUA_API size_t lua_objlen (lua_State *L, int idx) {$/;"	f
+lua_open	.\gw_src\inc\lua.h	287;"	d
+lua_pcall	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_pcall (lua_State *L, int nargs, int nresults, int errfunc) {$/;"	f
+lua_pclose	.\gw_src\inc\luaconf.h	671;"	d
+lua_pclose	.\gw_src\inc\luaconf.h	676;"	d
+lua_pclose	.\gw_src\inc\luaconf.h	682;"	d
+lua_pop	.\gw_src\inc\lua.h	254;"	d
+lua_popen	.\gw_src\inc\luaconf.h	670;"	d
+lua_popen	.\gw_src\inc\luaconf.h	675;"	d
+lua_popen	.\gw_src\inc\luaconf.h	680;"	d
+lua_pushboolean	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushboolean (lua_State *L, int b) {$/;"	f
+lua_pushcclosure	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushcclosure (lua_State *L, lua_CFunction fn, int n) {$/;"	f
+lua_pushcfunction	.\gw_src\inc\lua.h	260;"	d
+lua_pushfstring	.\gw_src\lua_src\lapi.c	/^LUA_API const char *lua_pushfstring (lua_State *L, const char *fmt, ...) {$/;"	f
+lua_pushinteger	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushinteger (lua_State *L, lua_Integer n) {$/;"	f
+lua_pushlightuserdata	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushlightuserdata (lua_State *L, void *p) {$/;"	f
+lua_pushliteral	.\gw_src\inc\lua.h	273;"	d
+lua_pushlstring	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushlstring (lua_State *L, const char *s, size_t len) {$/;"	f
+lua_pushnil	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushnil (lua_State *L) {$/;"	f
+lua_pushnumber	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushnumber (lua_State *L, lua_Number n) {$/;"	f
+lua_pushstring	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushstring (lua_State *L, const char *s) {$/;"	f
+lua_pushthread	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_pushthread (lua_State *L) {$/;"	f
+lua_pushvalue	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_pushvalue (lua_State *L, int idx) {$/;"	f
+lua_pushvfstring	.\gw_src\lua_src\lapi.c	/^LUA_API const char *lua_pushvfstring (lua_State *L, const char *fmt,$/;"	f
+lua_rawequal	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_rawequal (lua_State *L, int index1, int index2) {$/;"	f
+lua_rawget	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_rawget (lua_State *L, int idx) {$/;"	f
+lua_rawgeti	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_rawgeti (lua_State *L, int idx, int n) {$/;"	f
+lua_rawset	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_rawset (lua_State *L, int idx) {$/;"	f
+lua_rawseti	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_rawseti (lua_State *L, int idx, int n) {$/;"	f
+lua_readline	.\gw_src\inc\luaconf.h	277;"	d
+lua_readline	.\gw_src\inc\luaconf.h	283;"	d
+lua_ref	.\gw_src\inc\lauxlib.h	162;"	d
+lua_register	.\gw_src\inc\lua.h	258;"	d
+lua_remove	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_remove (lua_State *L, int idx) {$/;"	f
+lua_replace	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_replace (lua_State *L, int idx) {$/;"	f
+lua_resume	.\gw_src\lua_src\ldo.c	/^LUA_API int lua_resume (lua_State *L, int nargs) {$/;"	f
+lua_saveline	.\gw_src\inc\luaconf.h	278;"	d
+lua_saveline	.\gw_src\inc\luaconf.h	286;"	d
+lua_setallocf	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_setallocf (lua_State *L, lua_Alloc f, void *ud) {$/;"	f
+lua_setfenv	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_setfenv (lua_State *L, int idx) {$/;"	f
+lua_setfield	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_setfield (lua_State *L, int idx, const char *k) {$/;"	f
+lua_setglobal	.\gw_src\inc\lua.h	276;"	d
+lua_sethook	.\gw_src\lua_src\ldebug.c	/^LUA_API int lua_sethook (lua_State *L, lua_Hook func, int mask, int count) {$/;"	f
+lua_setlevel	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_setlevel (lua_State *from, lua_State *to) {$/;"	f
+lua_setlocal	.\gw_src\lua_src\ldebug.c	/^LUA_API const char *lua_setlocal (lua_State *L, const lua_Debug *ar, int n) {$/;"	f
+lua_setmetatable	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_setmetatable (lua_State *L, int objindex) {$/;"	f
+lua_settable	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_settable (lua_State *L, int idx) {$/;"	f
+lua_settop	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_settop (lua_State *L, int idx) {$/;"	f
+lua_setupvalue	.\gw_src\lua_src\lapi.c	/^LUA_API const char *lua_setupvalue (lua_State *L, int funcindex, int n) {$/;"	f
+lua_status	.\gw_src\lua_src\lapi.c	/^LUA_API int  lua_status (lua_State *L) {$/;"	f
+lua_stdin_is_tty	.\gw_src\inc\luaconf.h	229;"	d
+lua_stdin_is_tty	.\gw_src\inc\luaconf.h	233;"	d
+lua_stdin_is_tty	.\gw_src\inc\luaconf.h	235;"	d
+lua_str2number	.\gw_src\inc\luaconf.h	525;"	d
+lua_strlen	.\gw_src\inc\lua.h	262;"	d
+lua_tmpnam	.\gw_src\inc\luaconf.h	649;"	d
+lua_tmpnam	.\gw_src\inc\luaconf.h	657;"	d
+lua_toboolean	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_toboolean (lua_State *L, int idx) {$/;"	f
+lua_tocfunction	.\gw_src\lua_src\lapi.c	/^LUA_API lua_CFunction lua_tocfunction (lua_State *L, int idx) {$/;"	f
+lua_tointeger	.\gw_src\lua_src\lapi.c	/^LUA_API lua_Integer lua_tointeger (lua_State *L, int idx) {$/;"	f
+lua_tolstring	.\gw_src\lua_src\lapi.c	/^LUA_API const char *lua_tolstring (lua_State *L, int idx, size_t *len) {$/;"	f
+lua_tonumber	.\gw_src\lua_src\lapi.c	/^LUA_API lua_Number lua_tonumber (lua_State *L, int idx) {$/;"	f
+lua_topointer	.\gw_src\lua_src\lapi.c	/^LUA_API const void *lua_topointer (lua_State *L, int idx) {$/;"	f
+lua_tostring	.\gw_src\inc\lua.h	279;"	d
+lua_tothread	.\gw_src\lua_src\lapi.c	/^LUA_API lua_State *lua_tothread (lua_State *L, int idx) {$/;"	f
+lua_touserdata	.\gw_src\lua_src\lapi.c	/^LUA_API void *lua_touserdata (lua_State *L, int idx) {$/;"	f
+lua_type	.\gw_src\lua_src\lapi.c	/^LUA_API int lua_type (lua_State *L, int idx) {$/;"	f
+lua_typename	.\gw_src\lua_src\lapi.c	/^LUA_API const char *lua_typename (lua_State *L, int t) {$/;"	f
+lua_unlock	.\gw_src\inc\llimits.h	111;"	d
+lua_unref	.\gw_src\inc\lauxlib.h	165;"	d
+lua_upvalueindex	.\gw_src\inc\lua.h	39;"	d
+lua_xmove	.\gw_src\lua_src\lapi.c	/^LUA_API void lua_xmove (lua_State *from, lua_State *to, int n) {$/;"	f
+lua_yield	.\gw_src\lua_src\ldo.c	/^LUA_API int lua_yield (lua_State *L, int nresults) {$/;"	f
+luac_c	.\gw_src\lua_src\luac.c	12;"	d	file:
+luac_c	.\gw_src\lua_src\print.c	10;"	d	file:
+luai_Cast	.\gw_src\inc\luaconf.h	/^union luai_Cast { double l_d; long l_l; };$/;"	u
+luai_apicheck	.\gw_src\inc\luaconf.h	379;"	d
+luai_apicheck	.\gw_src\inc\luaconf.h	381;"	d
+luai_jmpbuf	.\gw_src\inc\luaconf.h	611;"	d
+luai_jmpbuf	.\gw_src\inc\luaconf.h	617;"	d
+luai_jmpbuf	.\gw_src\inc\luaconf.h	623;"	d
+luai_numadd	.\gw_src\inc\luaconf.h	533;"	d
+luai_numdiv	.\gw_src\inc\luaconf.h	536;"	d
+luai_numeq	.\gw_src\inc\luaconf.h	540;"	d
+luai_numisnan	.\gw_src\inc\luaconf.h	543;"	d
+luai_numle	.\gw_src\inc\luaconf.h	542;"	d
+luai_numlt	.\gw_src\inc\luaconf.h	541;"	d
+luai_nummod	.\gw_src\inc\luaconf.h	537;"	d
+luai_nummul	.\gw_src\inc\luaconf.h	535;"	d
+luai_numpow	.\gw_src\inc\luaconf.h	538;"	d
+luai_numsub	.\gw_src\inc\luaconf.h	534;"	d
+luai_numunm	.\gw_src\inc\luaconf.h	539;"	d
+luai_threadyield	.\gw_src\inc\llimits.h	115;"	d
+luai_userstateclose	.\gw_src\inc\luaconf.h	724;"	d
+luai_userstatefree	.\gw_src\inc\luaconf.h	726;"	d
+luai_userstateopen	.\gw_src\inc\luaconf.h	723;"	d
+luai_userstateresume	.\gw_src\inc\luaconf.h	727;"	d
+luai_userstatethread	.\gw_src\inc\luaconf.h	725;"	d
+luai_userstateyield	.\gw_src\inc\luaconf.h	728;"	d
+lualib_h	.\gw_src\inc\lualib.h	9;"	d
+lualibs	.\gw_src\lua_src\linit.c	/^static const luaL_Reg lualibs[] = {$/;"	v	file:
+luaopen_base	.\gw_src\lua_src\lbaselib.c	/^LUALIB_API int luaopen_base (lua_State *L) {$/;"	f
+luaopen_debug	.\gw_src\lua_src\ldblib.c	/^LUALIB_API int luaopen_debug (lua_State *L) {$/;"	f
+luaopen_io	.\gw_src\lua_src\liolib.c	/^LUALIB_API int luaopen_io (lua_State *L) {$/;"	f
+luaopen_math	.\gw_src\lua_src\lmathlib.c	/^LUALIB_API int luaopen_math (lua_State *L) {$/;"	f
+luaopen_os	.\gw_src\lua_src\loslib.c	/^LUALIB_API int luaopen_os (lua_State *L) {$/;"	f
+luaopen_package	.\gw_src\lua_src\loadlib.c	/^LUALIB_API int luaopen_package (lua_State *L) {$/;"	f
+luaopen_string	.\gw_src\lua_src\lstrlib.c	/^LUALIB_API int luaopen_string (lua_State *L) {$/;"	f
+luaopen_table	.\gw_src\lua_src\ltablib.c	/^LUALIB_API int luaopen_table (lua_State *L) {$/;"	f
+lundump_c	.\gw_src\lua_src\lundump.c	9;"	d	file:
+lundump_h	.\gw_src\inc\lundump.h	8;"	d
+lvl	.\gw_src\inc\lauxlib.h	/^  int lvl;  \/* number of strings in the stack (level) *\/$/;"	m	struct:luaL_Buffer
+lvm_c	.\gw_src\lua_src\lvm.c	12;"	d	file:
+lvm_h	.\gw_src\inc\lvm.h	8;"	d
+lzio_c	.\gw_src\lua_src\lzio.c	10;"	d	file:
+lzio_h	.\gw_src\inc\lzio.h	9;"	d
+main	.\bx_bin_v1\main.lua	/^function main(...)$/;"	f
+main	.\gw_src\lua.c	/^int main (int argc, char **argv) {$/;"	f
+main	.\gw_src\lua_src\luac.c	/^int main(int argc, char* argv[])$/;"	f
+main	.\phclient.c	/^int main(int argc, char **argv)$/;"	f
+main	.\qt_bin\main.lua	/^function main( ... )$/;"	f
+main	.\tcpserver.c	/^int main(int argc, char *argv[])$/;"	f
+main	.\udpserver.c	/^int main(int argc, char *argv[])$/;"	f
+mainIPCtrl	.\qt_bin\main.lua	/^function mainIPCtrl( ... )$/;"	f
+mainSLCtrol	.\bx_bin_v0\bx_format.lua	/^function mainSLCtrol(OPTION, ...)$/;"	f
+mainSLCtrol	.\ph_bin\GB_format.lua	/^function mainSLCtrol(...)$/;"	f
+mainposition	.\gw_src\lua_src\ltable.c	/^static Node *mainposition (const Table *t, const TValue *key) {$/;"	f	file:
+mainthread	.\gw_src\inc\lstate.h	/^  struct lua_State *mainthread;$/;"	m	struct:global_State	typeref:struct:global_State::lua_State
+makemask	.\gw_src\lua_src\ldblib.c	/^static int makemask (const char *smask, int count) {$/;"	f	file:
+makewhite	.\gw_src\lua_src\lgc.c	34;"	d	file:
+markfinalized	.\gw_src\lua_src\lgc.c	44;"	d	file:
+markmt	.\gw_src\lua_src\lgc.c	/^static void markmt (global_State *g) {$/;"	f	file:
+markobject	.\gw_src\lua_src\lgc.c	55;"	d	file:
+markroot	.\gw_src\lua_src\lgc.c	/^static void markroot (lua_State *L) {$/;"	f	file:
+marktmu	.\gw_src\lua_src\lgc.c	/^static void marktmu (global_State *g) {$/;"	f	file:
+markupval	.\gw_src\lua_src\lparser.c	/^static void markupval (FuncState *fs, int level) {$/;"	f	file:
+markvalue	.\gw_src\lua_src\lgc.c	52;"	d	file:
+maskmarks	.\gw_src\lua_src\lgc.c	32;"	d	file:
+match	.\gw_src\lua_src\lstrlib.c	/^static const char *match (MatchState *ms, const char *s, const char *p) {$/;"	f	file:
+match_capture	.\gw_src\lua_src\lstrlib.c	/^static const char *match_capture (MatchState *ms, const char *s, int l) {$/;"	f	file:
+match_class	.\gw_src\lua_src\lstrlib.c	/^static int match_class (int c, int cl) {$/;"	f	file:
+matchbalance	.\gw_src\lua_src\lstrlib.c	/^static const char *matchbalance (MatchState *ms, const char *s,$/;"	f	file:
+matchbracketclass	.\gw_src\lua_src\lstrlib.c	/^static int matchbracketclass (int c, const char *p, const char *ec) {$/;"	f	file:
+math_abs	.\gw_src\lua_src\lmathlib.c	/^static int math_abs (lua_State *L) {$/;"	f	file:
+math_acos	.\gw_src\lua_src\lmathlib.c	/^static int math_acos (lua_State *L) {$/;"	f	file:
+math_asin	.\gw_src\lua_src\lmathlib.c	/^static int math_asin (lua_State *L) {$/;"	f	file:
+math_atan	.\gw_src\lua_src\lmathlib.c	/^static int math_atan (lua_State *L) {$/;"	f	file:
+math_atan2	.\gw_src\lua_src\lmathlib.c	/^static int math_atan2 (lua_State *L) {$/;"	f	file:
+math_ceil	.\gw_src\lua_src\lmathlib.c	/^static int math_ceil (lua_State *L) {$/;"	f	file:
+math_cos	.\gw_src\lua_src\lmathlib.c	/^static int math_cos (lua_State *L) {$/;"	f	file:
+math_cosh	.\gw_src\lua_src\lmathlib.c	/^static int math_cosh (lua_State *L) {$/;"	f	file:
+math_deg	.\gw_src\lua_src\lmathlib.c	/^static int math_deg (lua_State *L) {$/;"	f	file:
+math_exp	.\gw_src\lua_src\lmathlib.c	/^static int math_exp (lua_State *L) {$/;"	f	file:
+math_floor	.\gw_src\lua_src\lmathlib.c	/^static int math_floor (lua_State *L) {$/;"	f	file:
+math_fmod	.\gw_src\lua_src\lmathlib.c	/^static int math_fmod (lua_State *L) {$/;"	f	file:
+math_frexp	.\gw_src\lua_src\lmathlib.c	/^static int math_frexp (lua_State *L) {$/;"	f	file:
+math_ldexp	.\gw_src\lua_src\lmathlib.c	/^static int math_ldexp (lua_State *L) {$/;"	f	file:
+math_log	.\gw_src\lua_src\lmathlib.c	/^static int math_log (lua_State *L) {$/;"	f	file:
+math_log10	.\gw_src\lua_src\lmathlib.c	/^static int math_log10 (lua_State *L) {$/;"	f	file:
+math_max	.\gw_src\lua_src\lmathlib.c	/^static int math_max (lua_State *L) {$/;"	f	file:
+math_min	.\gw_src\lua_src\lmathlib.c	/^static int math_min (lua_State *L) {$/;"	f	file:
+math_modf	.\gw_src\lua_src\lmathlib.c	/^static int math_modf (lua_State *L) {$/;"	f	file:
+math_pow	.\gw_src\lua_src\lmathlib.c	/^static int math_pow (lua_State *L) {$/;"	f	file:
+math_rad	.\gw_src\lua_src\lmathlib.c	/^static int math_rad (lua_State *L) {$/;"	f	file:
+math_random	.\gw_src\lua_src\lmathlib.c	/^static int math_random (lua_State *L) {$/;"	f	file:
+math_randomseed	.\gw_src\lua_src\lmathlib.c	/^static int math_randomseed (lua_State *L) {$/;"	f	file:
+math_sin	.\gw_src\lua_src\lmathlib.c	/^static int math_sin (lua_State *L) {$/;"	f	file:
+math_sinh	.\gw_src\lua_src\lmathlib.c	/^static int math_sinh (lua_State *L) {$/;"	f	file:
+math_sqrt	.\gw_src\lua_src\lmathlib.c	/^static int math_sqrt (lua_State *L) {$/;"	f	file:
+math_tan	.\gw_src\lua_src\lmathlib.c	/^static int math_tan (lua_State *L) {$/;"	f	file:
+math_tanh	.\gw_src\lua_src\lmathlib.c	/^static int math_tanh (lua_State *L) {$/;"	f	file:
+mathlib	.\gw_src\lua_src\lmathlib.c	/^static const luaL_Reg mathlib[] = {$/;"	v	file:
+max_expand	.\gw_src\lua_src\lstrlib.c	/^static const char *max_expand (MatchState *ms, const char *s,$/;"	f	file:
+maxn	.\gw_src\lua_src\ltablib.c	/^static int maxn (lua_State *L) {$/;"	f	file:
+maxstacksize	.\gw_src\inc\lobject.h	/^  lu_byte maxstacksize;$/;"	m	struct:Proto
+metatable	.\gw_src\inc\lobject.h	/^    struct Table *metatable;$/;"	m	struct:Udata::__anon12	typeref:struct:Udata::__anon12::Table
+metatable	.\gw_src\inc\lobject.h	/^  struct Table *metatable;$/;"	m	struct:Table	typeref:struct:Table::Table
+min_expand	.\gw_src\lua_src\lstrlib.c	/^static const char *min_expand (MatchState *ms, const char *s,$/;"	f	file:
+mkfuncname	.\gw_src\lua_src\loadlib.c	/^static const char *mkfuncname (lua_State *L, const char *modname) {$/;"	f	file:
+mn_pw	.\gw_src\gateway.c	/^static MN_PW mn_pw[MAXLEN1] = {'\\0'}; \/\/存储设备的序列号和密码$/;"	v	file:
+modinit	.\gw_src\lua_src\loadlib.c	/^static void modinit (lua_State *L, const char *modname) {$/;"	f	file:
+mt	.\gw_src\inc\lstate.h	/^  struct Table *mt[NUM_TAGS];  \/* metatables for basic types *\/$/;"	m	struct:global_State	typeref:struct:global_State::Table
+n	.\gw_src\inc\lobject.h	/^  lua_Number n;$/;"	m	union:__anon10
+n	.\gw_src\inc\lzio.h	/^  size_t n;			\/* bytes still unread *\/$/;"	m	struct:Zio
+n	.\gw_src\inc\lzio.h	/^  size_t n;$/;"	m	struct:Mbuffer
+nCcalls	.\gw_src\inc\lstate.h	/^  unsigned short nCcalls;  \/* number of nested C calls *\/$/;"	m	struct:lua_State
+na	.\gw_src\lua_src\lparser.c	/^  int na;  \/* total number of array elements *\/$/;"	m	struct:ConsControl	file:
+nactvar	.\gw_src\inc\lparser.h	/^  lu_byte nactvar;  \/* number of active local variables *\/$/;"	m	struct:FuncState
+nactvar	.\gw_src\lua_src\lparser.c	/^  lu_byte nactvar;  \/* # active locals outside the breakable structure *\/$/;"	m	struct:BlockCnt	file:
+name	.\gw_src\inc\lauxlib.h	/^  const char *name;$/;"	m	struct:luaL_Reg
+name	.\gw_src\inc\lua.h	/^  const char *name;	\/* (n) *\/$/;"	m	struct:lua_Debug
+name	.\gw_src\lua_src\ldo.c	/^  const char *name;$/;"	m	struct:SParser	file:
+name	.\gw_src\lua_src\lundump.c	/^ const char* name;$/;"	m	struct:__anon24	file:
+namewhat	.\gw_src\inc\lua.h	/^  const char *namewhat;	\/* (n) `global', `local', `field', `method' *\/$/;"	m	struct:lua_Debug
+need_value	.\gw_src\lua_src\lcode.c	/^static int need_value (FuncState *fs, int list) {$/;"	f	file:
+new_localvar	.\gw_src\lua_src\lparser.c	/^static void new_localvar (LexState *ls, TString *name, int n) {$/;"	f	file:
+new_localvarliteral	.\gw_src\lua_src\lparser.c	156;"	d	file:
+newfenv	.\gw_src\lua_src\liolib.c	/^static void newfenv (lua_State *L, lua_CFunction cls) {$/;"	f	file:
+newfile	.\gw_src\lua_src\liolib.c	/^static FILE **newfile (lua_State *L) {$/;"	f	file:
+newkey	.\gw_src\lua_src\ltable.c	/^static TValue *newkey (lua_State *L, Table *t, const TValue *key) {$/;"	f	file:
+newlstr	.\gw_src\lua_src\lstring.c	/^static TString *newlstr (lua_State *L, const char *str, size_t l,$/;"	f	file:
+next	.\gw_src\inc\lobject.h	/^      struct UpVal *next;$/;"	m	struct:UpVal::__anon13::__anon14	typeref:struct:UpVal::__anon13::__anon14::UpVal
+next	.\gw_src\inc\lobject.h	/^    struct Node *next;  \/* for chaining *\/$/;"	m	struct:TKey::__anon15	typeref:struct:TKey::__anon15::Node
+next	.\gw_src\lua_src\llex.c	28;"	d	file:
+ngcotouv	.\gw_src\inc\lstate.h	157;"	d
+nh	.\gw_src\lua_src\lparser.c	/^  int nh;  \/* total number of `record' elements *\/$/;"	m	struct:ConsControl	file:
+nilK	.\gw_src\lua_src\lcode.c	/^static int nilK (FuncState *fs) {$/;"	f	file:
+nk	.\gw_src\inc\lobject.h	/^  } nk;$/;"	m	union:TKey	typeref:struct:TKey::__anon15
+nk	.\gw_src\inc\lparser.h	/^  int nk;  \/* number of elements in `k' *\/$/;"	m	struct:FuncState
+nlocvars	.\gw_src\inc\lparser.h	/^  short nlocvars;  \/* number of elements in `locvars' *\/$/;"	m	struct:FuncState
+node	.\gw_src\inc\lobject.h	/^  Node *node;$/;"	m	struct:Table
+notail	.\gw_src\lua.c	260;"	d	file:
+np	.\gw_src\inc\lparser.h	/^  int np;  \/* number of elements in `p' *\/$/;"	m	struct:FuncState
+nresults	.\gw_src\inc\lstate.h	/^  int nresults;  \/* expected number of results from this function *\/$/;"	m	struct:CallInfo
+nresults	.\gw_src\lua_src\lapi.c	/^  int nresults;$/;"	m	struct:CallS	file:
+num	.\gw_src\inc\global_var.h	/^	int num;$/;"	m	struct:__anon1
+numints	.\gw_src\lua_src\ltable.c	69;"	d	file:
+numparams	.\gw_src\inc\lobject.h	/^  lu_byte numparams;$/;"	m	struct:Proto
+numusearray	.\gw_src\lua_src\ltable.c	/^static int numusearray (const Table *t, int *nums) {$/;"	f	file:
+numusehash	.\gw_src\lua_src\ltable.c	/^static int numusehash (const Table *t, int *nums, int *pnasize) {$/;"	f	file:
+nups	.\gw_src\inc\lobject.h	/^  lu_byte nups;  \/* number of upvalues *\/$/;"	m	struct:Proto
+nups	.\gw_src\inc\lua.h	/^  int nups;		\/* (u) number of upvalues *\/$/;"	m	struct:lua_Debug
+nuse	.\gw_src\inc\lstate.h	/^  lu_int32 nuse;  \/* number of elements *\/$/;"	m	struct:stringtable
+nval	.\gw_src\inc\lparser.h	/^    lua_Number nval;$/;"	m	union:expdesc::__anon18
+nvalue	.\gw_src\inc\lobject.h	93;"	d
+obj2gco	.\gw_src\inc\lstate.h	162;"	d
+open_func	.\gw_src\lua_src\lparser.c	/^static void open_func (LexState *ls, FuncState *fs) {$/;"	f	file:
+openupval	.\gw_src\inc\lstate.h	/^  GCObject *openupval;  \/* list of open upvalues in this stack *\/$/;"	m	struct:lua_State
+opmode	.\gw_src\lua_src\lopcodes.c	59;"	d	file:
+os_clock	.\gw_src\lua_src\loslib.c	/^static int os_clock (lua_State *L) {$/;"	f	file:
+os_date	.\gw_src\lua_src\loslib.c	/^static int os_date (lua_State *L) {$/;"	f	file:
+os_difftime	.\gw_src\lua_src\loslib.c	/^static int os_difftime (lua_State *L) {$/;"	f	file:
+os_execute	.\gw_src\lua_src\loslib.c	/^static int os_execute (lua_State *L) {$/;"	f	file:
+os_exit	.\gw_src\lua_src\loslib.c	/^static int os_exit (lua_State *L) {$/;"	f	file:
+os_getenv	.\gw_src\lua_src\loslib.c	/^static int os_getenv (lua_State *L) {$/;"	f	file:
+os_pushresult	.\gw_src\lua_src\loslib.c	/^static int os_pushresult (lua_State *L, int i, const char *filename) {$/;"	f	file:
+os_remove	.\gw_src\lua_src\loslib.c	/^static int os_remove (lua_State *L) {$/;"	f	file:
+os_rename	.\gw_src\lua_src\loslib.c	/^static int os_rename (lua_State *L) {$/;"	f	file:
+os_setlocale	.\gw_src\lua_src\loslib.c	/^static int os_setlocale (lua_State *L) {$/;"	f	file:
+os_time	.\gw_src\lua_src\loslib.c	/^static int os_time (lua_State *L) {$/;"	f	file:
+os_tmpname	.\gw_src\lua_src\loslib.c	/^static int os_tmpname (lua_State *L) {$/;"	f	file:
+otherwhite	.\gw_src\inc\lgc.h	69;"	d
+output	.\gw_src\lua_src\luac.c	/^static const char* output=Output;	\/* actual output file name *\/$/;"	v	file:
+p	.\gw_src\inc\lauxlib.h	/^  char *p;			\/* current position in buffer *\/$/;"	m	struct:luaL_Buffer
+p	.\gw_src\inc\lobject.h	/^  struct Proto **p;  \/* functions defined inside the function *\/$/;"	m	struct:Proto	typeref:struct:Proto::Proto
+p	.\gw_src\inc\lobject.h	/^  struct Proto *p;$/;"	m	struct:LClosure	typeref:struct:LClosure::Proto
+p	.\gw_src\inc\lobject.h	/^  void *p;$/;"	m	union:__anon10
+p	.\gw_src\inc\lstate.h	/^  struct Proto p;$/;"	m	union:GCObject	typeref:struct:GCObject::Proto
+p	.\gw_src\inc\lzio.h	/^  const char *p;		\/* current position in buffer *\/$/;"	m	struct:Zio
+pBuffer	.\gw_src\inc\global_var.h	/^	BUFFER_t *pBuffer;$/;"	m	struct:__anon7
+pBuffer	.\gw_src\inc\global_var.h	/^	BUFFER_t *pBuffer;$/;"	m	struct:__anon8
+pIpPort	.\gw_src\inc\global_var.h	/^	IP_PORT_t *pIpPort;$/;"	m	struct:__anon7
+pSockfd	.\gw_src\inc\global_var.h	/^	int *pSockfd;$/;"	m	struct:__anon8
+pac_point1	.\gw_src\gateway.c	/^static uint8_t *pac_point1 = NULL; \/\/指向IP端报文的头指针$/;"	v	file:
+pac_point2	.\gw_src\gateway.c	/^static uint8_t *pac_point2 = NULL; \/\/指向IP端报文的尾指针$/;"	v	file:
+packet	.\gw_src\inc\global_var.h	/^	uint8_t packet[MAXLEN8];$/;"	m	struct:__anon5
+panic	.\gw_src\inc\lstate.h	/^  lua_CFunction panic;  \/* to be called in unprotected errors *\/$/;"	m	struct:global_State
+panic	.\gw_src\lua_src\lauxlib.c	/^static int panic (lua_State *L) {$/;"	f	file:
+parlist	.\gw_src\lua_src\lparser.c	/^static void parlist (LexState *ls) {$/;"	f	file:
+patchlistaux	.\gw_src\lua_src\lcode.c	/^static void patchlistaux (FuncState *fs, int list, int vtarget, int reg,$/;"	f	file:
+patchtestreg	.\gw_src\lua_src\lcode.c	/^static int patchtestreg (FuncState *fs, int node, int reg) {$/;"	f	file:
+pc	.\gw_src\inc\lparser.h	/^  int pc;  \/* next position to code (equivalent to `ncode') *\/$/;"	m	struct:FuncState
+pcRel	.\gw_src\inc\ldebug.h	14;"	d
+pk_funcs	.\gw_src\lua_src\loadlib.c	/^static const luaL_Reg pk_funcs[] = {$/;"	v	file:
+pmain	.\gw_src\lua.c	/^static int pmain (lua_State *L) {$/;"	f	file:
+pmain	.\gw_src\lua_src\luac.c	/^static int pmain(lua_State* L)$/;"	f	file:
+port	.\gw_src\inc\global_var.h	/^	uint8_t port[MAXLEN1];$/;"	m	struct:__anon4
+posrelat	.\gw_src\lua_src\lstrlib.c	/^static ptrdiff_t posrelat (ptrdiff_t pos, size_t len) {$/;"	f	file:
+precheck	.\gw_src\lua_src\ldebug.c	/^static int precheck (const Proto *pt) {$/;"	f	file:
+prefixexp	.\gw_src\lua_src\lparser.c	/^static void prefixexp (LexState *ls, expdesc *v) {$/;"	f	file:
+preinit_state	.\gw_src\lua_src\lstate.c	/^static void preinit_state (lua_State *L, global_State *g) {$/;"	f	file:
+prev	.\gw_src\inc\lobject.h	/^      struct UpVal *prev;$/;"	m	struct:UpVal::__anon13::__anon14	typeref:struct:UpVal::__anon13::__anon14::UpVal
+prev	.\gw_src\inc\lparser.h	/^  struct FuncState *prev;  \/* enclosing function *\/$/;"	m	struct:FuncState	typeref:struct:FuncState::FuncState
+prev	.\gw_src\lua_src\lparser.c	/^  struct LHS_assign *prev;$/;"	m	struct:LHS_assign	typeref:struct:LHS_assign::LHS_assign	file:
+previous	.\gw_src\lua_src\ldo.c	/^  struct lua_longjmp *previous;$/;"	m	struct:lua_longjmp	typeref:struct:lua_longjmp::lua_longjmp	file:
+previous	.\gw_src\lua_src\lparser.c	/^  struct BlockCnt *previous;  \/* chain *\/$/;"	m	struct:BlockCnt	typeref:struct:BlockCnt::BlockCnt	file:
+primaryexp	.\gw_src\lua_src\lparser.c	/^static void primaryexp (LexState *ls, expdesc *v) {$/;"	f	file:
+print_usage	.\gw_src\lua.c	/^static void print_usage (void) {$/;"	f	file:
+print_version	.\gw_src\lua.c	/^static void print_version (void) {$/;"	f	file:
+priority	.\gw_src\lua_src\lparser.c	/^} priority[] = {  \/* ORDER OPR *\/$/;"	v	typeref:struct:__anon22	file:
+progname	.\gw_src\lua.c	/^static const char *progname = LUA_PROGNAME;$/;"	v	file:
+progname	.\gw_src\lua_src\luac.c	/^static const char* progname=PROGNAME;	\/* actual program name *\/$/;"	v	file:
+propagateall	.\gw_src\lua_src\lgc.c	/^static size_t propagateall (global_State *g) {$/;"	f	file:
+propagatemark	.\gw_src\lua_src\lgc.c	/^static l_mem propagatemark (global_State *g) {$/;"	f	file:
+push_captures	.\gw_src\lua_src\lstrlib.c	/^static int push_captures (MatchState *ms, const char *s, const char *e) {$/;"	f	file:
+push_onecapture	.\gw_src\lua_src\lstrlib.c	/^static void push_onecapture (MatchState *ms, int i, const char *s,$/;"	f	file:
+pushclosure	.\gw_src\lua_src\lparser.c	/^static void pushclosure (LexState *ls, FuncState *func, expdesc *v) {$/;"	f	file:
+pusherror	.\gw_src\lua_src\loadlib.c	/^static void pusherror (lua_State *L) {$/;"	f	file:
+pushline	.\gw_src\lua.c	/^static int pushline (lua_State *L, int firstline) {$/;"	f	file:
+pushnexttemplate	.\gw_src\lua_src\loadlib.c	/^static const char *pushnexttemplate (lua_State *L, const char *path) {$/;"	f	file:
+pushresult	.\gw_src\lua_src\liolib.c	/^static int pushresult (lua_State *L, int i, const char *filename) {$/;"	f	file:
+pushstr	.\gw_src\lua_src\lobject.c	/^static void pushstr (lua_State *L, const char *str) {$/;"	f	file:
+pvalue	.\gw_src\inc\lobject.h	92;"	d
+r	.\gw_src\inc\llex.h	/^  lua_Number r;$/;"	m	union:__anon9
+rawgco2ts	.\gw_src\inc\lstate.h	149;"	d
+rawgco2u	.\gw_src\inc\lstate.h	151;"	d
+rawtsvalue	.\gw_src\inc\lobject.h	94;"	d
+rawuvalue	.\gw_src\inc\lobject.h	96;"	d
+read_chars	.\gw_src\lua_src\liolib.c	/^static int read_chars (lua_State *L, FILE *f, size_t n) {$/;"	f	file:
+read_line	.\gw_src\lua_src\liolib.c	/^static int read_line (lua_State *L, FILE *f) {$/;"	f	file:
+read_long_string	.\gw_src\lua_src\llex.c	/^static void read_long_string (LexState *ls, SemInfo *seminfo, int sep) {$/;"	f	file:
+read_number	.\gw_src\lua_src\liolib.c	/^static int read_number (lua_State *L, FILE *f) {$/;"	f	file:
+read_numeral	.\gw_src\lua_src\llex.c	/^static void read_numeral (LexState *ls, SemInfo *seminfo) {$/;"	f	file:
+read_string	.\gw_src\lua_src\llex.c	/^static void read_string (LexState *ls, int del, SemInfo *seminfo) {$/;"	f	file:
+readable	.\gw_src\lua_src\loadlib.c	/^static int readable (const char *filename) {$/;"	f	file:
+reader	.\gw_src\inc\lzio.h	/^  lua_Reader reader;$/;"	m	struct:Zio
+readn	.\gw_src\gateway.c	/^static ssize_t readn(int fd, void *vptr, size_t n)$/;"	f	file:
+readn	.\phclient.c	/^ssize_t readn(int fd, void *vptr, size_t n)$/;"	f
+reallymarkobject	.\gw_src\lua_src\lgc.c	/^static void reallymarkobject (global_State *g, GCObject *o) {$/;"	f	file:
+recGBPacket	.\gw_src\gateway.c	/^int recGBPacket(lua_State *L)$/;"	f
+recSLPacket	.\gw_src\gateway.c	/^int recSLPacket(lua_State *L)$/;"	f
+recXDPacket	.\gw_src\gateway.c	/^int recXDPacket(lua_State *L)$/;"	f
+recfield	.\gw_src\lua_src\lparser.c	/^static void recfield (LexState *ls, struct ConsControl *cc) {$/;"	f	file:
+recvn	.\gw_src\gateway.c	/^static ssize_t recvn(int sockfd, void *vptr, size_t n, int flags)$/;"	f	file:
+registerlocalvar	.\gw_src\lua_src\lparser.c	/^static int registerlocalvar (LexState *ls, TString *varname) {$/;"	f	file:
+registry	.\gw_src\inc\lstate.h	25;"	d
+rehash	.\gw_src\lua_src\ltable.c	/^static void rehash (lua_State *L, Table *t, const TValue *ek) {$/;"	f	file:
+remarkupvals	.\gw_src\lua_src\lgc.c	/^static void remarkupvals (global_State *g) {$/;"	f	file:
+removeentry	.\gw_src\lua_src\lgc.c	/^static void removeentry (Node *n) {$/;"	f	file:
+removevalues	.\gw_src\lua_src\lcode.c	/^static void removevalues (FuncState *fs, int list) {$/;"	f	file:
+removevars	.\gw_src\lua_src\lparser.c	/^static void removevars (LexState *ls, int tolevel) {$/;"	f	file:
+repeatstat	.\gw_src\lua_src\lparser.c	/^static void repeatstat (LexState *ls, int line) {$/;"	f	file:
+report	.\gw_src\lua.c	/^static int report (lua_State *L, int status) {$/;"	f	file:
+reserved	.\gw_src\inc\lobject.h	/^    lu_byte reserved;$/;"	m	struct:TString::__anon11
+reset2bits	.\gw_src\inc\lgc.h	36;"	d
+resetbit	.\gw_src\inc\lgc.h	33;"	d
+resetbits	.\gw_src\inc\lgc.h	27;"	d
+resethookcount	.\gw_src\inc\ldebug.h	18;"	d
+resetstack	.\gw_src\lua_src\ldo.c	/^static void resetstack (lua_State *L, int status) {$/;"	f	file:
+resize	.\gw_src\lua_src\ltable.c	/^static void resize (lua_State *L, Table *t, int nasize, int nhsize) {$/;"	f	file:
+resoGBPacket	.\ph_bin\GB_format.lua	/^function resoGBPacket(...)$/;"	f
+resoSLPacket	.\bx_bin_v0\TH_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\bx_bin_v0\old_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\bx_bin_v0\rain_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\bx_bin_v0\salt_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\gw_src\gateway.c	/^int resoSLPacket(lua_State *L)$/;"	f
+resoSLPacket	.\ph_bin\SL_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\qt_bin\TH_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\qt_bin\old_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\qt_bin\rain_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+resoSLPacket	.\qt_bin\salt_format.lua	/^function resoSLPacket(pac_kv, ...)$/;"	f
+restore_stack_limit	.\gw_src\lua_src\ldo.c	/^static void restore_stack_limit (lua_State *L) {$/;"	f	file:
+restoreci	.\gw_src\inc\ldo.h	28;"	d
+restorestack	.\gw_src\inc\ldo.h	25;"	d
+resume	.\gw_src\lua_src\ldo.c	/^static void resume (lua_State *L, void *ud) {$/;"	f	file:
+resume_error	.\gw_src\lua_src\ldo.c	/^static int resume_error (lua_State *L, const char *msg) {$/;"	f	file:
+retstat	.\gw_src\lua_src\lparser.c	/^static void retstat (LexState *ls) {$/;"	f	file:
+right	.\gw_src\lua_src\lparser.c	/^  lu_byte right; \/* right priority *\/$/;"	m	struct:__anon22	file:
+rootgc	.\gw_src\inc\lstate.h	/^  GCObject *rootgc;  \/* list of all collectable objects *\/$/;"	m	struct:global_State
+runargs	.\gw_src\lua.c	/^static int runargs (lua_State *L, char **argv, int n) {$/;"	f	file:
+runtime_check	.\gw_src\lua_src\lvm.c	345;"	d	file:
+s	.\gw_src\inc\lparser.h	/^    struct { int info, aux; } s;$/;"	m	union:expdesc::__anon18	typeref:struct:expdesc::__anon18::__anon19
+s	.\gw_src\lua_src\lauxlib.c	/^  const char *s;$/;"	m	struct:LoadS	file:
+save	.\gw_src\lua_src\llex.c	/^static void save (LexState *ls, int c) {$/;"	f	file:
+save_and_next	.\gw_src\lua_src\llex.c	48;"	d	file:
+saveci	.\gw_src\inc\ldo.h	27;"	d
+savedpc	.\gw_src\inc\lstate.h	/^  const Instruction *savedpc;  \/* `savedpc' of current function *\/$/;"	m	struct:lua_State
+savedpc	.\gw_src\inc\lstate.h	/^  const Instruction *savedpc;$/;"	m	struct:CallInfo
+savestack	.\gw_src\inc\ldo.h	24;"	d
+scanformat	.\gw_src\lua_src\lstrlib.c	/^static const char *scanformat (lua_State *L, const char *strfrmt, char *form) {$/;"	f	file:
+schMatchMark	.\gw_src\gateway.c	/^static uint8_t *schMatchMark(uint8_t *t_str, const uint8_t *mark1, const uint8_t *mark2)$/;"	f	file:
+searchvar	.\gw_src\lua_src\lparser.c	/^static int searchvar (FuncState *fs, TString *n) {$/;"	f	file:
+sem_empty	.\gw_src\inc\global_var.h	/^	sem_t sem_empty;$/;"	m	struct:__anon6
+sem_full	.\gw_src\inc\global_var.h	/^	sem_t sem_full;$/;"	m	struct:__anon6
+sem_mutex	.\gw_src\inc\global_var.h	/^	sem_t sem_mutex;$/;"	m	struct:__anon6
+seminfo	.\gw_src\inc\llex.h	/^  SemInfo seminfo;$/;"	m	struct:Token
+sendGBPacket	.\gw_src\gateway.c	/^int sendGBPacket(lua_State *L)$/;"	f
+sendn	.\gw_src\gateway.c	/^static ssize_t sendn(int sockfd, const void *vptr, size_t n, int flags)$/;"	f	file:
+sentinel	.\gw_src\lua_src\loadlib.c	448;"	d	file:
+sentinel_	.\gw_src\lua_src\loadlib.c	/^static const int sentinel_ = 0;$/;"	v	file:
+sepField	.\gw_src\gateway.c	/^int sepField(lua_State *L)$/;"	f
+sepPacket	.\gw_src\gateway.c	/^int sepPacket(lua_State *L)$/;"	f
+serial_fd	.\gw_src\gateway.c	/^static int 	   serial_fd = -1;  \/\/串口文件描述符：串口号$/;"	v	file:
+server_do	.\tcpserver.c	/^int server_do(int sockfd, void *mesg)$/;"	f
+server_do	.\udpserver.c	/^int server_do(int sockfd, struct sockaddr * cliaddr, socklen_t clilen, uint8_t *mesg)$/;"	f
+set2	.\gw_src\lua_src\ltablib.c	/^static void set2 (lua_State *L, int i, int j) {$/;"	f	file:
+set2bits	.\gw_src\inc\lgc.h	35;"	d
+setGBPacket	.\gw_src\gateway.c	/^int setGBPacket(lua_State *L)$/;"	f
+setGBRTPacket	.\gw_src\gateway.c	/^int setGBRTPacket(lua_State *L)$/;"	f
+setPassWord	.\gw_src\gateway.c	/^int setPassWord(lua_State *L)$/;"	f
+setPort	.\gw_src\gateway.c	/^int setPort(lua_State *L)  \/\/设置串口信息$/;"	f
+setSLPacket	.\gw_src\gateway.c	/^int setSLPacket(lua_State *L)$/;"	f
+setSystemTime	.\gw_src\gateway.c	/^int setSystemTime(lua_State *L)$/;"	f
+setarrayvector	.\gw_src\lua_src\ltable.c	/^static void setarrayvector (lua_State *L, Table *t, int size) {$/;"	f	file:
+setbits	.\gw_src\inc\lgc.h	28;"	d
+setboolfield	.\gw_src\lua_src\loslib.c	/^static void setboolfield (lua_State *L, const char *key, int value) {$/;"	f	file:
+setbvalue	.\gw_src\inc\lobject.h	125;"	d
+setclvalue	.\gw_src\inc\lobject.h	143;"	d
+setfenv	.\gw_src\lua_src\loadlib.c	/^static void setfenv (lua_State *L) {$/;"	f	file:
+setfield	.\gw_src\lua_src\loslib.c	/^static void setfield (lua_State *L, const char *key, int value) {$/;"	f	file:
+sethvalue	.\gw_src\inc\lobject.h	148;"	d
+sethvalue2s	.\gw_src\inc\lobject.h	176;"	d
+setn	.\gw_src\lua_src\ltablib.c	/^static int setn (lua_State *L) {$/;"	f	file:
+setnilvalue	.\gw_src\inc\lobject.h	117;"	d
+setnodevector	.\gw_src\lua_src\ltable.c	/^static void setnodevector (lua_State *L, Table *t, int size) {$/;"	f	file:
+setnvalue	.\gw_src\inc\lobject.h	119;"	d
+setobj	.\gw_src\inc\lobject.h	161;"	d
+setobj2n	.\gw_src\inc\lobject.h	183;"	d
+setobj2s	.\gw_src\inc\lobject.h	174;"	d
+setobj2t	.\gw_src\inc\lobject.h	181;"	d
+setobjs2s	.\gw_src\inc\lobject.h	172;"	d
+setobjt2t	.\gw_src\inc\lobject.h	179;"	d
+setpath	.\gw_src\lua_src\loadlib.c	/^static void setpath (lua_State *L, const char *fieldname, const char *envname,$/;"	f	file:
+setprogdir	.\gw_src\lua_src\loadlib.c	/^static void setprogdir (lua_State *L) {$/;"	f	file:
+setprogdir	.\gw_src\lua_src\loadlib.c	42;"	d	file:
+setprogdir	.\gw_src\lua_src\loadlib.c	95;"	d	file:
+setptvalue	.\gw_src\inc\lobject.h	153;"	d
+setptvalue2s	.\gw_src\inc\lobject.h	177;"	d
+setpvalue	.\gw_src\inc\lobject.h	122;"	d
+setsvalue	.\gw_src\inc\lobject.h	128;"	d
+setsvalue2n	.\gw_src\inc\lobject.h	184;"	d
+setsvalue2s	.\gw_src\inc\lobject.h	175;"	d
+settabsi	.\gw_src\lua_src\ldblib.c	/^static void settabsi (lua_State *L, const char *i, int v) {$/;"	f	file:
+settabss	.\gw_src\lua_src\ldblib.c	/^static void settabss (lua_State *L, const char *i, const char *v) {$/;"	f	file:
+setthreshold	.\gw_src\lua_src\lgc.c	59;"	d	file:
+setthvalue	.\gw_src\inc\lobject.h	138;"	d
+setttype	.\gw_src\inc\lobject.h	186;"	d
+setuvalue	.\gw_src\inc\lobject.h	133;"	d
+short_src	.\gw_src\inc\lua.h	/^  char short_src[LUA_IDSIZE]; \/* (S) *\/$/;"	m	struct:lua_Debug
+sig_get	.\gw_src\inc\global_var.h	/^	int sig_get;$/;"	m	struct:__anon6
+sig_save	.\gw_src\inc\global_var.h	/^	int sig_save;$/;"	m	struct:__anon6
+simpleexp	.\gw_src\lua_src\lparser.c	/^static void simpleexp (LexState *ls, expdesc *v) {$/;"	f	file:
+simuLossPacket	.\bx_bin_v0\bx_format.lua	/^function simuLossPacket(n, ...)$/;"	f
+singlematch	.\gw_src\lua_src\lstrlib.c	/^static int singlematch (int c, const char *p, const char *ep) {$/;"	f	file:
+singlestep	.\gw_src\lua_src\lgc.c	/^static l_mem singlestep (lua_State *L) {$/;"	f	file:
+singlevar	.\gw_src\lua_src\lparser.c	/^static void singlevar (LexState *ls, expdesc *var) {$/;"	f	file:
+singlevaraux	.\gw_src\lua_src\lparser.c	/^static int singlevaraux (FuncState *fs, TString *n, expdesc *var, int base) {$/;"	f	file:
+size	.\gw_src\inc\lstate.h	/^  int size;$/;"	m	struct:stringtable
+size	.\gw_src\lua_src\lauxlib.c	/^  size_t size;$/;"	m	struct:LoadS	file:
+sizeCclosure	.\gw_src\inc\lfunc.h	14;"	d
+sizeLclosure	.\gw_src\inc\lfunc.h	17;"	d
+size_ci	.\gw_src\inc\lstate.h	/^  int size_ci;  \/* size of array `base_ci' *\/$/;"	m	struct:lua_State
+sizearray	.\gw_src\inc\lobject.h	/^  int sizearray;  \/* size of `array' array *\/$/;"	m	struct:Table
+sizecode	.\gw_src\inc\lobject.h	/^  int sizecode;$/;"	m	struct:Proto
+sizek	.\gw_src\inc\lobject.h	/^  int sizek;  \/* size of `k' *\/$/;"	m	struct:Proto
+sizelineinfo	.\gw_src\inc\lobject.h	/^  int sizelineinfo;$/;"	m	struct:Proto
+sizelocvars	.\gw_src\inc\lobject.h	/^  int sizelocvars;$/;"	m	struct:Proto
+sizenode	.\gw_src\inc\lobject.h	360;"	d
+sizep	.\gw_src\inc\lobject.h	/^  int sizep;  \/* size of `p' *\/$/;"	m	struct:Proto
+sizestring	.\gw_src\inc\lstring.h	16;"	d
+sizeudata	.\gw_src\inc\lstring.h	18;"	d
+sizeupvalues	.\gw_src\inc\lobject.h	/^  int sizeupvalues;$/;"	m	struct:Proto
+skip_sep	.\gw_src\lua_src\llex.c	/^static int skip_sep (LexState *ls) {$/;"	f	file:
+sort	.\gw_src\lua_src\ltablib.c	/^static int sort (lua_State *L) {$/;"	f	file:
+sort_comp	.\gw_src\lua_src\ltablib.c	/^static int sort_comp (lua_State *L, int a, int b) {$/;"	f	file:
+source	.\gw_src\inc\llex.h	/^  TString *source;  \/* current source name *\/$/;"	m	struct:LexState
+source	.\gw_src\inc\lobject.h	/^  TString  *source;$/;"	m	struct:Proto
+source	.\gw_src\inc\lua.h	/^  const char *source;	\/* (S) *\/$/;"	m	struct:lua_Debug
+space_mark_fd	.\gw_src\inc\global_var.h	/^	uint8_t space_mark_fd[MAXLEN1];$/;"	m	struct:__anon2
+space_mark_kv	.\gw_src\inc\global_var.h	/^	uint8_t space_mark_kv[MAXLEN1];$/;"	m	struct:__anon2
+space_mark_lr	.\gw_src\inc\global_var.h	/^	uint8_t space_mark_lr[MAXLEN1];$/;"	m	struct:__anon2
+src_end	.\gw_src\lua_src\lstrlib.c	/^  const char *src_end;  \/* end (`\\0') of source string *\/$/;"	m	struct:MatchState	file:
+src_init	.\gw_src\lua_src\lstrlib.c	/^  const char *src_init;  \/* init of source string *\/$/;"	m	struct:MatchState	file:
+stack	.\gw_src\inc\lstate.h	/^  StkId stack;  \/* stack base *\/$/;"	m	struct:lua_State
+stack_init	.\gw_src\lua_src\lstate.c	/^static void stack_init (lua_State *L1, lua_State *L) {$/;"	f	file:
+stack_last	.\gw_src\inc\lstate.h	/^  StkId stack_last;  \/* last free slot in the stack *\/$/;"	m	struct:lua_State
+stacksize	.\gw_src\inc\lstate.h	/^  int stacksize;$/;"	m	struct:lua_State
+start_capture	.\gw_src\lua_src\lstrlib.c	/^static const char *start_capture (MatchState *ms, const char *s,$/;"	f	file:
+startpc	.\gw_src\inc\lobject.h	/^  int startpc;  \/* first point where variable is active *\/$/;"	m	struct:LocVar
+state_size	.\gw_src\lua_src\lstate.c	27;"	d	file:
+statement	.\gw_src\lua_src\lparser.c	/^static int statement (LexState *ls) {$/;"	f	file:
+statnames	.\gw_src\lua_src\lbaselib.c	/^static const char *const statnames[] =$/;"	v	file:
+status	.\gw_src\inc\lstate.h	/^  lu_byte status;$/;"	m	struct:lua_State
+status	.\gw_src\lua.c	/^  int status;$/;"	m	struct:Smain	file:
+status	.\gw_src\lua_src\ldo.c	/^  volatile int status;  \/* error code *\/$/;"	m	struct:lua_longjmp	file:
+status	.\gw_src\lua_src\ldump.c	/^ int status;$/;"	m	struct:__anon21	file:
+str_byte	.\gw_src\lua_src\lstrlib.c	/^static int str_byte (lua_State *L) {$/;"	f	file:
+str_char	.\gw_src\lua_src\lstrlib.c	/^static int str_char (lua_State *L) {$/;"	f	file:
+str_checkname	.\gw_src\lua_src\lparser.c	/^static TString *str_checkname (LexState *ls) {$/;"	f	file:
+str_do	.\phclient.c	/^int str_do(int sockfd)$/;"	f
+str_dump	.\gw_src\lua_src\lstrlib.c	/^static int str_dump (lua_State *L) {$/;"	f	file:
+str_find	.\gw_src\lua_src\lstrlib.c	/^static int str_find (lua_State *L) {$/;"	f	file:
+str_find_aux	.\gw_src\lua_src\lstrlib.c	/^static int str_find_aux (lua_State *L, int find) {$/;"	f	file:
+str_format	.\gw_src\lua_src\lstrlib.c	/^static int str_format (lua_State *L) {$/;"	f	file:
+str_gsub	.\gw_src\lua_src\lstrlib.c	/^static int str_gsub (lua_State *L) {$/;"	f	file:
+str_len	.\gw_src\lua_src\lstrlib.c	/^static int str_len (lua_State *L) {$/;"	f	file:
+str_lower	.\gw_src\lua_src\lstrlib.c	/^static int str_lower (lua_State *L) {$/;"	f	file:
+str_match	.\gw_src\lua_src\lstrlib.c	/^static int str_match (lua_State *L) {$/;"	f	file:
+str_rep	.\gw_src\lua_src\lstrlib.c	/^static int str_rep (lua_State *L) {$/;"	f	file:
+str_reverse	.\gw_src\lua_src\lstrlib.c	/^static int str_reverse (lua_State *L) {$/;"	f	file:
+str_sub	.\gw_src\lua_src\lstrlib.c	/^static int str_sub (lua_State *L) {$/;"	f	file:
+str_upper	.\gw_src\lua_src\lstrlib.c	/^static int str_upper (lua_State *L) {$/;"	f	file:
+stringmark	.\gw_src\lua_src\lgc.c	40;"	d	file:
+stringtable	.\gw_src\inc\lstate.h	/^typedef struct stringtable {$/;"	s
+stringtable	.\gw_src\inc\lstate.h	/^} stringtable;$/;"	t	typeref:struct:stringtable
+strip	.\gw_src\lua_src\ldump.c	/^ int strip;$/;"	m	struct:__anon21	file:
+stripping	.\gw_src\lua_src\luac.c	/^static int stripping=0;			\/* strip debug information? *\/$/;"	v	file:
+strlib	.\gw_src\lua_src\lstrlib.c	/^static const luaL_Reg strlib[] = {$/;"	v	file:
+strrstr	.\gw_src\preprocess.c	/^char *strrstr(char *str, char *substr)$/;"	f
+strt	.\gw_src\inc\lstate.h	/^  stringtable strt;  \/* hash table for strings *\/$/;"	m	struct:global_State
+subexpr	.\gw_src\lua_src\lparser.c	/^static BinOpr subexpr (LexState *ls, expdesc *v, unsigned int limit) {$/;"	f	file:
+svalue	.\gw_src\inc\lobject.h	211;"	d
+sweepgc	.\gw_src\inc\lstate.h	/^  GCObject **sweepgc;  \/* position of sweep in `rootgc' *\/$/;"	m	struct:global_State
+sweeplist	.\gw_src\lua_src\lgc.c	/^static GCObject **sweeplist (lua_State *L, GCObject **p, lu_mem count) {$/;"	f	file:
+sweepstrgc	.\gw_src\inc\lstate.h	/^  int sweepstrgc;  \/* position of sweep in `strt' *\/$/;"	m	struct:global_State
+sweepwholelist	.\gw_src\lua_src\lgc.c	404;"	d	file:
+symbexec	.\gw_src\lua_src\ldebug.c	/^static Instruction symbexec (const Proto *pt, int lastpc, int reg) {$/;"	f	file:
+syslib	.\gw_src\lua_src\loslib.c	/^static const luaL_Reg syslib[] = {$/;"	v	file:
+t	.\gw_src\inc\llex.h	/^  Token t;  \/* current token *\/$/;"	m	struct:LexState
+t	.\gw_src\inc\lparser.h	/^  int t;  \/* patch list of `exit when true' *\/$/;"	m	struct:expdesc
+t	.\gw_src\lua_src\lparser.c	/^  expdesc *t;  \/* table descriptor *\/$/;"	m	struct:ConsControl	file:
+tab_funcs	.\gw_src\lua_src\ltablib.c	/^static const luaL_Reg tab_funcs[] = {$/;"	v	file:
+tag_error	.\gw_src\lua_src\lauxlib.c	/^static void tag_error (lua_State *L, int narg, int tag) {$/;"	f	file:
+tailcalls	.\gw_src\inc\lstate.h	/^  int tailcalls;  \/* number of tail calls lost under this entry *\/$/;"	m	struct:CallInfo
+tconcat	.\gw_src\lua_src\ltablib.c	/^static int tconcat (lua_State *L) {$/;"	f	file:
+tcpConnect_thread	.\gw_src\gateway.c	/^static void *tcpConnect_thread(void *arg)$/;"	f	file:
+tcpPacketToBuffer	.\gw_src\gateway.c	/^static void *tcpPacketToBuffer(void *arg)$/;"	f	file:
+tcpRecv_thread	.\gw_src\gateway.c	/^static void *tcpRecv_thread(void *arg)$/;"	f	file:
+tcpSend_fd	.\gw_src\gateway.c	/^int tcpSend_fd = 0; \/\/用于tcp发送的描述符$/;"	v
+tcpSend_mutex	.\gw_src\gateway.c	/^pthread_mutex_t tcpSend_mutex = PTHREAD_MUTEX_INITIALIZER; \/\/用于保护tcpSend_fd和O_CREATE_TCP的互斥量$/;"	v
+test2bits	.\gw_src\inc\lgc.h	37;"	d
+testAMode	.\gw_src\inc\lopcodes.h	257;"	d
+testTMode	.\gw_src\inc\lopcodes.h	258;"	d
+test_eof	.\gw_src\lua_src\liolib.c	/^static int test_eof (lua_State *L, FILE *f) {$/;"	f	file:
+test_then_block	.\gw_src\lua_src\lparser.c	/^static int test_then_block (LexState *ls) {$/;"	f	file:
+testbit	.\gw_src\inc\lgc.h	34;"	d
+testbits	.\gw_src\inc\lgc.h	29;"	d
+testnext	.\gw_src\lua_src\lparser.c	/^static int testnext (LexState *ls, int c) {$/;"	f	file:
+th	.\gw_src\inc\lstate.h	/^  struct lua_State th;  \/* thread *\/$/;"	m	union:GCObject	typeref:struct:GCObject::lua_State
+thvalue	.\gw_src\inc\lobject.h	101;"	d
+tinsert	.\gw_src\lua_src\ltablib.c	/^static int tinsert (lua_State *L) {$/;"	f	file:
+tmname	.\gw_src\inc\lstate.h	/^  TString *tmname[TM_N];  \/* array with tag-method names *\/$/;"	m	struct:global_State
+tmudata	.\gw_src\inc\lstate.h	/^  GCObject *tmudata;  \/* last element of list of userdata to be GC *\/$/;"	m	struct:global_State
+tofile	.\gw_src\lua_src\liolib.c	/^static FILE *tofile (lua_State *L) {$/;"	f	file:
+tofilep	.\gw_src\lua_src\liolib.c	54;"	d	file:
+token	.\gw_src\inc\llex.h	/^  int token;$/;"	m	struct:Token
+tonumber	.\gw_src\inc\lvm.h	18;"	d
+top	.\gw_src\inc\lstate.h	/^  StkId	top;  \/* top for this function *\/$/;"	m	struct:CallInfo
+top	.\gw_src\inc\lstate.h	/^  StkId top;  \/* first free slot in the stack *\/$/;"	m	struct:lua_State
+toproto	.\gw_src\lua_src\luac.c	117;"	d	file:
+tostate	.\gw_src\lua_src\lstate.c	29;"	d	file:
+tostore	.\gw_src\lua_src\lparser.c	/^  int tostore;  \/* number of array elements pending to be stored *\/$/;"	m	struct:ConsControl	file:
+tostring	.\gw_src\inc\lvm.h	16;"	d
+totalbytes	.\gw_src\inc\lstate.h	/^  lu_mem totalbytes;  \/* number of bytes currently allocated *\/$/;"	m	struct:global_State
+traceback	.\gw_src\lua.c	/^static int traceback (lua_State *L) {$/;"	f	file:
+traceexec	.\gw_src\lua_src\lvm.c	/^static void traceexec (lua_State *L, const Instruction *pc) {$/;"	f	file:
+transmit	.\bx_bin_v1\main.lua	/^function transmit(OPTION, ...)$/;"	f
+traverseclosure	.\gw_src\lua_src\lgc.c	/^static void traverseclosure (global_State *g, Closure *cl) {$/;"	f	file:
+traverseproto	.\gw_src\lua_src\lgc.c	/^static void traverseproto (global_State *g, Proto *f) {$/;"	f	file:
+traversestack	.\gw_src\lua_src\lgc.c	/^static void traversestack (global_State *g, lua_State *l) {$/;"	f	file:
+traversetable	.\gw_src\lua_src\lgc.c	/^static int traversetable (global_State *g, Table *h) {$/;"	f	file:
+treatstackoption	.\gw_src\lua_src\ldblib.c	/^static void treatstackoption (lua_State *L, lua_State *L1, const char *fname) {$/;"	f	file:
+tremove	.\gw_src\lua_src\ltablib.c	/^static int tremove (lua_State *L) {$/;"	f	file:
+trydecpoint	.\gw_src\lua_src\llex.c	/^static void trydecpoint (LexState *ls, SemInfo *seminfo) {$/;"	f	file:
+tryfuncTM	.\gw_src\lua_src\ldo.c	/^static StkId tryfuncTM (lua_State *L, StkId func) {$/;"	f	file:
+ts	.\gw_src\inc\llex.h	/^  TString *ts;$/;"	m	union:__anon9
+ts	.\gw_src\inc\lstate.h	/^  union TString ts;$/;"	m	union:GCObject	typeref:union:GCObject::TString
+tsv	.\gw_src\inc\lobject.h	/^  } tsv;$/;"	m	union:TString	typeref:struct:TString::__anon11
+tsvalue	.\gw_src\inc\lobject.h	95;"	d
+ttisboolean	.\gw_src\inc\lobject.h	84;"	d
+ttisfunction	.\gw_src\inc\lobject.h	83;"	d
+ttislightuserdata	.\gw_src\inc\lobject.h	87;"	d
+ttisnil	.\gw_src\inc\lobject.h	79;"	d
+ttisnumber	.\gw_src\inc\lobject.h	80;"	d
+ttisstring	.\gw_src\inc\lobject.h	81;"	d
+ttistable	.\gw_src\inc\lobject.h	82;"	d
+ttisthread	.\gw_src\inc\lobject.h	86;"	d
+ttisuserdata	.\gw_src\inc\lobject.h	85;"	d
+ttype	.\gw_src\inc\lobject.h	90;"	d
+tvk	.\gw_src\inc\lobject.h	/^  TValue tvk;$/;"	m	union:TKey
+twoto	.\gw_src\inc\lobject.h	359;"	d
+txtToken	.\gw_src\lua_src\llex.c	/^static const char *txtToken (LexState *ls, int token) {$/;"	f	file:
+u	.\gw_src\inc\lobject.h	/^  } u;$/;"	m	struct:UpVal	typeref:union:UpVal::__anon13
+u	.\gw_src\inc\lparser.h	/^  } u;$/;"	m	struct:expdesc	typeref:union:expdesc::__anon18
+u	.\gw_src\inc\lstate.h	/^  union Udata u;$/;"	m	union:GCObject	typeref:union:GCObject::Udata
+uchar	.\gw_src\lua_src\lstrlib.c	24;"	d	file:
+ud	.\gw_src\inc\lstate.h	/^  void *ud;         \/* auxiliary data to `frealloc' *\/$/;"	m	struct:global_State
+ud	.\gw_src\lua_src\lapi.c	/^  void *ud;$/;"	m	struct:CCallS	file:
+udpConnect_thread	.\gw_src\gateway.c	/^static void *udpConnect_thread(void *arg)$/;"	f	file:
+udpSend_fd	.\gw_src\gateway.c	/^int udpSend_fd = 0; \/\/用于udp发送的描述符$/;"	v
+udpSend_mutex	.\gw_src\gateway.c	/^pthread_mutex_t udpSend_mutex = PTHREAD_MUTEX_INITIALIZER; \/\/用于保护udpSend_fd和O_CREATE_UDP的互斥量$/;"	v
+unbound_search	.\gw_src\lua_src\ltable.c	/^static int unbound_search (Table *t, unsigned int j) {$/;"	f	file:
+unlinkupval	.\gw_src\lua_src\lfunc.c	/^static void unlinkupval (UpVal *uv) {$/;"	f	file:
+unmakemask	.\gw_src\lua_src\ldblib.c	/^static char *unmakemask (int mask, char *smask) {$/;"	f	file:
+upval	.\gw_src\lua_src\lparser.c	/^  lu_byte upval;  \/* true if some variable in the block is an upvalue *\/$/;"	m	struct:BlockCnt	file:
+upvaldesc	.\gw_src\inc\lparser.h	/^typedef struct upvaldesc {$/;"	s
+upvaldesc	.\gw_src\inc\lparser.h	/^} upvaldesc;$/;"	t	typeref:struct:upvaldesc
+upvals	.\gw_src\inc\lobject.h	/^  UpVal *upvals[1];$/;"	m	struct:LClosure
+upvalue	.\gw_src\inc\lobject.h	/^  TValue upvalue[1];$/;"	m	struct:CClosure
+upvalues	.\gw_src\inc\lobject.h	/^  TString **upvalues;  \/* upvalue names *\/$/;"	m	struct:Proto
+upvalues	.\gw_src\inc\lparser.h	/^  upvaldesc upvalues[LUAI_MAXUPVALUES];  \/* upvalues *\/$/;"	m	struct:FuncState
+usage	.\gw_src\lua_src\luac.c	/^static void usage(const char* message)$/;"	f	file:
+uv	.\gw_src\inc\lobject.h	/^  } uv;$/;"	m	union:Udata	typeref:struct:Udata::__anon12
+uv	.\gw_src\inc\lstate.h	/^  struct UpVal uv;$/;"	m	union:GCObject	typeref:struct:GCObject::UpVal
+uvalue	.\gw_src\inc\lobject.h	97;"	d
+uvhead	.\gw_src\inc\lstate.h	/^  UpVal uvhead;  \/* head of double-linked list of all open upvalues *\/$/;"	m	struct:global_State
+v	.\gw_src\inc\lobject.h	/^  TValue *v;  \/* points to stack or to its own value *\/$/;"	m	struct:UpVal
+v	.\gw_src\lua_src\lparser.c	/^  expdesc v;  \/* last list item read *\/$/;"	m	struct:ConsControl	file:
+v	.\gw_src\lua_src\lparser.c	/^  expdesc v;  \/* variable (global, local, upvalue, or indexed) *\/$/;"	m	struct:LHS_assign	file:
+valiswhite	.\gw_src\inc\lgc.h	75;"	d
+value	.\gw_src\inc\global_var.h	/^	uint8_t value[MAXLEN6];$/;"	m	struct:__anon1
+value	.\gw_src\inc\lobject.h	/^    TValue value;  \/* the value (when closed) *\/$/;"	m	union:UpVal::__anon13
+varname	.\gw_src\inc\lobject.h	/^  TString *varname;$/;"	m	struct:LocVar
+weak	.\gw_src\inc\lstate.h	/^  GCObject *weak;  \/* list of weak tables (to be cleared) *\/$/;"	m	struct:global_State
+what	.\gw_src\inc\lua.h	/^  const char *what;	\/* (S) `Lua', `C', `main', `tail' *\/$/;"	m	struct:lua_Debug
+whilestat	.\gw_src\lua_src\lparser.c	/^static void whilestat (LexState *ls, int line) {$/;"	f	file:
+white2gray	.\gw_src\lua_src\lgc.c	37;"	d	file:
+writen	.\phclient.c	/^static ssize_t writen(int fd, const void *vptr, size_t n)$/;"	f	file:
+writer	.\gw_src\lua_src\ldump.c	/^ lua_Writer writer;$/;"	m	struct:__anon21	file:
+writer	.\gw_src\lua_src\lstrlib.c	/^static int writer (lua_State *L, const void* b, size_t size, void* B) {$/;"	f	file:
+writer	.\gw_src\lua_src\luac.c	/^static int writer(lua_State* L, const void* p, size_t size, void* u)$/;"	f	file:
+yindex	.\gw_src\lua_src\lparser.c	/^static void yindex (LexState *ls, expdesc *v) {$/;"	f	file:
+z	.\gw_src\inc\llex.h	/^  ZIO *z;  \/* input stream *\/$/;"	m	struct:LexState
+z	.\gw_src\lua_src\ldo.c	/^  ZIO *z;$/;"	m	struct:SParser	file:
+zgetc	.\gw_src\inc\lzio.h	22;"	d

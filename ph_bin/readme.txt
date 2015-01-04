@@ -1,0 +1,1 @@
+command: ./lua main.lua
