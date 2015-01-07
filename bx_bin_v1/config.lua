@@ -1,6 +1,6 @@
 SL_port =
 {
-	PATH = "/dev/ttyS2",  --串口路径,(Top6410: /dev/ttySAC3)
+	PATH = "/dev/ttyUSB0",  --串口路径,(Top6410: /dev/ttySAC3)
 	BAUD = 57600,           --波特率
 	DATA = 8,               --数据位数
 	PARI = 0,               --奇偶校验

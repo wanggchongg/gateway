@@ -2340,14 +2340,11 @@ static void *udpConnect_thread(void *arg)
 {
 	IPPORT_FD_MUTEX_t *pIpport_fd_mutex = (IPPORT_FD_MUTEX_t *)arg;
 
-	//SOCKADDRIN_FD_MUTEX_t *pServaddr_fd_mutex = (SOCKADDRIN_FD_MUTEX_t *)arg;
-
 	struct sockaddr_in servaddr;
 	extern char GATEWAY_NO[];
-	char mesg[10] = {0};
-	int len;
-
-	sprintf(mesg, "#%s#", GATEWAY_NO);
+	char heart[MAXLEN1] = {0};
+	char ack[MAXLEN1] = {0};
+	struct timeval timeout;
 
 	memset(&servaddr, '\0', sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
@@ -2358,73 +2355,59 @@ static void *udpConnect_thread(void *arg)
 		pthread_exit((void *)-1);
 	}
 
+	sprintf(heart, "#%s#", GATEWAY_NO);
+	timeout.tv_sec = 2;
+	timeout.tv_usec = 0;
+
+udpConnect:
 	pthread_mutex_lock(pIpport_fd_mutex->pMutex);
 	if((*pIpport_fd_mutex->pFd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
 	{
 		perror("\tudpConnect_thread: udp socket error");
+		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		goto udpConnect;
 	}
 
-	if(connect_nonb(*pIpport_fd_mutex->pFd, (struct sockaddr *)&servaddr, sizeof(servaddr), 2) < 0)
+    if(setsockopt(*pIpport_fd_mutex->pFd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0)  //设置套接字选项
+    {
+        perror("\tudpConnect_thread: udp socket setsockopt failed");
+        close(*pIpport_fd_mutex->pFd);
+        pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		goto udpConnect;
+    }
+
+	if(connect(*pIpport_fd_mutex->pFd, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0)
 	{
 		perror("\tudpConnect_thread: udp connect_nonb error");
 		close(*pIpport_fd_mutex->pFd);
+		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		sleep(30);
+		goto udpConnect;
 	}
 	pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
-
-	// fd_set readfd;
-	// struct timeval timeout;
-	// FD_ZERO(&readfd);
-	// FD_SET(*pIpport_fd_mutex->pFd, &readfd);
 
 	while(1)
 	{
 		pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-		len = send(*pIpport_fd_mutex->pFd, mesg, strlen(mesg), 0);
+		send(*pIpport_fd_mutex->pFd, heart, strlen(heart), 0);
 		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
 
-		// char ACK[10];
-		// recv(*pIpport_fd_mutex->pFd, ACK, 10, 0);
-		// printf("ACK: %s\n", ACK);
+		memset(ack, 0, MAXLEN1);
+		recv(*pIpport_fd_mutex->pFd, ack, MAXLEN1, 0);
 
-		// timeout.tv_sec = 2;
-		// timeout.tv_usec = 0;
-		// int retn = select(*pIpport_fd_mutex->pFd+1, &readfd, NULL, NULL, &timeout);  //如果设置超时时间，select相当于一个半阻塞
-
-		// if(0 == retn)
-		// {
-		// 	printf("udpConnect_thread: disconnected\n");
-		// 	sleep(5);
-		// }
-		// else if(-1 == retn)
-		// {
-		// 	perror("\tselect error");
-		// 	continue;
-		// }
-
-		// else
-		// {
-		// 	printf("udpConnect_thread: recv something\n");
-		// 	sleep(10);
-		// }
-
-
-		if(len != strlen(mesg))
+		if(strcmp(ack, "###"))
 		{
-			perror("\tudpConnect_thread: udp sendto error");
+			perror("\tudpConnect_thread: disconnected");
 			pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-
-			// LocalFlag = 1;
-
-			//close(*pIpport_fd_mutex->pFd);
+			//LocalFlag = 1;
 			pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
-			sleep(10); //连接不通时，30秒后再次连接
 		}
-		// else
-		// {
-		// 	LocalFlag = 0;
-		// }
 		else
-			sleep(20); //60秒发送一次心跳
+		{
+			printf("\tudpConnect_thread: connected");
+			//LocalFlag = 0
+		}
+		sleep(10); //60秒发送一次心跳
 	}
 }
 
