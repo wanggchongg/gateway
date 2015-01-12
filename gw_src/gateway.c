@@ -2198,59 +2198,78 @@ int sendPacToIPBuf(lua_State *L)
 
 
 
-// static int saveFile(FILE *fp, void *pac, void *fileName)
-// {
-// 	FILE *tmpfp = NULL;
-//     char tmpname[MAXLEN3] = {0};
-//     char message[MAXLEN8] = {0};
+static int saveFile(FILE *fp, void *pac)
+{
+	FILE *tmpfp = NULL;
+    char tmpname[MAXLEN3] = {0};
+    char message[MAXLEN8] = {0};
+    int filefd;
+    char fileName[MAXLEN3] = {0};
+    char buf[MAXLEN3] = {0};
+    pid_t pid;
   
-//     tmpnam(tmpname); //创建临时文件。  
-//     if((tmpfp = fopen(tmpname, "wb+")) == NULL)  //打开临时文件  
-//     {  
-//         perror ("Temp file open error!\n");  
-//         return -1;
-//     }
+    tmpnam(tmpname); //创建临时文件。  
+    if((tmpfp = fopen(tmpname, "wb+")) == NULL)  //打开临时文件  
+    {  
+        perror ("Temp file open error!\n");  
+        return -1;
+    }
 
-//     fputs(pac, tmpfp);
-//     while(fgets(message, MAXLEN8, fp) != NULL)  
-//     {  
-//         fputs(message, tmpfp); //将修改后的内容写入临时文件
-//         memset(message, 0, MAXLEN8);
-//     }  
-//     fclose(fp);  
-//     fclose(tmpfp);  
-//     remove(fileName); //删除原文件。  
-//     rename(tmpname, fileName); //用临时文件替换原文件。
-//     fp = fopen(fileName, "wb+");
-//     return 0;
-// }
+    fputs(pac, tmpfp);
+    fputc('\n', fp);
+    while(fgets(message, MAXLEN8, fp) != NULL)  
+    {  
+        fputs(message, tmpfp); //将修改后的内容写入临时文件
+        fputc('\n', fp);
+        memset(message, 0, MAXLEN8);
+    }
+    filefd = fileno(fp);
+    pid = getpid();
+    sprintf(fileName, "/proc/%d/%d", pid, filefd);
+    readlink(fileName, buf, MAXLEN3);
+    fclose(fp);  
+    fclose(tmpfp);  
+    remove(buf); //删除原文件。  
+    rename(tmpname, buf); //用临时文件替换原文件。
+    fp = fopen(buf, "ab+");
+    return 0;
+}
 
 
+static void *sendLocalPac_thread(void *arg)
+{
+	FD_FP_FLAG_MUTEX_t *pFd_fp_flag_mutex;
+	pFd_fp_flag_mutex = (FD_FP_FLAG_MUTEX_t *)arg;
 
-// static void *sendLocalPac_thread(void *arg)
-// {
-// 	fp = fopen(fileName, "wb+");
-// 	while(1)
-// 	{
-// 		sem_wait();
-// 		sem_wait();
+	uint8_t *message = (uint8_t *)malloc(MAXLEN8);
+	memset(message, 0, MAXLEN8);
 
-// 		while(fgets(message, MAXLEN8, fp) != NULL)
-// 		{
-// 			len = send(sockfd, message, strlen(message), 0);
+	while(1)
+	{
+		if(*pFd_fp_flag_mutex->pFlag == 1)
+		{
+			pthread_mutex_lock(pFd_fp_flag_mutex->pMutex);
+			fseek(pFd_fp_flag_mutex->pFp, 0, SEEK_SET); 
+			while(fgets(message, MAXLEN8, pFd_fp_flag_mutex->pFp) != NULL)
+			{
+				if(*pFd_fp_flag_mutex->pFlag == 1)
+				{
+					send(*pFd_fp_flag_mutex->pFd, message, strlen(message), 0);
+				}
+				else
+				{
+					saveFile(pFd_fp_flag_mutex->pFp, message);
+					break;
+				}
+				memset(message, 0, MAXLEN8);
+				usleep(100*1000);
+			}
+			pthread_mutex_unlock(pFd_fp_flag_mutex->pMutex);
+		}
 
-// 			if(len != strlen(message))
-// 			{
-// 				saveFile(fp, message, fileName);
-// 				break;
-// 			}
-// 			usleep(500*1000);
-// 		}
-
-// 		sem_post();
-// 		sem_post();
-// 	}
-// }
+		sleep(30);
+	}
+}
 
 
 /**
@@ -2338,7 +2357,7 @@ done:
  */
 static void *udpConnect_thread(void *arg)
 {
-	IPPORT_FD_MUTEX_t *pIpport_fd_mutex = (IPPORT_FD_MUTEX_t *)arg;
+	IPPORT_FD_FLAG_MUTEX_t *pIpport_fd_flag_mutex = (IPPORT_FD_FLAG_MUTEX_t *)arg;
 
 	struct sockaddr_in servaddr;
 	extern char GATEWAY_NO[];
@@ -2348,10 +2367,10 @@ static void *udpConnect_thread(void *arg)
 
 	memset(&servaddr, '\0', sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port = htons(atoi(pIpport_fd_mutex->pIpPort->port));
-	if(inet_pton(AF_INET, pIpport_fd_mutex->pIpPort->ip, &servaddr.sin_addr) <= 0)
+	servaddr.sin_port = htons(atoi(pIpport_fd_flag_mutex->pIpPort->port));
+	if(inet_pton(AF_INET, pIpport_fd_flag_mutex->pIpPort->ip, &servaddr.sin_addr) <= 0)
 	{
-		fprintf(stderr, "\tudpConnect_thread: inet_pton error for %s\n", pIpport_fd_mutex->pIpPort->ip);
+		fprintf(stderr, "\tudpConnect_thread: inet_pton error for %s\n", pIpport_fd_flag_mutex->pIpPort->ip);
 		pthread_exit((void *)-1);
 	}
 
@@ -2360,54 +2379,55 @@ static void *udpConnect_thread(void *arg)
 	timeout.tv_usec = 0;
 
 udpConnect:
-	pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-	if((*pIpport_fd_mutex->pFd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
+	pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+	if((*pIpport_fd_flag_mutex->pFd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
 	{
 		perror("\tudpConnect_thread: udp socket error");
-		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 		goto udpConnect;
 	}
 
-    if(setsockopt(*pIpport_fd_mutex->pFd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0)  //设置套接字选项
+    if(setsockopt(*pIpport_fd_flag_mutex->pFd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0)  //设置套接字选项
     {
         perror("\tudpConnect_thread: udp socket setsockopt failed");
-        close(*pIpport_fd_mutex->pFd);
-        pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+        close(*pIpport_fd_flag_mutex->pFd);
+        pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 		goto udpConnect;
     }
 
-	if(connect(*pIpport_fd_mutex->pFd, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0)
+	if(connect(*pIpport_fd_flag_mutex->pFd, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0)
 	{
 		perror("\tudpConnect_thread: udp connect_nonb error");
-		close(*pIpport_fd_mutex->pFd);
-		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		close(*pIpport_fd_flag_mutex->pFd);
+		pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 		sleep(30);
 		goto udpConnect;
 	}
-	pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+	pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 
 	while(1)
 	{
-		pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-		send(*pIpport_fd_mutex->pFd, heart, strlen(heart), 0);
-		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+		send(*pIpport_fd_flag_mutex->pFd, heart, strlen(heart), 0);
+		pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 
 		memset(ack, 0, MAXLEN1);
-		recv(*pIpport_fd_mutex->pFd, ack, MAXLEN1, 0);
+		recv(*pIpport_fd_flag_mutex->pFd, ack, MAXLEN1, 0);
 
 		if(strcmp(ack, "###"))
 		{
 			perror("\tudpConnect_thread: disconnected");
-			pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-			//LocalFlag = 1;
-			pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+			pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+			*pIpport_fd_flag_mutex->pFlag = 0;
+			pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 		}
 		else
 		{
-			printf("\tudpConnect_thread: connected");
-			//LocalFlag = 0
+			pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+			*pIpport_fd_flag_mutex->pFlag = 1;
+			pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 		}
-		sleep(10); //60秒发送一次心跳
+		sleep(60); //60秒发送一次心跳
 	}
 }
 
@@ -2421,24 +2441,25 @@ static void *udpSend_thread(void *arg)
 {
 	BUFFER_IPPORT_t buf_ipport = *(BUFFER_IPPORT_t *)arg;
 
-	pthread_detach(pthread_self());
 	int err;
 	pthread_t tid;
 	int sockfd = -1;
 	IP_PORT_t ip_port = {0};
+	int connectFlag = 1;
 	pthread_mutex_t sockfd_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护sockfd
-	IPPORT_FD_MUTEX_t ipport_fd_mutex;
+	IPPORT_FD_FLAG_MUTEX_t ipport_fd_flag_mutex;
 	BUFFER_t *pBuffer = buf_ipport.pBuffer;
 	uint8_t *message = NULL;
 	ssize_t  mesglen = 0;
 	int len;
 
 	memcpy(&ip_port, buf_ipport.pIpPort, sizeof(ip_port));
-	ipport_fd_mutex.pIpPort = &ip_port;
-	ipport_fd_mutex.pFd = &sockfd;
-	ipport_fd_mutex.pMutex = &sockfd_mutex;
+	ipport_fd_flag_mutex.pIpPort = &ip_port;
+	ipport_fd_flag_mutex.pFd = &sockfd;
+	ipport_fd_flag_mutex.pFlag = &connectFlag;
+	ipport_fd_flag_mutex.pMutex = &sockfd_mutex;
 
-	err = pthread_create(&tid, NULL, udpConnect_thread, &ipport_fd_mutex);
+	err = pthread_create(&tid, NULL, udpConnect_thread, &ipport_fd_flag_mutex);
 	if(err)
 	{
 		fprintf(stderr, "\tcan't create udpConnect thread: %s\n", strerror(err));
@@ -2447,6 +2468,17 @@ static void *udpSend_thread(void *arg)
 	usleep(1000*200);
 
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
+
+	int O_CLOCAL_THD = 0;
+	pthread_mutex_t fp_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护fp
+	FILE *fp;
+	fp = fopen("./udp", "ab+");
+
+	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
+	fd_fp_flag_mutex.pFd = &sockfd;
+	fd_fp_flag_mutex.pFp = fp;
+	fd_fp_flag_mutex.pMutex = &fp_mutex;
+
 	while(1)
 	{
 		memset(message, 0, MAXLEN8);
@@ -2461,37 +2493,31 @@ static void *udpSend_thread(void *arg)
 		sem_post(&pBuffer->sem_mutex);
 		sem_post(&pBuffer->sem_empty);
 
-		// if(LocalFlag == 0)
-		// {
+		if(connectFlag == 1)
+		{
 			pthread_mutex_lock(&sockfd_mutex);
-			len = send(sockfd, message, mesglen, 0);
+			send(sockfd, message, mesglen, 0);
 			pthread_mutex_unlock(&sockfd_mutex);
-
-			if(len != mesglen)
+		}
+		else
+		{
+			if(O_CLOCAL_THD == 0)
 			{
-				perror("\tUDP send error");
-				// LocalFlag = 1;
-				// if(O_CLOCAL_THD = 0)
-				// {
-				// 	err = pthread_create(&tid, NULL, sendLocalPac_thread, &fp);
-				// 	if(err)
-				// 	{
-				// 		fprintf(stderr, "\tcan't create udpConnect thread: %s\n", strerror(err));
-				// 		pthread_exit((void *)-1);
-				// 	}
-				// 	usleep(1000*200);
-				// }
-
-				// O_CLOCAL_THD = 1;
-				
-				// pthread_mutex_lock();
-				// fputs(message, localfp);
+				err = pthread_create(&tid, NULL, sendLocalPac_thread, &fp);
+				if(err)
+				{
+					fprintf(stderr, "\tcan't create udpConnect thread: %s\n", strerror(err));
+					pthread_exit((void *)-1);
+				}
+				O_CLOCAL_THD = 1;
+				usleep(200*1000);
 			}
-		// }
-		// else
-		// {
-		// 	fputs(message, localfp);
-		// }
+
+			pthread_mutex_lock(&fp_mutex);
+			fputs(message, fp);
+			fputc('\n', fp);
+			pthread_mutex_unlock(&fp_mutex);
+		}
 	}
 
 	free(message);
