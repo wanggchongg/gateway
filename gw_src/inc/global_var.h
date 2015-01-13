@@ -161,7 +161,7 @@ typedef struct
 typedef struct
 {
 	int *pFd;
-	FILE *pFp;
+	FILE **pFp;
 	int *pFlag;
 	pthread_mutex_t *pMutex;
 }FD_FP_FLAG_MUTEX_t;

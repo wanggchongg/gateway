@@ -2198,40 +2198,41 @@ int sendPacToIPBuf(lua_State *L)
 
 
 
-static int saveFile(FILE *fp, void *pac)
+static int saveFile(FILE **pFp, void *pac)
 {
-	FILE *tmpfp = NULL;
-    char tmpname[MAXLEN3] = {0};
+	FILE *tempfp = NULL;
+	char tempname[MAXLEN3] = {0};
     char message[MAXLEN8] = {0};
-    int filefd;
-    char fileName[MAXLEN3] = {0};
-    char buf[MAXLEN3] = {0};
-    pid_t pid;
+    char procName[MAXLEN3] = {0};
+    char fileName[MAXLEN5] = {0};
   
-    tmpnam(tmpname); //创建临时文件。  
-    if((tmpfp = fopen(tmpname, "wb+")) == NULL)  //打开临时文件  
+    tmpnam(tempname); //创建临时文件。  
+    if((tempfp = fopen(tempname, "wb+")) == NULL)  //打开临时文件  
     {  
-        perror ("Temp file open error!\n");  
+        perror ("\tFunction saveFile: temp file open error\n");  
         return -1;
     }
 
-    fputs(pac, tmpfp);
-    fputc('\n', fp);
-    while(fgets(message, MAXLEN8, fp) != NULL)  
+    fputs(pac, tempfp);
+    while(!feof(*pFp))
     {  
-        fputs(message, tmpfp); //将修改后的内容写入临时文件
-        fputc('\n', fp);
+    	fgets(message, MAXLEN8, *pFp);
+        fputs(message, tempfp); //将修改后的内容写入临时文件
         memset(message, 0, MAXLEN8);
     }
-    filefd = fileno(fp);
-    pid = getpid();
-    sprintf(fileName, "/proc/%d/%d", pid, filefd);
-    readlink(fileName, buf, MAXLEN3);
-    fclose(fp);  
-    fclose(tmpfp);  
-    remove(buf); //删除原文件。  
-    rename(tmpname, buf); //用临时文件替换原文件。
-    fp = fopen(buf, "ab+");
+
+    sprintf(procName, "/proc/%d/fd/%d", getpid(), fileno(*pFp));
+    if(readlink(procName, fileName, MAXLEN5) < 0)
+    {
+    	fprintf(stderr, "\tFunction saveFile: readlink error\n");
+    }
+    
+    fclose(tempfp);
+    fclose(*pFp);
+    remove(fileName); //删除原文件
+    rename(tempname, fileName); //用临时文件替换原文件。
+    *pFp = fopen(fileName, "ab+");
+
     return 0;
 }
 
@@ -2241,28 +2242,41 @@ static void *sendLocalPac_thread(void *arg)
 	FD_FP_FLAG_MUTEX_t *pFd_fp_flag_mutex;
 	pFd_fp_flag_mutex = (FD_FP_FLAG_MUTEX_t *)arg;
 
+	pthread_detach(pthread_self());
+
 	uint8_t *message = (uint8_t *)malloc(MAXLEN8);
 	memset(message, 0, MAXLEN8);
 
 	while(1)
 	{
+		printf("----------*pFd_fp_flag_mutex->pFlag: %d -----------\n", *pFd_fp_flag_mutex->pFlag);
 		if(*pFd_fp_flag_mutex->pFlag == 1)
 		{
 			pthread_mutex_lock(pFd_fp_flag_mutex->pMutex);
-			fseek(pFd_fp_flag_mutex->pFp, 0, SEEK_SET); 
-			while(fgets(message, MAXLEN8, pFd_fp_flag_mutex->pFp) != NULL)
+
+			fseek(*pFd_fp_flag_mutex->pFp, 0, SEEK_SET); 
+			while(!feof(*pFd_fp_flag_mutex->pFp))
 			{
-				if(*pFd_fp_flag_mutex->pFlag == 1)
+				if(fgets(message, MAXLEN8, *pFd_fp_flag_mutex->pFp))
 				{
-					send(*pFd_fp_flag_mutex->pFd, message, strlen(message), 0);
+					if(*pFd_fp_flag_mutex->pFlag == 1)
+					{
+						message[strlen(message)-1] = 0;
+						send(*pFd_fp_flag_mutex->pFd, message, strlen(message), 0);
+					}
+					else
+					{
+						saveFile(pFd_fp_flag_mutex->pFp, message);
+						break;
+					}
+					memset(message, 0, MAXLEN8);
+					usleep(100*1000);
 				}
 				else
 				{
-					saveFile(pFd_fp_flag_mutex->pFp, message);
+					ftruncate(fileno(*pFd_fp_flag_mutex->pFp), 0);
 					break;
 				}
-				memset(message, 0, MAXLEN8);
-				usleep(100*1000);
 			}
 			pthread_mutex_unlock(pFd_fp_flag_mutex->pMutex);
 		}
@@ -2476,8 +2490,18 @@ static void *udpSend_thread(void *arg)
 
 	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
 	fd_fp_flag_mutex.pFd = &sockfd;
-	fd_fp_flag_mutex.pFp = fp;
+	fd_fp_flag_mutex.pFp = &fp;
+	fd_fp_flag_mutex.pFlag = &connectFlag;
 	fd_fp_flag_mutex.pMutex = &fp_mutex;
+
+	err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
+	if(err)
+	{
+		fprintf(stderr, "\tcan't create sendLocalPac_thread: %s\n", strerror(err));
+		pthread_exit((void *)-1);
+	}
+	O_CLOCAL_THD = 1;
+	usleep(200*1000);
 
 	while(1)
 	{
@@ -2501,21 +2525,10 @@ static void *udpSend_thread(void *arg)
 		}
 		else
 		{
-			if(O_CLOCAL_THD == 0)
-			{
-				err = pthread_create(&tid, NULL, sendLocalPac_thread, &fp);
-				if(err)
-				{
-					fprintf(stderr, "\tcan't create udpConnect thread: %s\n", strerror(err));
-					pthread_exit((void *)-1);
-				}
-				O_CLOCAL_THD = 1;
-				usleep(200*1000);
-			}
-
+			message[mesglen] = '\n';
 			pthread_mutex_lock(&fp_mutex);
+			fseek(fp, 0, SEEK_END);
 			fputs(message, fp);
-			fputc('\n', fp);
 			pthread_mutex_unlock(&fp_mutex);
 		}
 	}
