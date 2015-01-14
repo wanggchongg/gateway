@@ -2219,8 +2219,10 @@ static int saveFile(FILE **pFp, void *pac, ssize_t len)
     while(!feof(*pFp))
     {  
     	mesglen = 0;
-    	memset(message, 0, MAXLEN8);
 		fread(&mesglen, 1, sizeof(mesglen), *pFp);
+		if(feof(*pFp))
+			break;
+		memset(message, 0, MAXLEN8);
     	fread(message, 1, mesglen, *pFp);
     	fwrite(&mesglen, 1, sizeof(mesglen), tempfp);
 		fwrite(message, 1, mesglen, tempfp);
@@ -2256,7 +2258,7 @@ static void *sendLocalPac_thread(void *arg)
 
 	while(1)
 	{
-		printf("----------*pFd_fp_flag_mutex->pFlag: %d -----------\n", *pFd_fp_flag_mutex->pFlag);
+		printf("----------Flag: %d -----------\n", *pFd_fp_flag_mutex->pFlag);
 		if(*pFd_fp_flag_mutex->pFlag == 1)
 		{
 			pthread_mutex_lock(pFd_fp_flag_mutex->pMutex);
@@ -2264,22 +2266,23 @@ static void *sendLocalPac_thread(void *arg)
 			fseek(*pFd_fp_flag_mutex->pFp, 0, SEEK_SET); 
 			while(1)
 			{
+				mesglen = 0;
+				fread(&mesglen, 1, sizeof(mesglen), *pFd_fp_flag_mutex->pFp);
 				if(!feof(*pFd_fp_flag_mutex->pFp))
 				{
-					mesglen = 0;
 					memset(message, 0, MAXLEN8);
-					fread(&mesglen, 1, sizeof(mesglen), *pFd_fp_flag_mutex->pFp);
 					mesglen = fread(message, 1, mesglen, *pFd_fp_flag_mutex->pFp);
+
 					if(*pFd_fp_flag_mutex->pFlag == 1)
 					{
-						send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0);
+						printf("\t---send: %d byte---\n", send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0));
 					}
 					else
 					{
 						saveFile(pFd_fp_flag_mutex->pFp, message, mesglen);
 						break;
 					}
-					usleep(50*1000);
+					usleep(100*1000);
 				}
 				else
 				{
@@ -2580,6 +2583,13 @@ tcpConnect:
 	{
 		perror("\ttcpConnect_thread: TCP socket error");
 	}
+
+	int on=1;
+    if(setsockopt(*pIpport_fd_flag_mutex->pFd, IPPROTO_TCP, TCP_NODELAY, &on, sizeof(on)) < 0)  //设置套接字选项
+    {
+        perror("\ttcpConnect_thread: TCP socket setsockopt failed");
+        close(*pIpport_fd_flag_mutex->pFd);
+    }
 
 	signal(SIGPIPE, SIG_IGN);/*忽略SIGPIPE,防止进程在接收到对端发来的RST分节时再次send导致SIGPIPE信号出现而使进程崩溃*/
 
