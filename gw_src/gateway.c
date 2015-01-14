@@ -2198,11 +2198,12 @@ int sendPacToIPBuf(lua_State *L)
 
 
 
-static int saveFile(FILE **pFp, void *pac)
+static int saveFile(FILE **pFp, void *pac, ssize_t len)
 {
 	FILE *tempfp = NULL;
 	char tempname[MAXLEN3] = {0};
-    char message[MAXLEN8] = {0};
+    uint8_t message[MAXLEN8] = {0};
+    ssize_t mesglen;
     char procName[MAXLEN3] = {0};
     char fileName[MAXLEN5] = {0};
   
@@ -2213,12 +2214,16 @@ static int saveFile(FILE **pFp, void *pac)
         return -1;
     }
 
-    fputs(pac, tempfp);
+    fwrite(&len, sizeof(len), sizeof(len), *pFp);
+	fwrite(pac, 1, len, *pFp);
     while(!feof(*pFp))
     {  
-    	fgets(message, MAXLEN8, *pFp);
-        fputs(message, tempfp); //将修改后的内容写入临时文件
-        memset(message, 0, MAXLEN8);
+    	mesglen = 0;
+    	memset(message, 0, MAXLEN8);
+		fread(&mesglen, 1, sizeof(mesglen), *pFp);
+    	fread(message, 1, mesglen, *pFp);
+    	fwrite(&mesglen, 1, sizeof(mesglen), tempfp);
+		fwrite(message, 1, mesglen, tempfp);
     }
 
     sprintf(procName, "/proc/%d/fd/%d", getpid(), fileno(*pFp));
@@ -2237,6 +2242,8 @@ static int saveFile(FILE **pFp, void *pac)
 }
 
 
+
+
 static void *sendLocalPac_thread(void *arg)
 {
 	FD_FP_FLAG_MUTEX_t *pFd_fp_flag_mutex;
@@ -2245,7 +2252,7 @@ static void *sendLocalPac_thread(void *arg)
 	pthread_detach(pthread_self());
 
 	uint8_t *message = (uint8_t *)malloc(MAXLEN8);
-	memset(message, 0, MAXLEN8);
+	ssize_t mesglen;
 
 	while(1)
 	{
@@ -2255,21 +2262,23 @@ static void *sendLocalPac_thread(void *arg)
 			pthread_mutex_lock(pFd_fp_flag_mutex->pMutex);
 
 			fseek(*pFd_fp_flag_mutex->pFp, 0, SEEK_SET); 
-			while(!feof(*pFd_fp_flag_mutex->pFp))
+			while(1)
 			{
-				if(fgets(message, MAXLEN8, *pFd_fp_flag_mutex->pFp))
+				if(!feof(*pFd_fp_flag_mutex->pFp))
 				{
+					mesglen = 0;
+					memset(message, 0, MAXLEN8);
+					fread(&mesglen, 1, sizeof(mesglen), *pFd_fp_flag_mutex->pFp);
+					mesglen = fread(message, 1, mesglen, *pFd_fp_flag_mutex->pFp);
 					if(*pFd_fp_flag_mutex->pFlag == 1)
 					{
-						message[strlen(message)-1] = 0;
-						send(*pFd_fp_flag_mutex->pFd, message, strlen(message), 0);
+						send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0);
 					}
 					else
 					{
-						saveFile(pFd_fp_flag_mutex->pFp, message);
+						saveFile(pFd_fp_flag_mutex->pFp, message, mesglen);
 						break;
 					}
-					memset(message, 0, MAXLEN8);
 					usleep(100*1000);
 				}
 				else
@@ -2459,7 +2468,7 @@ static void *udpSend_thread(void *arg)
 	pthread_t tid;
 	int sockfd = -1;
 	IP_PORT_t ip_port = {0};
-	int connectFlag = 1;
+	int connectFlag = 0;
 	pthread_mutex_t sockfd_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护sockfd
 	IPPORT_FD_FLAG_MUTEX_t ipport_fd_flag_mutex;
 	BUFFER_t *pBuffer = buf_ipport.pBuffer;
@@ -2525,10 +2534,12 @@ static void *udpSend_thread(void *arg)
 		}
 		else
 		{
-			message[mesglen] = '\n';
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
-			fputs(message, fp);
+			if(ftell(fp) > 10000000)
+				continue;
+			fwrite(&mesglen, 1, sizeof(mesglen), fp);
+			fwrite(message, 1, mesglen, fp);
 			pthread_mutex_unlock(&fp_mutex);
 		}
 	}
