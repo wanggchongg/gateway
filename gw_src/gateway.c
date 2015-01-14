@@ -2279,7 +2279,7 @@ static void *sendLocalPac_thread(void *arg)
 						saveFile(pFd_fp_flag_mutex->pFp, message, mesglen);
 						break;
 					}
-					usleep(100*1000);
+					usleep(50*1000);
 				}
 				else
 				{
@@ -2495,7 +2495,7 @@ static void *udpSend_thread(void *arg)
 	int O_CLOCAL_THD = 0;
 	pthread_mutex_t fp_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护fp
 	FILE *fp;
-	fp = fopen("./udp", "ab+");
+	fp = fopen("./udp.pac", "ab+");
 
 	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
 	fd_fp_flag_mutex.pFd = &sockfd;
@@ -2526,18 +2526,19 @@ static void *udpSend_thread(void *arg)
 		sem_post(&pBuffer->sem_mutex);
 		sem_post(&pBuffer->sem_empty);
 
-		if(connectFlag == 1)
-		{
-			pthread_mutex_lock(&sockfd_mutex);
-			send(sockfd, message, mesglen, 0);
-			pthread_mutex_unlock(&sockfd_mutex);
-		}
-		else
+		pthread_mutex_lock(&sockfd_mutex);
+		send(sockfd, message, mesglen, 0);
+		pthread_mutex_unlock(&sockfd_mutex);
+
+		if(connectFlag == 0)
 		{
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
 			if(ftell(fp) > 10000000)
+			{
+				pthread_mutex_unlock(&fp_mutex);
 				continue;
+			}
 			fwrite(&mesglen, 1, sizeof(mesglen), fp);
 			fwrite(message, 1, mesglen, fp);
 			pthread_mutex_unlock(&fp_mutex);
@@ -2657,7 +2658,7 @@ static void *tcpSend_thread(void *arg)
 	int O_CLOCAL_THD = 0;
 	pthread_mutex_t fp_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护fp
 	FILE *fp;
-	fp = fopen("./tcp", "ab+");
+	fp = fopen("./tcp.pac", "ab+");
 
 	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
 	fd_fp_flag_mutex.pFd = &sockfd;
@@ -2688,18 +2689,19 @@ static void *tcpSend_thread(void *arg)
 		sem_post(&pBuffer->sem_mutex);
 		sem_post(&pBuffer->sem_empty);
 
-		if(connectFlag == 1)
-		{
-			pthread_mutex_lock(&sockfd_mutex);
-			send(sockfd, message, mesglen, 0);
-			pthread_mutex_unlock(&sockfd_mutex);
-		}
-		else
+		pthread_mutex_lock(&sockfd_mutex);
+		send(sockfd, message, mesglen, 0);
+		pthread_mutex_unlock(&sockfd_mutex);
+
+		if(connectFlag == 0)
 		{
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
 			if(ftell(fp) > 10000000)
+			{
+				pthread_mutex_unlock(&fp_mutex);
 				continue;
+			}
 			fwrite(&mesglen, 1, sizeof(mesglen), fp);
 			fwrite(message, 1, mesglen, fp);
 			pthread_mutex_unlock(&fp_mutex);
