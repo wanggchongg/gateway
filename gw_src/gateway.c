@@ -2485,7 +2485,7 @@ static void *udpSend_thread(void *arg)
 	err = pthread_create(&tid, NULL, udpConnect_thread, &ipport_fd_flag_mutex);
 	if(err)
 	{
-		fprintf(stderr, "\tcan't create udpConnect thread: %s\n", strerror(err));
+		fprintf(stderr, "\tudpSend_thread can't create udpConnect thread: %s\n", strerror(err));
 		pthread_exit((void *)-1);
 	}
 	usleep(1000*200);
@@ -2506,7 +2506,7 @@ static void *udpSend_thread(void *arg)
 	err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
 	if(err)
 	{
-		fprintf(stderr, "\tcan't create sendLocalPac_thread: %s\n", strerror(err));
+		fprintf(stderr, "\tudpSend_thread can't create sendLocalPac_thread: %s\n", strerror(err));
 		pthread_exit((void *)-1);
 	}
 	O_CLOCAL_THD = 1;
@@ -2556,52 +2556,60 @@ static void *udpSend_thread(void *arg)
  */
 static void *tcpConnect_thread(void *arg)
 {
-	IPPORT_FD_MUTEX_t *pIpport_fd_mutex = (IPPORT_FD_MUTEX_t *)arg;
+	IPPORT_FD_FLAG_MUTEX_t *pIpport_fd_flag_mutex = (IPPORT_FD_FLAG_MUTEX_t *)arg;
 
 	extern char GATEWAY_NO[];
 	struct sockaddr_in servaddr;
-	char mesg[10] = {0};
+	char heart[MAXLEN1] = {0};
 	int len;
 
-	sprintf(mesg, "#%s#", GATEWAY_NO);
+	sprintf(heart, "#%s#", GATEWAY_NO);
 	memset(&servaddr, '\0', sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port = htons(atoi(pIpport_fd_mutex->pIpPort->port));
-	if(inet_pton(AF_INET, pIpport_fd_mutex->pIpPort->ip, &servaddr.sin_addr) <= 0)
+	servaddr.sin_port = htons(atoi(pIpport_fd_flag_mutex->pIpPort->port));
+	if(inet_pton(AF_INET, pIpport_fd_flag_mutex->pIpPort->ip, &servaddr.sin_addr) <= 0)
 	{
-		fprintf(stderr, "\ttcpConnect_thread: inet_pton error for %s\n", pIpport_fd_mutex->pIpPort->ip);
+		fprintf(stderr, "\ttcpConnect_thread: inet_pton error for %s\n", pIpport_fd_flag_mutex->pIpPort->ip);
 		pthread_exit((void *)-1);
 	}
 
 tcpConnect:
-	pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-	if((*pIpport_fd_mutex->pFd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+	pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+	if((*pIpport_fd_flag_mutex->pFd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
 	{
 		perror("\ttcpConnect_thread: TCP socket error");
 	}
 
 	signal(SIGPIPE, SIG_IGN);/*忽略SIGPIPE,防止进程在接收到对端发来的RST分节时再次send导致SIGPIPE信号出现而使进程崩溃*/
 
-	if(connect_nonb(*pIpport_fd_mutex->pFd, (struct sockaddr *)&servaddr, sizeof(servaddr), 2) < 0)
+	if(connect_nonb(*pIpport_fd_flag_mutex->pFd, (struct sockaddr *)&servaddr, sizeof(servaddr), 2) < 0)
 	{
 		perror("\ttcpConnect_thread: TCP connect_nonb error");
-		close(*pIpport_fd_mutex->pFd);
+		close(*pIpport_fd_flag_mutex->pFd);
 	}
-	pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+	pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
+
 	while(1)
 	{
-		pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-		len = send(*pIpport_fd_mutex->pFd, mesg, strlen(mesg), 0);
-		pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+		pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+		len = send(*pIpport_fd_flag_mutex->pFd, heart, strlen(heart), 0);
+		pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 
-		if(len != strlen(mesg))
+		if(len != strlen(heart))
 		{
-			perror("\ttcpConnect_thread: tcp send error");
-			pthread_mutex_lock(pIpport_fd_mutex->pMutex);
-			close(*pIpport_fd_mutex->pFd);
-			pthread_mutex_unlock(pIpport_fd_mutex->pMutex);
+			perror("\ttcpConnect_thread: disconnected");
+			pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+			*pIpport_fd_flag_mutex->pFlag = 0;
+			close(*pIpport_fd_flag_mutex->pFd);
+			pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 			sleep(30); //连接不通时，30秒后再次连接
 			goto tcpConnect;
+		}
+		else
+		{
+			pthread_mutex_lock(pIpport_fd_flag_mutex->pMutex);
+			*pIpport_fd_flag_mutex->pFlag = 1;
+			pthread_mutex_unlock(pIpport_fd_flag_mutex->pMutex);
 		}
 		sleep(60); //60秒发送一次心跳
 	}
@@ -2622,27 +2630,50 @@ static void *tcpSend_thread(void *arg)
 	pthread_t tid;
 	int sockfd = -1;
 	IP_PORT_t ip_port = {0};
+	int connectFlag = 0;
 	pthread_mutex_t sockfd_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护sockfd
-	IPPORT_FD_MUTEX_t ipport_fd_mutex;
+	IPPORT_FD_FLAG_MUTEX_t ipport_fd_flag_mutex;
 	BUFFER_t *pBuffer = buf_ipport.pBuffer;
 	uint8_t *message = NULL;
 	ssize_t  mesglen = 0;
 	int len;
 
 	memcpy(&ip_port, buf_ipport.pIpPort, sizeof(ip_port));
-	ipport_fd_mutex.pIpPort = &ip_port;
-	ipport_fd_mutex.pFd = &sockfd;
-	ipport_fd_mutex.pMutex = &sockfd_mutex;
+	ipport_fd_flag_mutex.pIpPort = &ip_port;
+	ipport_fd_flag_mutex.pFd = &sockfd;
+	ipport_fd_flag_mutex.pFlag = &connectFlag;
+	ipport_fd_flag_mutex.pMutex = &sockfd_mutex;
 
-	err = pthread_create(&tid, NULL, tcpConnect_thread, &ipport_fd_mutex);
+	err = pthread_create(&tid, NULL, tcpConnect_thread, &ipport_fd_flag_mutex);
 	if(err)
 	{
-		fprintf(stderr, "\tcan't create tcpConnect thread: %s\n", strerror(err));
+		fprintf(stderr, "\ttcpSend_thread can't create tcpConnect thread: %s\n", strerror(err));
 		pthread_exit((void *)-1);
 	}
 	usleep(200*1000);
 
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
+
+	int O_CLOCAL_THD = 0;
+	pthread_mutex_t fp_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护fp
+	FILE *fp;
+	fp = fopen("./tcp", "ab+");
+
+	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
+	fd_fp_flag_mutex.pFd = &sockfd;
+	fd_fp_flag_mutex.pFp = &fp;
+	fd_fp_flag_mutex.pFlag = &connectFlag;
+	fd_fp_flag_mutex.pMutex = &fp_mutex;
+
+	err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
+	if(err)
+	{
+		fprintf(stderr, "\ttcpSend_thread can't create sendLocalPac_thread: %s\n", strerror(err));
+		pthread_exit((void *)-1);
+	}
+	O_CLOCAL_THD = 1;
+	usleep(200*1000);
+
 	while(1)
 	{
 		memset(message, 0, MAXLEN8);
@@ -2657,13 +2688,21 @@ static void *tcpSend_thread(void *arg)
 		sem_post(&pBuffer->sem_mutex);
 		sem_post(&pBuffer->sem_empty);
 
-		pthread_mutex_lock(&sockfd_mutex);
-		len = send(sockfd, message, mesglen, 0);
-		pthread_mutex_unlock(&sockfd_mutex);
-
-		if(len != mesglen)
+		if(connectFlag == 1)
 		{
-			perror("\tTCP send error");
+			pthread_mutex_lock(&sockfd_mutex);
+			send(sockfd, message, mesglen, 0);
+			pthread_mutex_unlock(&sockfd_mutex);
+		}
+		else
+		{
+			pthread_mutex_lock(&fp_mutex);
+			fseek(fp, 0, SEEK_END);
+			if(ftell(fp) > 10000000)
+				continue;
+			fwrite(&mesglen, 1, sizeof(mesglen), fp);
+			fwrite(message, 1, mesglen, fp);
+			pthread_mutex_unlock(&fp_mutex);
 		}
 	}
 
