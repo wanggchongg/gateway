@@ -3,12 +3,12 @@ dofile("./config.lua")
 LOC_PAC_OPT = 0
 function transmit(OPTION, GATEWAY_NO, SL_buffer, XD_buffer, BY_buffer, ...)
 	if OPTION == "1" then
-		SL_packet = lgateway.lrecvPacFromSLBuf(SL_buffer)
+		SL_packet, SL_buflen = lgateway.lrecvPacFromSLBuf(SL_buffer)
 		local SL_len = string.len(SL_packet)
-		if SL_len < 184 and SL_len > 186 then
+		if SL_len ~= 184 then
 			return nil
 		end
-		if XD_ADDR ~= nil then
+		if XD_ADDR ~= nil and SL_buflen == 92 then
 			lgateway.lsendPacToIPBuf(2, XD_buffer) -- 0:GB, 1:ASCII, 2:RTU
 		end
 		SL_packet = string.sub(SL_packet, string.len(SL_packet)/2+1, -1)

@@ -1,5 +1,27 @@
 #include "gateway.h"
 
+/*****************************************************/
+// define statical variable
+static uint8_t _CLIENTADDR_[20] = {'\0'}; //客户端(发送请求)IP号
+/*****************************************************/
+/*****************************************************/
+// define statical variable
+static uint8_t GB_packet[MAXGBLEN] = {'\0'}; //socket接收的IP端报文
+static int GB_packet_len = 0; //socket接收的IP端报文长度
+/*****************************************************/
+/*****************************************************/
+// define statical variable
+static uint8_t SL_buffer[MAXSLLEN] = {'\0'}; //存储从串口接收的十六进制比特串
+static int 	   SL_buflen = 0;				 //串口接收的十六进制比特串的长度
+static uint8_t SL_packet[MAXSLLEN] = {'\0'}; //存储串口十六进制比特串转化的ASCII字符串
+/*****************************************************/
+/*****************************************************/
+// define statical variable
+static uint8_t GB_packet_ret[MAXGBLEN] = {'\0'}; //IP端的返回报文
+/*****************************************************/
+
+
+
 /**
  * [getCommandArgs 获取命令行参数]
  * @param  arg1 [string, 命令参数名: "GATEWAY_NO", 网关号; "OPTION", 选择本地读还是串口读]
@@ -208,12 +230,6 @@ static ssize_t recvn(int sockfd, void *vptr, size_t n, int flags)
 	return (n-nleft);
 }
 
-
-
-/*****************************************************/
-// define statical variable
-static uint8_t _CLIENTADDR_[20] = {'\0'}; //客户端(发送请求)IP号
-/*****************************************************/
 
 
 /**
@@ -551,12 +567,6 @@ int recvPacFromSocket(lua_State *L)
 
 
 
-/*****************************************************/
-// define statical variable
-static uint8_t GB_packet[MAXGBLEN] = {'\0'}; //socket接收的IP端报文
-static int GB_packet_len = 0; //socket接收的IP端报文长度
-/*****************************************************/
-
 /** [recvPacFromIPBuf 从IP缓冲区中接收报文]
  * @param  arg1 [number, 0: 接收可打印的ASCII报文; 非0数字: 接收不可打印的RTU报文]
  * @param  arg2 [userdata:BUFFER_t, 自定义的含有信号量机制的缓冲区]
@@ -617,8 +627,6 @@ int setGBPacket(lua_State *L)
 
 	return 0;
 }
-
-
 
 
 
@@ -1029,17 +1037,11 @@ int recvPacFromSerial(lua_State *L)
 
 
 
-/*****************************************************/
-// define statical variable
-static uint8_t SL_buffer[MAXSLLEN] = {'\0'}; //存储从串口接收的十六进制比特串
-static int 	   SL_buflen = 0;				 //串口接收的十六进制比特串的长度
-static uint8_t SL_packet[MAXSLLEN] = {'\0'}; //存储串口十六进制比特串转化的ASCII字符串
-/*****************************************************/
-
 /**
  * [recvPacFromSLBuf 从串口报文缓存区中接收报文存至SL_packet]
  * @param  arg1 [userdata, BUFFER_t: 接收串口报文的缓存区]
  * @return      [string, 串口报文]
+ * @return      [number, SL_buflen]
  */
 int recvPacFromSLBuf(lua_State *L)
 {
@@ -1062,6 +1064,7 @@ int recvPacFromSLBuf(lua_State *L)
 	printf("Length: %d, received SL_packet: %s\n", SL_buflen*2, SL_packet);
 
 	lua_pushstring(L, SL_packet);
+	lua_pushinteger(L, SL_buflen);
 	return 0;
 }
 
@@ -1673,11 +1676,6 @@ int assemFieldValue(lua_State *L)
 }
 
 
-
-/*****************************************************/
-// define statical variable
-static uint8_t GB_packet_ret[MAXGBLEN] = {'\0'}; //IP端的返回报文
-/*****************************************************/
 
 /**
  * [setGBPacket 重新设置IP端返回报文内容]

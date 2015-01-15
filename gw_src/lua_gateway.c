@@ -176,6 +176,7 @@ static int lrecvPacFromSerial(lua_State *L)
  * [lrecvPacFromSLBuf 从串口报文缓存区中接收报文存至SL_packet]
  * @param  arg1 [userdata, BUFFER_t: 接收串口报文的缓存区]
  * @return      [string, 串口报文]
+ * @return      [number, SL_buflen]
  */
 static int lrecvPacFromSLBuf(lua_State *L)
 {
@@ -191,7 +192,7 @@ static int lrecvPacFromSLBuf(lua_State *L)
 		default:
 			break;
 	}
-	return 1;
+	return 2;
 }
 
 /**
