@@ -230,23 +230,53 @@ static void *tcpDo_thread(void *arg)
 
 	uint8_t *message = NULL;
 	ssize_t  mesglen = 0;
-	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
+	struct timeval timeout;
+	time_t time_old, time_new;
+	timeout.tv_sec = 250;
+	timeout.tv_usec = 0;
+	
+	if(setsockopt(connfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0)  //设置套接字选项
+    {
+        perror("\tthread tcpDo: tcp socket setsockopt(SO_RCVTIMEO) failed");
+        close(connfd);
+		pthread_exit((void *)-1); //结束此线程
+    }
+
+    message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
 	while(1)
 	{
 		memset(message, 0, MAXLEN8);
-		if((mesglen = recv(connfd, message, MAXLEN8, 0)) < 0) //recv函数出现错误，期待下次继续recv
+		time_old = time(NULL);
+		mesglen = recv(connfd, message, MAXLEN8, 0);
+		time_new = time(NULL);
+		if((time_new - time_old) > 240)
 		{
-			perror("\tthread tcpDo: TCP recvn error");
-			continue;
-		}
-		else if(mesglen == 0) //表示连接已经断开
-		{
+			printf("\tthread tcpDo: time out of 4 minute\n");
 			close(connfd);
-			fprintf(stderr, "\tthread tcpDo: connection disconnected\n");
 			free(message);
 			pthread_exit((void *)-1); //结束此线程
 		}
 
+		if(mesglen == 0) //表示连接已经断开
+		{
+			fprintf(stderr, "\tthread tcpDo: connection disconnected\n");
+			close(connfd);
+			free(message);
+			pthread_exit((void *)-1); //结束此线程
+		}
+		else if(mesglen < 0 && (errno == EINTR || errno == EWOULDBLOCK || errno == EAGAIN)) //recv函数出现错误，期待下次继续recv
+		{
+			perror("\tthread tcpDo: TCP recvn error");
+			continue;
+		}
+		else if(mesglen < 0 && errno != EINTR && errno != EWOULDBLOCK && errno != EAGAIN)  //recv函数出现错误
+		{
+			perror("\tthread tcpDo: TCP recvn error, close socket");
+			close(connfd);
+			free(message);
+			pthread_exit((void *)-1); //结束此线程
+		}
+		
 		sem_wait(&pBuffer->sem_empty);
 		sem_wait(&pBuffer->sem_mutex);
 
@@ -2275,14 +2305,14 @@ static void *sendLocalPac_thread(void *arg)
 
 					if(*pFd_fp_flag_mutex->pFlag == 1)
 					{
-						printf("\t---send: %d byte---\n", send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0));
+						send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0);
 					}
 					else
 					{
 						saveFile(pFd_fp_flag_mutex->pFp, message, mesglen);
 						break;
 					}
-					usleep(100*1000);
+					usleep(500*1000);
 				}
 				else
 				{
