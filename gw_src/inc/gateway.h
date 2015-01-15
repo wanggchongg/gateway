@@ -22,7 +22,7 @@
 #include <signal.h>
 #include <pthread.h>
 #include <semaphore.h>
-#include <linux/tcp.h> //TCP_NODELAY
+#include <netinet/tcp.h> //TCP_NODELAY
 
 #ifndef _LUA_H_
 #define _LUA_H_
