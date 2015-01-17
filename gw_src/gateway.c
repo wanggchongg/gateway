@@ -241,7 +241,7 @@ static void *tcpDo_thread(void *arg)
 	time_t time_old, time_new;
 	timeout.tv_sec = 250;
 	timeout.tv_usec = 0;
-	
+
 	if(setsockopt(connfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0)  //设置套接字选项
     {
         perror("\tthread tcpDo: tcp socket setsockopt(SO_RCVTIMEO) failed");
@@ -283,7 +283,7 @@ static void *tcpDo_thread(void *arg)
 			free(message);
 			pthread_exit((void *)-1); //结束此线程
 		}
-		
+
 		sem_wait(&pBuffer->sem_empty);
 		sem_wait(&pBuffer->sem_mutex);
 
@@ -756,7 +756,7 @@ static int setSerialConf(int serial_fd, int baud_rate, int data_bits, int parity
   	}
 	cfsetispeed(&new_cfg, speed);  //设置输入速度
 	cfsetospeed(&new_cfg, speed);  //设置输出速度
-	
+
 	switch (data_bits)  //字节的数据位数,CS字段就是CSIZE字段的取值
 	{
 		case 7:
@@ -1007,7 +1007,7 @@ int recvPacFromSerial(lua_State *L)
     	close(serial_fd);
     	return -2;
     }
-    
+
     pBuffer2_fd.pBuffer1 = pCmdBuffer;
     pBuffer2_fd.pBuffer2 = pSLBuffer;
     pBuffer2_fd.pFd = &serial_fd;
@@ -2220,23 +2220,25 @@ int sendPacToIPBuf(lua_State *L)
 static int saveFile(FILE **pFp, void *pac, ssize_t len)
 {
 	FILE *tempfp = NULL;
-	char tempname[MAXLEN3] = {0};
+	char tempName[MAXLEN5] = {0};
     uint8_t message[MAXLEN8] = {0};
     ssize_t mesglen;
     char procName[MAXLEN3] = {0};
     char fileName[MAXLEN5] = {0};
-  
-    tmpnam(tempname); //创建临时文件。  
-    if((tempfp = fopen(tempname, "wb+")) == NULL)  //打开临时文件  
-    {  
-        perror ("\tFunction saveFile: temp file open error\n");  
-        return -1;
-    }
 
-    fwrite(&len, sizeof(len), sizeof(len), *pFp);
-	fwrite(pac, 1, len, *pFp);
-    while(!feof(*pFp))
-    {  
+    sprintf(procName, "/proc/%d/fd/%d", getpid(), fileno(*pFp));
+    if(readlink(procName, fileName, MAXLEN5) < 0)
+    {
+    	fprintf(stderr, "\tFunction saveFile: readlink error\n");
+    }
+    sprintf(tempName, "%s~", fileName);
+
+	tempfp = fopen(tempName, "wb+"); //打开临时文件
+
+    fwrite(&len, 1, sizeof(len), tempfp);
+	fwrite(pac, 1, len, tempfp);
+    while(1)
+    {
     	mesglen = 0;
 		fread(&mesglen, 1, sizeof(mesglen), *pFp);
 		if(feof(*pFp))
@@ -2247,16 +2249,10 @@ static int saveFile(FILE **pFp, void *pac, ssize_t len)
 		fwrite(message, 1, mesglen, tempfp);
     }
 
-    sprintf(procName, "/proc/%d/fd/%d", getpid(), fileno(*pFp));
-    if(readlink(procName, fileName, MAXLEN5) < 0)
-    {
-    	fprintf(stderr, "\tFunction saveFile: readlink error\n");
-    }
-    
     fclose(tempfp);
     fclose(*pFp);
-    remove(fileName); //删除原文件
-    rename(tempname, fileName); //用临时文件替换原文件。
+
+	rename(tempName, fileName); //用临时文件替换原文件。
     *pFp = fopen(fileName, "ab+");
 
     return 0;
@@ -2274,15 +2270,15 @@ static void *sendLocalPac_thread(void *arg)
 
 	uint8_t *message = (uint8_t *)malloc(MAXLEN8);
 	ssize_t mesglen;
+	int nsend;
 
 	while(1)
 	{
-		printf("----------Flag: %d -----------\n", *pFd_fp_flag_mutex->pFlag);
 		if(*pFd_fp_flag_mutex->pFlag == 1)
 		{
 			pthread_mutex_lock(pFd_fp_flag_mutex->pMutex);
 
-			fseek(*pFd_fp_flag_mutex->pFp, 0, SEEK_SET); 
+			fseek(*pFd_fp_flag_mutex->pFp, 0, SEEK_SET);
 			while(1)
 			{
 				mesglen = 0;
@@ -2294,14 +2290,15 @@ static void *sendLocalPac_thread(void *arg)
 
 					if(*pFd_fp_flag_mutex->pFlag == 1)
 					{
-						send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0);
+						nsend = send(*pFd_fp_flag_mutex->pFd, message, mesglen, 0);
+						printf("\t---local sended: %d---\n", nsend);
 					}
 					else
 					{
 						saveFile(pFd_fp_flag_mutex->pFp, message, mesglen);
 						break;
 					}
-					usleep(500*1000);
+					sleep(1);
 				}
 				else
 				{
@@ -2556,7 +2553,7 @@ static void *udpSend_thread(void *arg)
 		{
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
-			if(ftell(fp) > 10000000)
+			if(ftell(fp) > 2000000)
 			{
 				pthread_mutex_unlock(&fp_mutex);
 				continue;
@@ -2726,7 +2723,7 @@ static void *tcpSend_thread(void *arg)
 		{
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
-			if(ftell(fp) > 10000000)
+			if(ftell(fp) > 2000000)
 			{
 				pthread_mutex_unlock(&fp_mutex);
 				continue;
