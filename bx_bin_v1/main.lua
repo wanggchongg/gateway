@@ -44,17 +44,17 @@ function main(...)
 	if OPTION == "1" then -- serial_Recv thread
 		local SL_conf = {SL_port.PATH, SL_port.BAUD, SL_port.DATA, SL_port.PARI, SL_port.STOP}
 		SL_buffer = lgateway.lnewBuffer()
-		lgateway.lrecvPacFromSerial(nil, SL_buffer, SL_conf) -- 
+		lgateway.lrecvPacFromSerial(nil, SL_buffer, SL_conf) --
 	end
 
 	if XD_ADDR ~= nil then -- tcp_Send thread
 		XD_buffer = lgateway.lnewBuffer()
-		lgateway.lsendPacToSocket(XD_ADDR, XD_PORT, 0, XD_buffer) -- 0:TCP, 1:UDP;
+		lgateway.lsendPacToSocket(XD_ADDR, XD_PORT, 0, 1, XD_buffer) -- 0:TCP, 1:UDP;
 	end
 
 	if BY_ADDR ~= nil then -- udp_Send thread
 		BY_buffer = lgateway.lnewBuffer()
-		lgateway.lsendPacToSocket(BY_ADDR, BY_PORT, 1, BY_buffer) -- 0:TCP, 1:UDP;
+		lgateway.lsendPacToSocket(BY_ADDR, BY_PORT, 1, 1, BY_buffer) -- 0:TCP, 1:UDP;
 	end
 
 	while true do

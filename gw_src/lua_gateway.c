@@ -753,11 +753,12 @@ static int lsendPacToIPBuf(lua_State *L)
 }
 
 /**
- * [sendPacToSocket, 发送国标报文至客户端(PC机)]
+ * [lsendPacToSocket, 发送国标报文至客户端(PC机)]
  * @param  arg1 [string/nil, nil: 由进程自动识别接收的客户端(PC)报文的IP号; string: 人工指定客户端(PC)的IP号]
  * @param  arg2 [string/nil, nil: 默认客户端(PC)进程的端口号为7777; string: 人工指定客户端(PC)的端口号]
  * @param  arg3 [number, 0: 使用TCP传输; 非0数字: 使用UDP传输]
- * @param  arg4 [userdata:BUFFER_t, 自定义的含有信号量机制的缓冲区]
+ * @param  arg4 [number, 0: 不使用网络不通时存储本地功能; 非0数字: 使用网络不通时存储本地功能]
+ * @param  arg5 [userdata:BUFFER_t, 自定义的含有信号量机制的缓冲区]
  */
 static int lsendPacToSocket(lua_State *L)
 {

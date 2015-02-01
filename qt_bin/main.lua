@@ -82,6 +82,8 @@ function mainIPCtrl(udpRecv_buf, ... )
 		SL_format = "./salt_format.lua"
 	elseif sensor == "0005" then
 		SL_format = "./shock_format.lua"
+	else
+		return nil
 	end
 	local s_pSLPac = lgateway.lnewPKV()
 	lgateway.ldefPacketFormat(s_pSLPac, SL_format)
@@ -94,9 +96,10 @@ end
 
 function assemGBPacket(s_pGBPac, udpRecv_buf, udpSend_buf, ...)
 	local dataTime, gatewayNo, Rtd = mainIPCtrl(udpRecv_buf)
-	if dataTime == nil then
+	if dataTime == nil or Rtd == nil then
 		return nil
 	end
+
 	local ST = "32"
 	lgateway.lassemFieldValue(s_pGBPac, "ST", ST, 1)
 	local CN = "2011"
@@ -131,7 +134,7 @@ function main( ... )
 	lgateway.lrecvPacFromSocket(nil, "7777", 1, udpRecv_buf) -- 0:TCP, 1:UDP;
 
 	local udpSend_buf = lgateway.lnewBuffer() -- udp_Send thread
-	lgateway.lsendPacToSocket("127.0.0.1", "7778", 1, udpSend_buf) -- 0:TCP, 1:UDP;
+	lgateway.lsendPacToSocket("127.0.0.1", "7778", 1, 0, udpSend_buf) -- 0:TCP, 1:UDP;
 
 	while true do
 		assemGBPacket(s_pGBPac, udpRecv_buf, udpSend_buf)

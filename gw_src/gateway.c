@@ -451,8 +451,8 @@ static void *udpRecv_thread(void *arg)
 
 ///////////////////////////////////////////////////////////////
 //调试用                                                    	///
-	FILE *heartFp = fopen("./scalar_heart.txt", "ab+");    	///
-	char heartLog[MAXLEN3] = {0};						   	///
+	FILE *heartFp = fopen("./scalar_heart.txt", "a+");    	///
+	char heartLog[MAXLEN3] = {0};							///
 ///////////////////////////////////////////////////////////////
 
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
@@ -475,13 +475,14 @@ static void *udpRecv_thread(void *arg)
 ///////////////////////////////////////////////////////////////
 //调试用                                                    	///
 			gettimestamp(heartLog);							///
-			strcat(heartLog, " -- ");						///
+			strcat(heartLog, "--");							///
 			strcat(heartLog, message);						///
 			strcat(heartLog, " \n");						///
 			fputs(heartLog, heartFp);						///
-			if(ftell(heartFp) > 2000000)					///
+			fflush(heartFp);								///
+			if(ftell(heartFp) > 50000)						///
 			{												///
-				ftruncate(heartFp, 0);						///
+				ftruncate(fileno(heartFp), 0);				///
 			}												///
 ///////////////////////////////////////////////////////////////
 
@@ -2501,25 +2502,27 @@ udpConnect:
  */
 static void *udpSend_thread(void *arg)
 {
-	BUFFER_IPPORT_t buf_ipport = *(BUFFER_IPPORT_t *)arg;
+	BUFFER_IPPORT_FLAG_t buf_ipport_flag = *(BUFFER_IPPORT_FLAG_t *)arg;
 
 	int err;
 	pthread_t tid;
 	int sockfd = -1;
 	IP_PORT_t ip_port = {0};
 	int connectFlag = 0;
+	int localOPT = 0;
 	pthread_mutex_t sockfd_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护sockfd
 	IPPORT_FD_FLAG_MUTEX_t ipport_fd_flag_mutex;
-	BUFFER_t *pBuffer = buf_ipport.pBuffer;
+	BUFFER_t *pBuffer = buf_ipport_flag.pBuffer;
 	uint8_t *message = NULL;
 	ssize_t  mesglen = 0;
-	int len;
 
-	memcpy(&ip_port, buf_ipport.pIpPort, sizeof(ip_port));
+	memcpy(&ip_port, buf_ipport_flag.pIpPort, sizeof(ip_port));
 	ipport_fd_flag_mutex.pIpPort = &ip_port;
 	ipport_fd_flag_mutex.pFd = &sockfd;
 	ipport_fd_flag_mutex.pFlag = &connectFlag;
 	ipport_fd_flag_mutex.pMutex = &sockfd_mutex;
+
+	localOPT = *buf_ipport_flag.pFlag;
 
 	err = pthread_create(&tid, NULL, udpConnect_thread, &ipport_fd_flag_mutex);
 	if(err)
@@ -2531,25 +2534,27 @@ static void *udpSend_thread(void *arg)
 
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
 
-	int O_CLOCAL_THD = 0;
+	FILE *fp = NULL;
 	pthread_mutex_t fp_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护fp
-	FILE *fp;
-	fp = fopen("./udp.pac", "ab+");
 
-	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
-	fd_fp_flag_mutex.pFd = &sockfd;
-	fd_fp_flag_mutex.pFp = &fp;
-	fd_fp_flag_mutex.pFlag = &connectFlag;
-	fd_fp_flag_mutex.pMutex = &fp_mutex;
-
-	err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
-	if(err)
+	if(localOPT)
 	{
-		fprintf(stderr, "\tudpSend_thread can't create sendLocalPac_thread: %s\n", strerror(err));
-		pthread_exit((void *)-1);
+		fp = fopen("./udp.pac", "ab+");
+
+		FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
+		fd_fp_flag_mutex.pFd = &sockfd;
+		fd_fp_flag_mutex.pFp = &fp;
+		fd_fp_flag_mutex.pFlag = &connectFlag;
+		fd_fp_flag_mutex.pMutex = &fp_mutex;
+
+		err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
+		if(err)
+		{
+			fprintf(stderr, "\tudpSend_thread can't create sendLocalPac_thread: %s\n", strerror(err));
+			pthread_exit((void *)-1);
+		}
+		usleep(200*1000);
 	}
-	O_CLOCAL_THD = 1;
-	usleep(200*1000);
 
 	while(1)
 	{
@@ -2569,7 +2574,7 @@ static void *udpSend_thread(void *arg)
 		send(sockfd, message, mesglen, 0);
 		pthread_mutex_unlock(&sockfd_mutex);
 
-		if(connectFlag == 0)
+		if(localOPT && (connectFlag == 0))
 		{
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
@@ -2580,6 +2585,7 @@ static void *udpSend_thread(void *arg)
 			}
 			fwrite(&mesglen, 1, sizeof(mesglen), fp);
 			fwrite(message, 1, mesglen, fp);
+			fflush(fp);
 			pthread_mutex_unlock(&fp_mutex);
 		}
 	}
@@ -2670,26 +2676,28 @@ tcpConnect:
  */
 static void *tcpSend_thread(void *arg)
 {
-	BUFFER_IPPORT_t buf_ipport = *(BUFFER_IPPORT_t *)arg;
+	BUFFER_IPPORT_FLAG_t buf_ipport_flag = *(BUFFER_IPPORT_FLAG_t *)arg;
 
 	pthread_detach(pthread_self());
 	int err;
 	pthread_t tid;
 	int sockfd = -1;
 	IP_PORT_t ip_port = {0};
+	int localOPT = 0;
 	int connectFlag = 0;
 	pthread_mutex_t sockfd_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护sockfd
 	IPPORT_FD_FLAG_MUTEX_t ipport_fd_flag_mutex;
-	BUFFER_t *pBuffer = buf_ipport.pBuffer;
+	BUFFER_t *pBuffer = buf_ipport_flag.pBuffer;
 	uint8_t *message = NULL;
 	ssize_t  mesglen = 0;
-	int len;
 
-	memcpy(&ip_port, buf_ipport.pIpPort, sizeof(ip_port));
+	memcpy(&ip_port, buf_ipport_flag.pIpPort, sizeof(ip_port));
 	ipport_fd_flag_mutex.pIpPort = &ip_port;
 	ipport_fd_flag_mutex.pFd = &sockfd;
 	ipport_fd_flag_mutex.pFlag = &connectFlag;
 	ipport_fd_flag_mutex.pMutex = &sockfd_mutex;
+
+	localOPT = *buf_ipport_flag.pFlag;
 
 	err = pthread_create(&tid, NULL, tcpConnect_thread, &ipport_fd_flag_mutex);
 	if(err)
@@ -2701,25 +2709,26 @@ static void *tcpSend_thread(void *arg)
 
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
 
-	int O_CLOCAL_THD = 0;
 	pthread_mutex_t fp_mutex = PTHREAD_MUTEX_INITIALIZER; //用于保护fp
-	FILE *fp;
-	fp = fopen("./tcp.pac", "ab+");
-
-	FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
-	fd_fp_flag_mutex.pFd = &sockfd;
-	fd_fp_flag_mutex.pFp = &fp;
-	fd_fp_flag_mutex.pFlag = &connectFlag;
-	fd_fp_flag_mutex.pMutex = &fp_mutex;
-
-	err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
-	if(err)
+	FILE *fp = NULL;
+	if(localOPT)
 	{
-		fprintf(stderr, "\ttcpSend_thread can't create sendLocalPac_thread: %s\n", strerror(err));
-		pthread_exit((void *)-1);
+		fp = fopen("./tcp.pac", "ab+");
+
+		FD_FP_FLAG_MUTEX_t fd_fp_flag_mutex;
+		fd_fp_flag_mutex.pFd = &sockfd;
+		fd_fp_flag_mutex.pFp = &fp;
+		fd_fp_flag_mutex.pFlag = &connectFlag;
+		fd_fp_flag_mutex.pMutex = &fp_mutex;
+
+		err = pthread_create(&tid, NULL, sendLocalPac_thread, &fd_fp_flag_mutex);
+		if(err)
+		{
+			fprintf(stderr, "\ttcpSend_thread can't create sendLocalPac_thread: %s\n", strerror(err));
+			pthread_exit((void *)-1);
+		}
+		usleep(200*1000);
 	}
-	O_CLOCAL_THD = 1;
-	usleep(200*1000);
 
 	while(1)
 	{
@@ -2739,7 +2748,7 @@ static void *tcpSend_thread(void *arg)
 		send(sockfd, message, mesglen, 0);
 		pthread_mutex_unlock(&sockfd_mutex);
 
-		if(connectFlag == 0)
+		if(localOPT && (connectFlag == 0))
 		{
 			pthread_mutex_lock(&fp_mutex);
 			fseek(fp, 0, SEEK_END);
@@ -2750,6 +2759,7 @@ static void *tcpSend_thread(void *arg)
 			}
 			fwrite(&mesglen, 1, sizeof(mesglen), fp);
 			fwrite(message, 1, mesglen, fp);
+			fflush(fp);
 			pthread_mutex_unlock(&fp_mutex);
 		}
 	}
@@ -2765,35 +2775,39 @@ static void *tcpSend_thread(void *arg)
  * @param  arg1 [string/nil, nil: 由进程自动识别接收的客户端(PC)报文的IP号; string: 人工指定客户端(PC)的IP号]
  * @param  arg2 [string/nil, nil: 默认客户端(PC)进程的端口号为7777; string: 人工指定客户端(PC)的端口号]
  * @param  arg3 [number, 0: 使用TCP传输; 非0数字: 使用UDP传输]
- * @param  arg4 [userdata:BUFFER_t, 自定义的含有信号量机制的缓冲区]
+ * @param  arg4 [number, 0: 不使用网络不通时存储本地功能; 非0数字: 使用网络不通时存储本地功能]
+ * @param  arg5 [userdata:BUFFER_t, 自定义的含有信号量机制的缓冲区]
  */
 int sendPacToSocket(lua_State *L)
 {
 	const uint8_t *SERV_ADDR = NULL;
 	const uint8_t *SERV_PORT = NULL;
 	int 		   MODE_OPT = 0;
+	int 		   LOCA_OPT = 0;
 	BUFFER_t      *pBuffer = NULL;
 
 	IP_PORT_t ip_port; //远程服务器的地址,端口
 	int err;
 	pthread_t tid;
-	BUFFER_IPPORT_t buffer_ipport;
+	BUFFER_IPPORT_FLAG_t buffer_ipport_flag;
 
 	SERV_ADDR = luaL_optstring(L, 1, _CLIENTADDR_); //默认由进程自动识别接收的客户端(PC)报文的IP号
 	SERV_PORT = luaL_optstring(L, 2, "7777"); //默认客户端(PC)进程的端口号为7777
 	MODE_OPT  = luaL_checkint(L, 3); //默认使用TCP传输
-	pBuffer   = (BUFFER_t *)luaL_checkudata(L, 4, "BUFFER_t");
+	LOCA_OPT  = luaL_checkint(L, 4); //默认不使用网络不通时存储本地功能
+	pBuffer   = (BUFFER_t *)luaL_checkudata(L, 5, "BUFFER_t");
 
 	memset(&ip_port, 0, sizeof(ip_port));
 	memcpy(ip_port.ip, SERV_ADDR, strlen(SERV_ADDR));
 	memcpy(ip_port.port, SERV_PORT, strlen(SERV_PORT));
 
-	buffer_ipport.pBuffer = pBuffer;
-	buffer_ipport.pIpPort = &ip_port;
+	buffer_ipport_flag.pBuffer = pBuffer;
+	buffer_ipport_flag.pIpPort = &ip_port;
+	buffer_ipport_flag.pFlag   = &LOCA_OPT;
 
 	if(MODE_OPT) //使用UDP传输
 	{
-		err = pthread_create(&tid, NULL, udpSend_thread, &buffer_ipport);
+		err = pthread_create(&tid, NULL, udpSend_thread, &buffer_ipport_flag);
 		if(err)
 		{
 			fprintf(stderr, "\tcan't create udpSend_thread: %s\n", strerror(err));
@@ -2802,7 +2816,7 @@ int sendPacToSocket(lua_State *L)
 	}
 	else //使用TCP传输
 	{
-		err = pthread_create(&tid, NULL, tcpSend_thread, &buffer_ipport);
+		err = pthread_create(&tid, NULL, tcpSend_thread, &buffer_ipport_flag);
 		if(err)
 		{
 			fprintf(stderr, "\tcan't create tcpSend_thread: %s\n", strerror(err));
