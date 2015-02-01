@@ -449,6 +449,12 @@ static void *udpRecv_thread(void *arg)
 		pthread_exit((void *)-1);
 	}
 
+///////////////////////////////////////////////////////////////
+//调试用                                                    	///
+	FILE *heartFp = fopen("./scalar_heart.txt", "ab+");    	///
+	char heartLog[MAXLEN3] = {0};						   	///
+///////////////////////////////////////////////////////////////
+
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
 	while(1)
 	{
@@ -465,6 +471,20 @@ static void *udpRecv_thread(void *arg)
 		else if(mesglen >=2 && mesglen <= 4)
 		{
 			sendto(listenfd, "###", 3, 0, (struct sockaddr*)&cliaddr, sizeof(cliaddr));
+
+///////////////////////////////////////////////////////////////
+//调试用                                                    	///
+			gettimestamp(heartLog);							///
+			strcat(heartLog, " -- ");						///
+			strcat(heartLog, message);						///
+			strcat(heartLog, " \n");						///
+			fputs(heartLog, heartFp);						///
+			if(ftell(heartFp) > 2000000)					///
+			{												///
+				ftruncate(heartFp, 0);						///
+			}												///
+///////////////////////////////////////////////////////////////
+
 		}
 		else if(mesglen == 0)
 		{
