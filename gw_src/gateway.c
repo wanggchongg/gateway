@@ -449,13 +449,22 @@ static void *udpRecv_thread(void *arg)
 		pthread_exit((void *)-1);
 	}
 
-///////////////////////////////////////////////////////////////
-//调试用                                                    	///
-	FILE *heartFp = fopen("./scalar_heart.txt", "a+");    	///
-	char heartLog[MAXLEN3] = {0};							///
-///////////////////////////////////////////////////////////////
-
 	message = (uint8_t *)malloc(MAXLEN8 * sizeof(uint8_t));
+
+///////////////////////////////////////////////////////////////////////////////////
+//调试用,将程序重启时间写入文件                                                 ///
+	FILE *heartFp = fopen("./scalar_heart.txt", "a+");    						///
+	char *heartLog  = (char *)malloc(50);										///
+	char *timeStamp = (char *)malloc(30);										///
+																				///
+	memset(heartLog, 0, 50);													///
+	memset(timeStamp, 0, 30);													///
+	gettimestamp(timeStamp);													///
+	snprintf(heartLog, 50, "\r\n程序重启时间：%s\r\n", timeStamp);				///
+	fputs(heartLog, heartFp);													///
+	fflush(heartFp);															///
+///////////////////////////////////////////////////////////////////////////////////
+
 	while(1)
 	{
 		printf("waiting for the UDP packet...\n");
@@ -472,19 +481,19 @@ static void *udpRecv_thread(void *arg)
 		{
 			sendto(listenfd, "###", 3, 0, (struct sockaddr*)&cliaddr, sizeof(cliaddr));
 
-///////////////////////////////////////////////////////////////
-//调试用                                                    	///
-			gettimestamp(heartLog);							///
-			strcat(heartLog, "--");							///
-			strcat(heartLog, message);						///
-			strcat(heartLog, " \n");						///
-			fputs(heartLog, heartFp);						///
-			fflush(heartFp);								///
-			if(ftell(heartFp) > 50000)						///
-			{												///
-				ftruncate(fileno(heartFp), 0);				///
-			}												///
-///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+//调试用,将收到的心跳写入文件                                                   ///
+			memset(heartLog, 0, 50);											///
+			memset(timeStamp, 0, 30);											///
+			gettimestamp(timeStamp);											///
+			snprintf(heartLog, 50, "%s--%s\r\n", message, timeStamp);			///
+			fputs(heartLog, heartFp);											///
+			fflush(heartFp);													///
+			if(ftell(heartFp) > 50000)											///
+			{																	///
+				ftruncate(fileno(heartFp), 0);									///
+			}																	///
+///////////////////////////////////////////////////////////////////////////////////
 
 		}
 		else if(mesglen == 0)

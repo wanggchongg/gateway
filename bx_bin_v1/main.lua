@@ -14,7 +14,7 @@ function transmit(OPTION, GATEWAY_NO, SL_buffer, XD_buffer, BY_buffer, ...)
 		SL_packet = string.sub(SL_packet, string.len(SL_packet)/2+1, -1)
 	else
 		LOC_PAC_OPT = LOC_PAC_OPT + 1
-		LOC_PAC_OPT = LOC_PAC_OPT % 4
+		LOC_PAC_OPT = LOC_PAC_OPT % 5
 		SL_packet = lgateway.lrecXDPacket(LOC_PAC_OPT)
 		if XD_ADDR ~= nil then
 			lgateway.lsendPacToIPBuf(2, XD_buffer) -- 0:GB, 1:ASCII, 2:RTU

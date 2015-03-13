@@ -42,7 +42,7 @@ data_field =
 	{"way1t", 6, "UCETN", data_type.DStr2DINum, 0},
 	{"way1h", 4, "UCETN", data_type.HStr2DINum, 0},
 	{"remain1", 6, "UCETN", data_type.C_String, 0},
-	{"saltv", 4, "UCETN", data_type.DStr2DINum, 0},
+	{"saltv", 4, "UCETN", data_type.HStr2DINum, 0},
 	{"remain2", 6, "UCETN", data_type.C_String, 0},
 	{"salts", 4, "UCETN", data_type.HStr2DINum, 0},
 	{"remain3", 10, "UCETN", data_type.C_String, 0},
@@ -64,14 +64,6 @@ packet =
 -------------------------------------------------------------------------------------------------
 -- the area of user's function, begin
 -------------------------------------------------------------------------------------------------
-A =
-{
-	{0.000157, 0.000157, 0.000157},
-}
-Z =
-{
-	{3000, 3000, 3000},
-}
 function resoSLPacket(pac_kv, ...)
 	local node = lgateway.lresoSLPacket(pac_kv, "nodetype", 1, 4)
 	if node ~= 4 then
@@ -85,11 +77,13 @@ function resoSLPacket(pac_kv, ...)
 		way1t = 0-way1t
 	end
 	local way1h = lgateway.lresoSLPacket(pac_kv, "way1h", 1, 4)
-	way1h = lsensor.lexHumidity(way1h, A[1][1], Z[1][1])
+	way1h = lsensor.lexHumidityInSalt(way1h)
 
 	local saltv = lgateway.lresoSLPacket(pac_kv, "saltv", 1, 4)
+	saltv = lsensor.lexSalt_v(saltv, way1t, way1h)
 
 	local salts = lgateway.lresoSLPacket(pac_kv, "salts", 1, 4)
+	salts = lsensor.lexSalt_s(salts, way1t, way1h)
 
 	-- local data = string.format("way1t=%.1f,way1h=%.2f%%;way2t=%.1f,way2h=%.2f%%;way3t=%.1f,way3h=%.2f%%;",
 	-- 	way1t, way1h*100, way2t, way2h*100, way3t, way3h*100)

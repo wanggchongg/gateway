@@ -902,15 +902,43 @@ static int lexOldHumidity(lua_State *L)
 }
 
 /**
- * [lexSalt description]
+ * [lexHumidityInSalt description]
  * @param  L [description]
  * @return   [description]
  */
-static int lexSalt(lua_State *L)
+static int lexHumidityInSalt(lua_State *L)
 {
-	if(exSalt(L) < 0)
+	if(exHumidityInSalt(L) < 0)
 	{
-		luaL_error(L, "\tfunction exSalt error");
+		luaL_error(L, "\tfunction exHumidityInSalt error");
+	}
+	return 1;
+}
+
+/**
+ * [lexSalt_v description]
+ * @param  L [description]
+ * @return   [description]
+ */
+static int lexSalt_v(lua_State *L)
+{
+	if(exSalt_v(L) < 0)
+	{
+		luaL_error(L, "\tfunction exSalt_v error");
+	}
+	return 1;
+}
+
+/**
+ * [lexSalt_s description]
+ * @param  L [description]
+ * @return   [description]
+ */
+static int lexSalt_s(lua_State *L)
+{
+	if(exSalt_s(L) < 0)
+	{
+		luaL_error(L, "\tfunction exSalt_s error");
 	}
 	return 1;
 }
@@ -932,7 +960,9 @@ static const struct luaL_Reg lsensor[] =
 	{"lexLight", lexLight},
 	{"lexOldTemperature", lexOldTemperature},
 	{"lexOldHumidity", lexOldHumidity},
-	{"lexSalt", lexSalt},
+	{"lexHumidityInSalt", lexHumidityInSalt},
+	{"lexSalt_v", lexSalt_v},
+	{"lexSalt_s", lexSalt_s},
 	{"lexShock", lexShock},
 	{NULL, NULL}
 };

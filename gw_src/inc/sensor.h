@@ -1,3 +1,8 @@
+#ifndef SENSOR_H
+#define SENSOR_H
+
+#include <math.h>
+
 #ifndef _LUA_H_
 #define _LUA_H_
 #include "lua.h"
@@ -11,5 +16,9 @@ int exHumidity(lua_State *L);
 int exOldHumidity(lua_State *L);//湿度转换公式
 int exVoltage(lua_State *L);
 int exLight(lua_State *L);
-int exSalt(lua_State *L);
+int exHumidityInSalt(lua_State *L);
+int exSalt_v(lua_State *L);
+int exSalt_s(lua_State *L);
 int exShock(lua_State *L);
+
+#endif
