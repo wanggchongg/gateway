@@ -63,24 +63,26 @@ packet =
 -------------------------------------------------------------------------------------------------
 function mainIPCtrl(udpRecv_buf, ... )
 	local IP_packet = lgateway.lrecvPacFromIPBuf(0, udpRecv_buf) -- 0:ASCII, 1:RTU
-	if string.len(IP_packet) ~= 109 then
+	if string.len(IP_packet) ~= 69 then
 		return nil
 	end
 	local gatewayno = string.sub(IP_packet, 1, 3)
+	print("gatewayno=", gatewayno)
 	local datatime = string.sub(IP_packet, 4, 17)
+	print("datatime=", datatime)
 	local SL_packet = string.sub(IP_packet, 18, -1)
 	lgateway.lsetSLPacket(SL_packet)
-	local sensor = string.sub(SL_packet, 37, 40)
-	-- print("sensor:", sensor)
-	if sensor == "0001" then
+	local sensor_type = string.sub(SL_packet, 9, 12)
+	print("sensor:", sensor_type)
+	if sensor_type == "0201" then
 		SL_format = "./old_format.lua"
-	elseif sensor == "0002" then
+	elseif sensor_type == "0202" then
 		SL_format = "./rain_format.lua"
-	elseif sensor == "0003" then
+	elseif sensor_type == "0203" then
 		SL_format = "./TH_format.lua"
-	elseif sensor == "0004" then
+	elseif sensor_type == "0204" then
 		SL_format = "./salt_format.lua"
-	elseif sensor == "0005" then
+	elseif sensor_type == "0205" then
 		SL_format = "./shock_format.lua"
 	else
 		return nil

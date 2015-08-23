@@ -33,25 +33,21 @@ check_type = CRC.NONE
 data_field =
 {
 ----{attribute key, 字段长度, 字段值, 数据类型, have key?}
-	{"nodeid", 4, "UCETN", data_type.C_String, 0},
-	{"flag", 4, "UCETN", data_type.C_String, 0},
-	{"counter", 4, "UCETN", data_type.C_String, 0},
-	{"segment", 4, "UCETN", data_type.C_String, 0},
-	{"nodetype", 4, "UCETN", data_type.DIStr2DINum, 0},
+	{"nodetype", 2, "UCETN", data_type.DIStr2DINum, 0},
 	{"voltage", 4, "UCETN", data_type.HCStr2DINum, 0},
 	{"light", 4, "UCETN", data_type.HCStr2DINum, 0},
 	{"tempera", 4, "UCETN", data_type.HCStr2DINum, 0},
 	{"humidity", 4, "UCETN", data_type.HCStr2DINum, 0},
-	{"remain", 30, "UCETN", data_type.C_String, 0},
+	{"remain", 22, "UCETN", data_type.C_String, 0},
 }
 
 packet =
 {
 ----{attribute key, 字段长度, 字段值, 数据类型, have key?}
 	{"start_code", 4, "7E45", data_type.C_String, 0},
-	{"hardware", 16, "UCETN", data_type.C_String, 0},
-	{"data_code", 64, "data_field", data_type.UCETN, 0},
-	{"hardware", 6, "UCETN", data_type.C_String, 0},
+	{"nodeid", 4, "UCETN", data_type.C_String, 0},
+	{"flag", 2, "UCETN", data_type.C_String, 0},
+	{"data_code", 40, "data_field", data_type.UCETN, 0},
 	{"end_code", 2, "7E", data_type.C_String, 0},
 }
 -------------------------------------------------------------------------------------------------
@@ -62,7 +58,7 @@ packet =
 -- the area of user's function, begin
 -------------------------------------------------------------------------------------------------
 function resoSLPacket(pac_kv, ...)
-	local node = lgateway.lresoSLPacket(pac_kv, "nodetype", 1, 4)
+	local node = lgateway.lresoSLPacket(pac_kv, "nodetype", 1, 2)
 	if node ~= 1 then
 		return nil
 	end
@@ -79,7 +75,7 @@ function resoSLPacket(pac_kv, ...)
 	local humidity = lgateway.lresoSLPacket(pac_kv, "humidity", 1, 4)
 	humidity = lsensor.lexOldHumidity(humidity, tempera)
 
-	local data = string.format("SensorNO=%d;1_voltage-Rtd=%.2f,1_voltage-Flag=N;1_light-Rtd=%.2f,1_light-Flag=N;1_a01001-Rtd=%.2f,1_a01001-Flag=N;1_a01002-Rtd=%.2f,1_a01002-Flag=N",
+	local data = string.format("SensorNO=%d;1_voltage-Rtd=%.3f,1_voltage-Flag=N;1_light-Rtd=%.3f,1_light-Flag=N;1_a01001-Rtd=%.3f,1_a01001-Flag=N;1_a01002-Rtd=%.3f,1_a01002-Flag=N",
 		node, voltage, light, tempera, humidity)
 
 	return data

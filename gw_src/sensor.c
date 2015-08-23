@@ -146,6 +146,7 @@ int exHumidityInSalt(lua_State *L)
 	nHum = luaL_checkint(L, 1);
 
 	fHum = 1.9-nHum/((pow(2, 12)-1)*5.2)*2.25;
+	fHum = fHum/100;
 	if(fHum<0)
 		fHum = 0;
 	if(fHum>1)

@@ -1,5 +1,5 @@
 require("lgateway")
-port = 
+port =
 {
 	P_N = "/dev/ttyUSB0",  --串口路径,(Top6410: /dev/ttySAC0, EM9x60: /dev/ttyS5)
 	B_R = 19200,           --波特率
@@ -25,8 +25,3 @@ while 1 do
 	lgateway.lsetPassWord("77777770000001", "123456")
 	resoGBPacket()
 end
-
-
-
-
-

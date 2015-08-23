@@ -489,7 +489,7 @@ static void *udpRecv_thread(void *arg)
 			snprintf(heartLog, 50, "%s--%s\r\n", message, timeStamp);			///
 			fputs(heartLog, heartFp);											///
 			fflush(heartFp);													///
-			if(ftell(heartFp) > 50000)											///
+			if(ftell(heartFp) > 52428800) //50MB								///
 			{																	///
 				ftruncate(fileno(heartFp), 0);									///
 			}																	///
@@ -2636,7 +2636,7 @@ tcpConnect:
 	}
 
 	int on=1;
-    if(setsockopt(*pIpport_fd_flag_mutex->pFd, IPPROTO_TCP, TCP_NODELAY, &on, sizeof(on)) < 0)  //设置套接字选项
+    if(setsockopt(*pIpport_fd_flag_mutex->pFd, IPPROTO_TCP, TCP_NODELAY, &on, sizeof(on)) < 0)  //设置套接字选项，禁用了Nagle算法，可以小块发送
     {
         perror("\ttcpConnect_thread: TCP socket setsockopt failed");
         close(*pIpport_fd_flag_mutex->pFd);

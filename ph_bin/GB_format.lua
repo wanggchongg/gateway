@@ -1,13 +1,13 @@
 ------------------------------------------------------------------------------------------------
 -- the area of system's settings, start
 ------------------------------------------------------------------------------------------------
-data_type = 
+data_type =
 {
 	--字符串型， 无符号整型， 有符号整型， 变长代码型， 不确定
 	C_String=1, U_Integer=2, S_Integer=3, V_Code=4, DIStr2DINum=5, HCStr2DINum=6, HCStr2DFStr=7, UCETN=-1,
 }
 
-CRC = 
+CRC =
 {
 	CRC16=1, CRC32=2, NONE=0,
 }
@@ -32,10 +32,10 @@ space_mark_kv = "="
 space_mark_lr = "&&"
 check_type = CRC.CRC32
 
-data_field = 
+data_field =
 {
-----------{attribute key, 字段长度, 字段值, 数据类型, have key?}	
-	[1] = {"QN", 17, "UCETN", data_type.C_String, 1}, 
+----------{attribute key, 字段长度, 字段值, 数据类型, have key?}
+	[1] = {"QN", 17, "UCETN", data_type.C_String, 1},
 	[2] = {"ST", -1, "UCETN", data_type.C_String, 1},
 	[3] = {"CN", -1, "UCETN", data_type.C_String, 1},
 	[4] = {"PW", 6, "UCETN", data_type.C_String, 1},
@@ -45,7 +45,7 @@ data_field =
 }
 
 -- 0 无此字段, -1 此字段值不确定
-packet = 
+packet =
 {
 ----------{attribute key, 字段长度, 字段值, 数据类型, have key?}
 	[1] = {"start_code", 2, "##", data_type.C_String, 0}, --开始符号
@@ -65,7 +65,10 @@ packet =
 
 --------------------------------------------------
 -- global variable of user's function
-nxt_state = 0   --zhuantai
+-- 状态：
+-- 0：无操作; 1：只返回应答; 2：返回应答后,返回执行结果;
+-- 3：返回应答后.返回数据,返回执行结果; 5：返回应答后,连续返回数据
+nxt_state = 0   --状态
 END = 0
 nCount = 1
 SERV_PORT = nil -- PC's port
@@ -84,7 +87,7 @@ function resoGBPacket(...)
 		GB_ST_Event(lgateway.lgetFieldValue(s_pGBPac, "ST"))
 		GB_PW_Event()
 		GB_CN_Event(lgateway.lgetFieldValue(s_pGBPac, "CN"))
-		local pac_key1 = 
+		local pac_key1 =
 		{
 			"ST", "CN", "PW", "MN", "CP",
 		}
@@ -150,7 +153,7 @@ function GB_Flag1_Action(...)
 	GB_ST_Event(lgateway.lgetFieldValue(s_pGBPac, "ST"))
 	GB_PW_Event()
 	GB_CN_Event(lgateway.lgetFieldValue(s_pGBPac, "CN"))
-	local pac_key2 = 
+	local pac_key2 =
 	{
 		"ST", "CN", "PW", "MN", "Flag", "CP",
 	}
@@ -403,7 +406,7 @@ end
 -- @return [0, success]
 --------------------------------------------------
 function GB_CN2012_Action(...)
-	
+
 	return 0
 end
 
@@ -427,7 +430,7 @@ end
 -- @return [0, success]
 --------------------------------------------------
 function GB_CN2022_Action(...)
-	
+
 	return 0
 end
 
@@ -436,7 +439,7 @@ end
 -- @return [0, success]
 --------------------------------------------------
 function GB_CN2051_Action(...)
-	
+
 	GB_End_Action()
 	return 0
 end

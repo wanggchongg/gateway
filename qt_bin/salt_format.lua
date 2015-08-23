@@ -33,11 +33,7 @@ check_type = CRC.NONE
 data_field =
 {
 ----{attribute key, 字段长度, 字段值, 数据类型, have key?}
-	{"nodeid", 4, "UCETN", data_type.C_String, 0},
-	{"flag", 4, "UCETN", data_type.C_String, 0},
-	{"counter", 4, "UCETN", data_type.C_String, 0},
-	{"segment", 4, "UCETN", data_type.C_String, 0},
-	{"nodetype", 4, "UCETN", data_type.DStr2DINum, 0},
+	{"nodetype", 2, "UCETN", data_type.DStr2DINum, 0},
 	{"address", 4, "UCETN", data_type.C_String, 0},
 	{"way1t", 6, "UCETN", data_type.DStr2DINum, 0},
 	{"way1h", 4, "UCETN", data_type.HStr2DINum, 0},
@@ -45,16 +41,16 @@ data_field =
 	{"saltv", 4, "UCETN", data_type.HStr2DINum, 0},
 	{"remain2", 6, "UCETN", data_type.C_String, 0},
 	{"salts", 4, "UCETN", data_type.HStr2DINum, 0},
-	{"remain3", 10, "UCETN", data_type.C_String, 0},
+	{"remain3", 4, "UCETN", data_type.C_String, 0},
 }
 
 packet =
 {
 ----{attribute key, 字段长度, 字段值, 数据类型, have key?}
 	{"start_code", 4, "7E45", data_type.C_String, 0},
-	{"hardware", 16, "UCETN", data_type.C_String, 0},
-	{"data_code", 64, "data_field", data_type.UCETN, 0},
-	{"hardware", 6, "UCETN", data_type.C_String, 0},
+	{"nodeid", 4, "UCETN", data_type.C_String, 0},
+	{"flag", 2, "UCETN", data_type.C_String, 0},
+	{"data_code", 40, "data_field", data_type.UCETN, 0},
 	{"end_code", 2, "7E", data_type.C_String, 0},
 }
 -------------------------------------------------------------------------------------------------
@@ -65,7 +61,7 @@ packet =
 -- the area of user's function, begin
 -------------------------------------------------------------------------------------------------
 function resoSLPacket(pac_kv, ...)
-	local node = lgateway.lresoSLPacket(pac_kv, "nodetype", 1, 4)
+	local node = lgateway.lresoSLPacket(pac_kv, "nodetype", 1, 2)
 	if node ~= 4 then
 		return nil
 	end
@@ -88,7 +84,7 @@ function resoSLPacket(pac_kv, ...)
 	-- local data = string.format("way1t=%.1f,way1h=%.2f%%;way2t=%.1f,way2h=%.2f%%;way3t=%.1f,way3h=%.2f%%;",
 	-- 	way1t, way1h*100, way2t, way2h*100, way3t, way3h*100)
 
-	local data = string.format("SensorNO=%d;4_a01001-Rtd=%.2f,4_a01001-Flag=N;4_a01002-Rtd=%.2f,4_a01002-Flag=N;4_w01008_v-Rtd=%.2f,4_w01008_v-Flag=N;4_w01008_s-Rtd=%.2f,4_w01008_s-Flag=N",
+	local data = string.format("SensorNO=%d;4_a01001-Rtd=%.3f,4_a01001-Flag=N;4_a01002-Rtd=%.3f,4_a01002-Flag=N;4_w01008_v-Rtd=%.3f,4_w01008_v-Flag=N;4_w01008_s-Rtd=%.3f,4_w01008_s-Flag=N",
 		node, way1t, way1h, saltv, salts)
 
 	return data
