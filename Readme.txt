@@ -32,3 +32,7 @@
 
 版本6.3
 16.由于西大传感器变化，将传感器报文字节数相应改小(bx_bin_v1中的main.lua和qt_bin/***_format.lua变化)
+
+版本6.4
+17.由于需求更改，需要将接收到的标量从服务器转发至西北大学的服务器，增加针对m-link编号的标量转发功能，(具体改变了gateway.c以及qt_bin/main.lua).
+18.增加服务器写原始标量报文至本地的功能(通过qt_bin/config.lua中的LOCAL_STORE来设置)

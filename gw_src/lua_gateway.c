@@ -1,6 +1,128 @@
 #include "lua_gateway.h"
 
 /**
+ * [lASCIIToRTU 将十六进制的字符串转换为二进制数组数据]
+ * @param  arg1 [string, 十六进制字符串]
+ * @return      [buffer, 转换后的二进制数组数据]
+ * @return      [number, 二进制数组数据的长度]
+ */
+static int lASCIIToRTU(lua_State *L)
+{
+	switch(ASCIIToRTU(L))
+	{
+		case -1:
+			lerror(L, "\tfunction ASCIIToRTU error:");
+			lua_pushstring(L, NULL);
+			break;
+		case -2:
+			luaL_error(L, "\tfunction ASCIIToRTU error");
+			break;
+		default:
+			break;
+	}
+	return 2;
+}
+
+/**
+ * [lsetSLBuffer 重新设置二进制形式的串口报文]
+ * @param  arg1 [buffer, 二进制比特串]
+ * @param  arg2 [number, 二进制比特串长度]
+ * @return      [boolean, 成功, true]
+ */
+static int lsetSLBuffer(lua_State *L)
+{
+	switch(setSLBuffer(L))
+	{
+		default:
+		case 0:
+			lua_pushboolean(L, 1);
+			break;
+		case -1:
+			lerror(L, "\tfunction setSLBuffer error:");
+			lua_pushboolean(L, 0);
+			break;
+		case -2:
+			luaL_error(L, "\tfunction setSLBuffer error:");
+			break;
+	}
+	return 1;
+}
+
+
+/**
+ * [lsetSLPacket 重新设置串口报文内容]
+ * @param  arg1 [string, 串口报文十六进制字符串]
+ * @return 		[boolean, true: success; false: failure]
+ */
+static int lsetSLPacket(lua_State *L)
+{
+	switch(setSLPacket(L))
+	{
+		default:
+		case 0:
+			lua_pushboolean(L, 1);
+			break;
+		case -1:
+			lerror(L, "\tfunction setSLPacket error:");
+			lua_pushboolean(L, 0);
+			break;
+		case -2:
+			luaL_error(L, "\tfunction setSLPacket error:");
+			break;
+	}
+	return 1;
+}
+
+
+/**
+ * [lsetGBRTPacket 重新设置IP端返回报文内容]
+ * @param  arg1 [string, IP端报文十六进制字符串]
+ * @return		[boolean, true: success; false: failure]
+ */
+static int lsetGBRTPacket(lua_State *L)
+{
+	switch(setGBRTPacket(L))
+	{
+		default:
+		case 0:
+			lua_pushboolean(L, 1);
+			break;
+		case -1:
+			lerror(L, "\tfunction setGBRTPacket error:");
+			lua_pushboolean(L, 0);
+			break;
+		case -2:
+			luaL_error(L, "\tfunction setGBRTPacket error:");
+			break;
+	}
+	return 1;
+}
+
+/**
+ * [lsetGBPacket 重新设置IP报文内容]
+ * @param  arg1 [string, 串口报文十六进制字符串]
+ * @return 		[boolean, true: success; false: failure]
+ */
+static int lsetGBPacket(lua_State *L)
+{
+	switch(setGBPacket(L))
+	{
+		default:
+		case 0:
+			lua_pushboolean(L, 1);
+			break;
+		case -1:
+			lerror(L, "\tfunction setGBPacket error:");
+			lua_pushboolean(L, 0);
+			break;
+		case -2:
+			luaL_error(L, "\tfunction setGBPacket error:");
+			break;
+	}
+	return 1;
+}
+
+/**
  * [lgetCommandArgs 获取命令行参数]
  * @param  arg1 [string, 命令参数名: "GATEWAY_NO", 网关号; "OPTION", 选择本地读还是串口读]
  * @return   	[string, arg1对应的命令参数值]
@@ -48,7 +170,7 @@ static int ldefPacketFormat(lua_State *L)
 }
 
 /**
- * [recvPacFromSocket, 从socket中接收报文, 并存至预设的IP缓冲区中, 该函数会建立tcp或udp服务器线程]
+ * [lrecvPacFromSocket, 从socket中接收报文, 并存至预设的IP缓冲区中, 该函数会建立tcp或udp服务器线程]
  * @param  arg1 [string/nil, nil: 服务器端(arm板)内核自动选择IP地址(如果有多个网卡); string: 人工指定服务器端(arm板)进程的IP地址]
  * @param  arg2 [string/nil, nil: 默认服务器端(arm板)的端口号为7777; string: 人工指定服务器端(arm板)进程的端口号]
  * @param  arg3 [number, 0: 使用TCP接收; 非0数字: 使用UDP接收]
@@ -74,7 +196,7 @@ static int lrecvPacFromSocket(lua_State *L)
 	return 1;
 }
 
-/** [recvPacFromIPBuf 从IP缓冲区中接收报文]
+/** [lrecvPacFromIPBuf 从IP缓冲区中接收报文]
  * @param  arg1 [number, 0: 接收可打印的ASCII报文; 非0数字: 接收不可打印的RTU报文]
  * @param  arg2 [userdata:BUFFET_t, 自定义的含有信号量机制的缓冲区]
  * @return		[string, arg1=0,返回可打印的ASCII报文; arg1=非0数字, 返回"GB_packet=RTU"]
@@ -91,30 +213,6 @@ static int lrecvPacFromIPBuf(lua_State *L)
 			luaL_error(L, "\tfunction recvPacFromIPBuf error");
 			break;
 		default:
-			break;
-	}
-	return 1;
-}
-
-/**
- * [lsetGBPacket 重新设置IP报文内容]
- * @param  arg1 [string, 串口报文十六进制字符串]
- * @return 		[boolean, true: success; false: failure]
- */
-static int lsetGBPacket(lua_State *L)
-{
-	switch(setGBPacket(L))
-	{
-		default:
-		case 0:
-			lua_pushboolean(L, 1);
-			break;
-		case -1:
-			lerror(L, "\tfunction setGBPacket error:");
-			lua_pushboolean(L, 0);
-			break;
-		case -2:
-			luaL_error(L, "\tfunction setGBPacket error:");
 			break;
 	}
 	return 1;
@@ -193,30 +291,6 @@ static int lrecvPacFromSLBuf(lua_State *L)
 			break;
 	}
 	return 2;
-}
-
-/**
- * [lsetSLPacket 重新设置串口报文内容]
- * @param  arg1 [string, 串口报文十六进制字符串]
- * @return 		[boolean, true: success; false: failure]
- */
-static int lsetSLPacket(lua_State *L)
-{
-	switch(setSLPacket(L))
-	{
-		default:
-		case 0:
-			lua_pushboolean(L, 1);
-			break;
-		case -1:
-			lerror(L, "\tfunction setSLPacket error:");
-			lua_pushboolean(L, 0);
-			break;
-		case -2:
-			luaL_error(L, "\tfunction setSLPacket error:");
-			break;
-	}
-	return 1;
 }
 
 /**
@@ -705,30 +779,6 @@ static int lsleep(lua_State *L)
 }
 
 /**
- * [lsetGBPacket 重新设置IP端返回报文内容]
- * @param  arg1 [string, IP端报文十六进制字符串]
- * @return		[boolean, true: success; false: failure]
- */
-static int lsetGBRTPacket(lua_State *L)
-{
-	switch(setGBRTPacket(L))
-	{
-		default:
-		case 0:
-			lua_pushboolean(L, 1);
-			break;
-		case -1:
-			lerror(L, "\tfunction setGBRTPacket error:");
-			lua_pushboolean(L, 0);
-			break;
-		case -2:
-			luaL_error(L, "\tfunction setGBRTPacket error:");
-			break;
-	}
-	return 1;
-}
-
-/**
  * [lsendPacToIPBuf, 发送解析后的报文至发送缓冲区]
  * @param  arg1 [number, 0: 传输解析生成的国标报文; 1: 传输ASCII形式的原始串口报文; 2: 传输RTU形式的原始串口报文]
  * @param  arg2 [userdata:BUFFER_t, 自定义的含有信号量机制的缓冲区]
@@ -781,6 +831,11 @@ static int lsendPacToSocket(lua_State *L)
 
 static const struct luaL_Reg lgateway[] =
 {
+	{"lASCIIToRTU", lASCIIToRTU},
+	{"lsetSLBuffer", lsetSLBuffer},
+	{"lsetSLPacket", lsetSLPacket},
+	{"lsetGBRTPacket", lsetGBRTPacket},
+	{"lsetGBPacket", lsetGBPacket},
 	{"lgetCommandArgs", lgetCommandArgs},
 	{"ldefPacketFormat", ldefPacketFormat},
 	{"lrecvPacFromSocket", lrecvPacFromSocket},
@@ -791,7 +846,6 @@ static const struct luaL_Reg lgateway[] =
 	{"lcheckPacket", lcheckPacket},
 	{"lsepPacket", lsepPacket},
 	{"lresoSLPacket", lresoSLPacket},
-	{"lsetSLPacket", lsetSLPacket},
 	{"lgetFieldValue", lgetFieldValue},
 	{"lassemFieldValue", lassemFieldValue},
 	{"lgetField", lgetField},
@@ -810,8 +864,6 @@ static const struct luaL_Reg lgateway[] =
 	{"lnewBuffer", lnewBuffer},
 	{"lsleep", lsleep},
 	{"lrecXDPacket", lrecXDPacket},
-	{"lsetGBRTPacket", lsetGBRTPacket},
-	{"lsetGBPacket", lsetGBPacket},
 	{"lsendPacToIPBuf", lsendPacToIPBuf},
 	{"lsendPacToSocket", lsendPacToSocket},
 	{NULL, NULL}

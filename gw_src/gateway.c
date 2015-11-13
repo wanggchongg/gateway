@@ -5,11 +5,103 @@
 static uint8_t _CLIENTADDR_[20] = {'\0'};        //客户端(发送请求)IP号
 static uint8_t GB_packet[MAXGBLEN] = {'\0'};     //socket接收的IP端报文
 static int     GB_packet_len = 0;                //socket接收的IP端报文长度
-static uint8_t SL_buffer[MAXSLLEN] = {'\0'};     //存储从串口接收的十六进制比特串
-static int 	   SL_buflen = 0;				     //串口接收的十六进制比特串的长度
+static uint8_t SL_buffer[MAXSLLEN] = {'\0'};     //存储从串口接收的二进制比特串
+static int 	   SL_buflen = 0;				     //串口接收的二进制比特串的长度
 static uint8_t SL_packet[MAXSLLEN] = {'\0'};     //存储串口十六进制比特串转化的ASCII字符串
 static uint8_t GB_packet_ret[MAXGBLEN] = {'\0'}; //IP端的返回报文
 /*************************************************************************************/
+
+
+/**
+ * [ASCIIToRTU 将十六进制的字符串转换为二进制数组数据]
+ * @param  arg1 [string, 十六进制字符串]
+ * @return      [buffer, 转换后的二进制数组数据]
+ * @return      [number, 二进制数组数据的长度]
+ */
+int ASCIIToRTU(lua_State *L) {
+	const uint8_t *arg1 = NULL;
+	int len = 0;
+	arg1 = luaL_checkstring(L, 1);
+	len = strlen(arg1);
+
+	uint8_t *rtn1 = (uint8_t *)malloc(len);
+	int rtn2 = HCStrToBU_CAry(arg1, rtn1, len);
+
+	lua_pushlstring(L, rtn1, rtn2);
+	lua_pushinteger(L, rtn2);
+	free(rtn1);
+	return 0;
+}
+
+
+
+/**
+ * [setGBPacket 重新设置IP报文内容]
+ * @param  arg1 [string, 串口报文十六进制字符串]
+ */
+int setGBPacket(lua_State *L)
+{
+	const uint8_t *pcArg1 = NULL;
+	pcArg1 = luaL_checkstring(L, 1);
+	memset(GB_packet, '\0', sizeof(GB_packet));
+	strcpy(GB_packet, pcArg1);
+
+	return 0;
+}
+
+
+
+/**
+ * [setSLBuffer 重新设置二进制形式的串口报文]
+ * @param  arg1 [buffer, 二进制比特串]
+ * @param  arg2 [number, 二进制比特串长度]
+ */
+int setSLBuffer(lua_State *L) {
+	const uint8_t *arg1 = NULL;
+	int arg2 = 0;
+	arg1 = luaL_checkstring(L, 1);
+	arg2 = luaL_checkint(L, 2);
+
+	if (arg2 > 0 && arg2 < sizeof(SL_buffer)) {
+		memcpy(SL_buffer, arg1, arg2);
+		SL_buflen = arg2;
+	}
+	return 0;
+}
+
+
+
+/**
+ * [setSLPacket 重新设置串口报文内容]
+ * @param  arg1 [string, 串口报文十六进制字符串]
+ */
+int setSLPacket(lua_State *L) {
+	const uint8_t *arg1 = NULL;
+	arg1 = luaL_checkstring(L, 1);
+	memset(SL_packet, 0, sizeof(SL_packet));
+	if (strlen(arg1) < sizeof(SL_packet)) {
+		strcpy(SL_packet, arg1);
+	}
+	return 0;
+}
+
+
+
+/**
+ * [setGBPacket 重新设置IP端返回报文内容]
+ * @param  arg1 [string, IP端报文十六进制字符串]
+ */
+int setGBRTPacket(lua_State *L)
+{
+	const uint8_t *arg1 = NULL;
+	arg1 = luaL_checkstring(L, 1);
+	memset(GB_packet_ret, 0, sizeof(GB_packet_ret));
+	if (strlen(arg1) < sizeof(GB_packet_ret)) {
+		strcpy(GB_packet_ret, arg1);
+	}
+
+	return 0;
+}
 
 
 
@@ -636,22 +728,6 @@ int recvPacFromIPBuf(lua_State *L)
 
 
 /**
- * [setGBPacket 重新设置IP报文内容]
- * @param  arg1 [string, 串口报文十六进制字符串]
- */
-int setGBPacket(lua_State *L)
-{
-	const uint8_t *pcArg1 = NULL;
-	pcArg1 = luaL_checkstring(L, 1);
-	memset(GB_packet, '\0', sizeof(GB_packet));
-	strcpy(GB_packet, pcArg1);
-
-	return 0;
-}
-
-
-
-/**
  * [readn 防止接收的数据由于缓冲区满而比要求的少而写的read函数增强版]
  */
 static ssize_t readn(int fd, void *vptr, size_t n)
@@ -1086,22 +1162,6 @@ int recvPacFromSLBuf(lua_State *L)
 
 	lua_pushstring(L, SL_packet);
 	lua_pushinteger(L, SL_buflen);
-	return 0;
-}
-
-
-
-/**
- * [setSLPacket 重新设置串口报文内容]
- * @param  arg1 [string, 串口报文十六进制字符串]
- */
-int setSLPacket(lua_State *L)
-{
-	const uint8_t *pcArg1 = NULL;
-	pcArg1 = luaL_checkstring(L, 1);
-	memset(SL_packet, '\0', sizeof(SL_packet));
-	strcpy(SL_packet, pcArg1);
-
 	return 0;
 }
 
@@ -1694,22 +1754,6 @@ int assemFieldValue(lua_State *L)
 
 	fprintf(stderr, "\tcan't find assigned field\n");
 	return -2;
-}
-
-
-
-/**
- * [setGBPacket 重新设置IP端返回报文内容]
- * @param  arg1 [string, IP端报文十六进制字符串]
- */
-int setGBRTPacket(lua_State *L)
-{
-	const uint8_t *pcArg1 = NULL;
-	pcArg1 = luaL_checkstring(L, 1);
-	memset(GB_packet_ret, '\0', sizeof(GB_packet_ret));
-	strcpy(GB_packet_ret, pcArg1);
-
-	return 0;
 }
 
 

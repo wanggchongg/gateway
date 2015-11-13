@@ -61,19 +61,48 @@ packet =
 -------------------------------------------------------------------------------------------------
 -- the area of IP_packet's function, start
 -------------------------------------------------------------------------------------------------
-function mainIPCtrl(udpRecv_buf, ... )
+dofile("./config.lua")
+
+function isExist(set, ele)
+	for k, v in pairs(set) do
+		if ele == v then
+			return true
+		end
+	end
+	return false
+end
+
+function sendPacketToXiBei(tcpSend_buf, GW_no, SL_packet)
+	if isExist(TRANSMIT_NO, GW_no) == false then
+		return nil
+	end
+	local pac, len = lgateway.lASCIIToRTU(SL_packet)
+	lgateway.lsetSLBuffer(pac, len)
+	if XD_ADDR ~= nil then
+		lgateway.lsendPacToIPBuf(2, tcpSend_buf) -- 0:GB, 1:ASCII, 2:RTU
+	end
+end
+
+function parseIPPacket(udpRecv_buf, tcpSend_buf, file, ... )
 	local IP_packet = lgateway.lrecvPacFromIPBuf(0, udpRecv_buf) -- 0:ASCII, 1:RTU
 	if string.len(IP_packet) ~= 69 then
 		return nil
 	end
-	local gatewayno = string.sub(IP_packet, 1, 3)
-	print("gatewayno=", gatewayno)
-	local datatime = string.sub(IP_packet, 4, 17)
-	print("datatime=", datatime)
+
+	if LOCAL_STORE == true then
+		file:write(IP_packet)
+		file:write("\n")
+	end
+
+	local gatewayNo = string.sub(IP_packet, 1, 3)
+	-- print("gatewayno=", gatewayNo)
+	local dataTime = string.sub(IP_packet, 4, 17)
+	--print("datatime=", dataTime)
 	local SL_packet = string.sub(IP_packet, 18, -1)
+	sendPacketToXiBei(tcpSend_buf, gatewayNo, SL_packet)
 	lgateway.lsetSLPacket(SL_packet)
 	local sensor_type = string.sub(SL_packet, 9, 12)
-	print("sensor:", sensor_type)
+	--print("sensor:", sensor_type)
 	if sensor_type == "0201" then
 		SL_format = "./old_format.lua"
 	elseif sensor_type == "0202" then
@@ -87,17 +116,18 @@ function mainIPCtrl(udpRecv_buf, ... )
 	else
 		return nil
 	end
+
 	local s_pSLPac = lgateway.lnewPKV()
 	lgateway.ldefPacketFormat(s_pSLPac, SL_format)
 	if lgateway.lcheckPacket(s_pSLPac, check_attribute) == false then
 		return nil
 	end
 	lgateway.lsepPacket(s_pSLPac)
-	return datatime, gatewayno, resoSLPacket(s_pSLPac)
+
+	return dataTime, gatewayNo, resoSLPacket(s_pSLPac)
 end
 
-function assemGBPacket(s_pGBPac, udpRecv_buf, udpSend_buf, ...)
-	local dataTime, gatewayNo, Rtd = mainIPCtrl(udpRecv_buf)
+function packagGBPacket(s_pGBPac, udpSend_buf, dataTime, gatewayNo, Rtd,...)
 	if dataTime == nil or Rtd == nil then
 		return nil
 	end
@@ -114,8 +144,7 @@ function assemGBPacket(s_pGBPac, udpRecv_buf, udpSend_buf, ...)
 	local CP = string.format("&&DataTime=%s;GatewayNO=%d;%s&&", dataTime, gatewayNo, Rtd)
 	lgateway.lassemFieldValue(s_pGBPac, "CP", CP, 1)
 
-	local pac_key =
-	{
+	local pac_key =	{
 		"ST", "CN", "PW", "MN",
 	}
 	lgateway.lconnectFields(s_pGBPac, pac_key, 0, 1)
@@ -123,23 +152,35 @@ function assemGBPacket(s_pGBPac, udpRecv_buf, udpSend_buf, ...)
 	local data_len = lgateway.lcountFieldsLen(packet, 4)
 	lgateway.lassemFieldValue(s_pGBPac, "data_field_len", data_len, 1)
 	lgateway.lconnectField(s_pGBPac, "data_field_len", 1, 0)
-	print("sended GB_packet:", lgateway.lassemPacket(s_pGBPac, check_attribute))
+	-- print("sended GB_packet:", lgateway.lassemPacket(s_pGBPac, check_attribute))
+
 	lgateway.lsendPacToIPBuf(0, udpSend_buf) -- 0:GB, 1:ASCII, 2:RTU
 end
 
 
-function main( ... )
+function main(...)
 	local s_pGBPac = lgateway.lnewPKV()
 	lgateway.ldefPacketFormat(s_pGBPac, nil)
 
 	local udpRecv_buf = lgateway.lnewBuffer() -- udp_Recv thread
-	lgateway.lrecvPacFromSocket(nil, "7777", 1, udpRecv_buf) -- 0:TCP, 1:UDP;
+	lgateway.lrecvPacFromSocket(nil, "7777", 1, udpRecv_buf) -- arg3[0:TCP, 1:UDP];
 
 	local udpSend_buf = lgateway.lnewBuffer() -- udp_Send thread
-	lgateway.lsendPacToSocket("127.0.0.1", "7778", 1, 0, udpSend_buf) -- 0:TCP, 1:UDP;
+	lgateway.lsendPacToSocket("127.0.0.1", "7778", 1, 0, udpSend_buf) -- arg3[0:TCP, 1:UDP];
+
+	if XD_ADDR ~= nil then
+		tcpSend_buf = lgateway.lnewBuffer() -- tcp_Send thread
+		lgateway.lsendPacToSocket(XD_ADDR, XD_PORT, 0, 0, tcpSend_buf) -- arg3[0:TCP, 1:UDP];
+	end
+
+	if LOCAL_STORE == true then
+		file = io.open("./scalar_packet.txt", "a+")
+		file:setvbuf("line") --设置缓冲为行缓冲
+	end
 
 	while true do
-		assemGBPacket(s_pGBPac, udpRecv_buf, udpSend_buf)
+		local dataTime, gatewayNo, Rtd = parseIPPacket(udpRecv_buf, tcpSend_buf, file)
+		packagGBPacket(s_pGBPac, udpSend_buf, dataTime, gatewayNo, Rtd)
 	end
 end
 -------------------------------------------------------------------------------------------------
